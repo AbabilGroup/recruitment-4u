@@ -1,47 +1,53 @@
-name: Deploy Next.js App
+name: Recruitment4U Deployment
 
 on:
   push:
     branches:
-      - main # Runs the pipeline when code is pushed to the main branch
+      - main # Trigger deployment on push to main branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: 🛠 Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: 🔧 Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "18"
 
-      - name: Install Dependencies
-        run: npm install
+      - name: 📦 Install Dependencies
+        run: npm install --legacy-peer-deps
 
-      - name: Build Next.js App
+      - name: 🔨 Build Next.js App
         run: npm run build
 
-      - name: Upload Build Artifacts
+      - name: 📤 Upload Build Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: next-build
-          path: .next
+          path: |
+            .next
+            package.json
+            package-lock.json
+            public
+            next.config.js
+            .env # Ensure your .env file is included (if applicable)
 
   deploy:
-    needs: build # Deploy only if the build job is successful
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download Build Artifacts
+      - name: 📥 Download Build Artifacts
         uses: actions/download-artifact@v3
         with:
           name: next-build
-          path: .next
+          path: /tmp/recruitment4u
 
-      - name: Deploy to VPS via SSH
+      - name: 🚀 Deploy to VPS via SSH
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_USER: ${{ secrets.SSH_USER }}
@@ -50,12 +56,9 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > private_key.pem
           chmod 600 private_key.pem
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
-          scp -i private_key.pem -r .next "$SSH_USER@$SSH_HOST:/var/www/recruitment4u"
-          ssh -i private_key.pem "$SSH_USER@$SSH_HOST" << 'EOF'
-            cd /var/www/recruitment4u
-            npm install --production
-            pm2 restart recruitment || pm2 start "npm run start" --name recruitment
-            exit
-          EOF
-          rm private_key.pem
-          echo "Deployment completed successfully."
+
+          echo "📂 Copying build files to the server..."
+          scp -i private_key.pem -r /tmp/recruitment4u "$SSH_USER@$SSH_HOST:/var/www/recruitment4u"
+
+          echo "🔧 Connecting to server and setting up..."
+          ssh -i private_key.pem "$SSH_USER@$SSH_HOST" << '_
