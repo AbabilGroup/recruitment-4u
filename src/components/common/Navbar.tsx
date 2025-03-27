@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -34,6 +35,7 @@ const languages = [
 ] as const;
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -86,13 +88,6 @@ const Navbar = () => {
     },
     {
       label: {
-        en: "Find Job",
-        hr: "Pronađi posao",
-      },
-      href: "/find-job",
-    },
-    {
-      label: {
         en: "Contact",
         hr: "Kontakt",
       },
@@ -124,35 +119,39 @@ const Navbar = () => {
 
           {/* Desktop Navigation Items */}
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
-            {navItems.map((item) => (
-              <motion.div
-                key={item.label[language]}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}>
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "text-base lg:text-lg font-semibold transition-all duration-200",
-                    "relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full",
-                    "after:origin-left after:scale-x-0 after:bg-primary-secondary",
-                    "after:transition-transform after:duration-300 hover:after:scale-x-100",
-                    hoveredItem
-                      ? hoveredItem === item.label[language]
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <motion.div
+                  key={item.label[language]}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}>
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "text-base lg:text-lg font-semibold transition-all duration-200",
+                      "relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full",
+                      "after:origin-left after:scale-x-0 after:bg-primary-secondary",
+                      "after:transition-transform after:duration-300 hover:after:scale-x-100",
+                      isActive
                         ? "text-primary-secondary after:scale-x-100"
-                        : "text-white/60"
-                      : "text-white hover:text-primary-secondary"
-                  )}
-                  onMouseEnter={() => setHoveredItem(item.label[language])}
-                  onMouseLeave={() => setHoveredItem(null)}>
-                  {item.label[language]}
-                </Link>
-              </motion.div>
-            ))}
+                        : hoveredItem
+                        ? hoveredItem === item.label[language]
+                          ? "text-primary-secondary after:scale-x-100"
+                          : "text-white/60"
+                        : "text-white hover:text-primary-secondary"
+                    )}
+                    onMouseEnter={() => setHoveredItem(item.label[language])}
+                    onMouseLeave={() => setHoveredItem(null)}>
+                    {item.label[language]}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Updated CTA Button with Link */}
             <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -165,7 +164,6 @@ const Navbar = () => {
               </motion.button>
             </Link>
 
-            {/* New Language Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <motion.button
@@ -249,28 +247,31 @@ const Navbar = () => {
                     We connect the right workers with the right employers.
                   </SheetDescription>
 
-                  {/* Update mobile menu items */}
                   <div className="flex flex-col gap-6">
-                    {navItems.map((item) => (
-                      <Link
-                        key={item.label[language]}
-                        href={item.href}
-                        className={cn(
-                          "text-base font-semibold text-white hover:text-primary-secondary transition-all duration-200",
-                          "relative w-fit after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full",
-                          "after:origin-left after:scale-x-0 after:bg-primary-secondary",
-                          "after:transition-transform after:duration-300 hover:after:scale-x-100"
-                        )}>
-                        {item.label[language]}
-                      </Link>
-                    ))}
+                    {navItems.map((item) => {
+                      const isActive = pathname === item.href;
+                      return (
+                        <Link
+                          key={item.label[language]}
+                          href={item.href}
+                          className={cn(
+                            "text-base font-semibold transition-all duration-200",
+                            "relative w-fit after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full",
+                            "after:origin-left after:scale-x-0 after:bg-primary-secondary",
+                            "after:transition-transform after:duration-300 hover:after:scale-x-100",
+                            isActive
+                              ? "text-primary-secondary after:scale-x-100"
+                              : "text-white hover:text-primary-secondary"
+                          )}>
+                          {item.label[language]}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
 
-                {/* Sticky Button Section in Mobile Menu */}
                 <div className="sticky bottom-0 pb-6 pt-4 bg-primary mt-auto border-t border-white/10">
                   <div className="flex flex-col gap-3">
-                    {/* Mobile Menu Language Selector */}
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <motion.button
@@ -320,7 +321,6 @@ const Navbar = () => {
                       </DropdownMenuContent>
                     </DropdownMenu>
 
-                    {/* Update mobile CTA button */}
                     <Link href="/contact" className="w-full">
                       <motion.button
                         whileHover={{ scale: 1.05 }}

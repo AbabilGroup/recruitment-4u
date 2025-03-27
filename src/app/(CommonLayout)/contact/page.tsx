@@ -1,6 +1,6 @@
 "use client"
 import ContactForm from '@/components/pages-layout/Contact/ContactForm';  
-import CustomBanner from "@/components/pages-layout/Job/CustomBanner";
+import CustomBanner from "@/components/pages-layout/Contact/CustomBanner";
 import Location from '@/components/pages-layout/Contact/Location';
 import Banner from '@/components/pages-layout/Company/Banner';
 
