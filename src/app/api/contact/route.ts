@@ -91,7 +91,7 @@ export async function POST(request: Request) {
   // Email options
   const mailOptions = {
     from: "contact.recruitment4u@gmail.com",
-    to: "contact.recruitment4u@gmail.com",
+    to: "chairmanababilgroup@gmail.com",
     subject: `${config.emailSubject} - ${formType}`,
     html: emailHtml,
   };
