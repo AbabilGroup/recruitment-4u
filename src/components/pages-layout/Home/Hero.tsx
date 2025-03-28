@@ -1,11 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ImageFrameBorder } from "@/animation/imageframeborder";
 // import { useRouter } from "next/router";
 
 const Hero = () => {
+  const t = useTranslations("hero");
   const router = useRouter();
   const handleButtonClick = (path: string) => {
     router.push(path);
@@ -61,7 +63,7 @@ const Hero = () => {
                   delay: 0.5,
                 }}
                 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
-                We connect the right workers with the right employers.
+                {t("title")}
               </motion.h1>
 
               <motion.p
@@ -96,7 +98,7 @@ const Hero = () => {
                     "text-xs sm:text-sm lg:text-base",
                     "hover:bg-primary-secondary/90"
                   )}>
-                  Looking for Workers
+                  {t("buttonText1")}
                 </motion.button>
 
                 {/* Right Button */}
@@ -112,7 +114,7 @@ const Hero = () => {
                     "text-xs sm:text-sm lg:text-base",
                     "hover:bg-primary-secondary/10"
                   )}>
-                  Looking for an Employer
+                  {t("buttonText2")}
                 </motion.button>
               </motion.div>
             </motion.div>

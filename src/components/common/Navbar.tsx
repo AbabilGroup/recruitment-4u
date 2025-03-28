@@ -12,9 +12,10 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,26 +23,27 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const languages = [
-  {
-    code: "en",
-    name: "English",
-    flag: "https://flagcdn.com/w20/gb.png",
-  },
-  {
-    code: "hr",
-    name: "Hrvatski",
-    flag: "https://flagcdn.com/w20/hr.png",
-  },
-] as const;
+// const languages = [
+//   {
+//     code: "en",
+//     name: "English",
+//     flag: "https://flagcdn.com/w20/gb.png",
+//   },
+//   {
+//     code: "hr",
+//     name: "Hrvatski",
+//     flag: "https://flagcdn.com/w20/hr.png",
+//   },
+// ] as const;
 
 const Navbar = () => {
+  const t = useTranslations("nav");
   const locale = useLocale(); //
   const pathname = usePathname();
   // const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [language, setLanguage] = useState<"en" | "hr">("en");
+  // const [language, setLanguage] = useState<"en" | "hr">("en");
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -72,67 +74,93 @@ const Navbar = () => {
       if (timeoutId) clearTimeout(timeoutId);
     };
   }, [lastScrollY]);
-
   const navItems = [
+    { label: t("home"), href: "/" },
+    { label: t("forCompanies"), href: "/for-companies" },
     {
-      label: {
-        en: "Home",
-        hr: "Početna",
-      },
-      href: "/",
-    },
-    {
-      label: {
-        en: "For Companies",
-        hr: "Za tvrtke",
-      },
-      href: "/for-companies",
-    },
-    {
-      label: {
-        en: "Solutions",
-        hr: "Rješenja",
-      },
+      label: t("solutions"),
       href: "/solutions",
       dropdown: [
         {
-          label: {
-            en: "Navigating immigration laws",
-            hr: "Navigacija kroz imigracijske zakone",
-          },
+          label: t("solutionsDropdown.immigrationLaws"),
           href: "/solutions/navigating-immigration-laws",
         },
         {
-          label: {
-            en: "Seasonal workers",
-            hr: "Sezonski radnici",
-          },
+          label: t("solutionsDropdown.seasonalWorkers"),
           href: "/solutions/seasonal-workers",
         },
         {
-          label: {
-            en: "Construction workers",
-            hr: "Građevinski radnici",
-          },
+          label: t("solutionsDropdown.constructionWorkers"),
           href: "/solutions/construction-workers",
         },
         {
-          label: {
-            en: "Healthcare workers",
-            hr: "Zdravstveni radnici",
-          },
+          label: t("solutionsDropdown.healthcareWorkers"),
           href: "/solutions/healthcare-workers",
         },
       ],
     },
-    {
-      label: {
-        en: "Contact",
-        hr: "Kontakt",
-      },
-      href: "/contact",
-    },
+    { label: t("contact"), href: "/contact" },
   ];
+
+  // const navItems = [
+  //   {
+  //     label: {
+
+  //     },
+  //     href: "/",
+  //   },
+  //   {
+  //     label: {
+  //       en: "For Companies",
+  //       hr: "Za tvrtke",
+  //     },
+  //     href: "/for-companies",
+  //   },
+  //   {
+  //     label: {
+  //       en: "Solutions",
+  //       hr: "Rješenja",
+  //     },
+  //     href: "/solutions",
+  //     dropdown: [
+  //       {
+  //         label: {
+  //           en: "Navigating immigration laws",
+  //           hr: "Navigacija kroz imigracijske zakone",
+  //         },
+  //         href: "/solutions/navigating-immigration-laws",
+  //       },
+  //       {
+  //         label: {
+  //           en: "Seasonal workers",
+  //           hr: "Sezonski radnici",
+  //         },
+  //         href: "/solutions/seasonal-workers",
+  //       },
+  //       {
+  //         label: {
+  //           en: "Construction workers",
+  //           hr: "Građevinski radnici",
+  //         },
+  //         href: "/solutions/construction-workers",
+  //       },
+  //       {
+  //         label: {
+  //           en: "Healthcare workers",
+  //           hr: "Zdravstveni radnici",
+  //         },
+  //         href: "/solutions/healthcare-workers",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     label: {
+  //       en: "Contact",
+  //       hr: "Kontakt",
+  //     },
+  //     href: "/contact",
+  //   },
+  // ];
 
   return (
     <nav
@@ -165,7 +193,7 @@ const Navbar = () => {
               const isActive = pathname === localizedHref;
               return item.dropdown ? (
                 // If it has a dropdown
-                <DropdownMenu key={item.label[language]}>
+                <DropdownMenu key={item.label}>
                   <DropdownMenuTrigger asChild>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
@@ -177,7 +205,7 @@ const Navbar = () => {
                             ? "text-primary-secondary"
                             : "text-white hover:text-primary-secondary"
                         )}>
-                        {item.label[language]}
+                        {item.label}
                         <ChevronDown className="h-4 w-4" />
                       </button>
                     </motion.div>
@@ -187,11 +215,11 @@ const Navbar = () => {
                     align="center"
                     className="w-[200px] bg-white shadow-lg rounded-md">
                     {item.dropdown.map((subItem) => (
-                      <DropdownMenuItem key={subItem.label[language]}>
+                      <DropdownMenuItem key={subItem.label}>
                         <Link
                           href={subItem.href}
                           className="block px-4 py-2 w-full text-primary hover:bg-gray-100">
-                          {subItem.label[language]}
+                          {subItem.label}
                         </Link>
                       </DropdownMenuItem>
                     ))}
@@ -200,7 +228,7 @@ const Navbar = () => {
               ) : (
                 // If no dropdown, render a normal link
                 <motion.div
-                  key={item.label[language]}
+                  key={item.label}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}>
                   <Link
@@ -214,7 +242,7 @@ const Navbar = () => {
                         ? "text-primary-secondary after:scale-x-100"
                         : "text-white hover:text-primary-secondary"
                     )}>
-                    {item.label[language]}
+                    {item.label}
                   </Link>
                 </motion.div>
               );
@@ -231,10 +259,11 @@ const Navbar = () => {
                   "bg-primary-secondary text-primary px-4 lg:px-6 py-2 rounded-md text-sm lg:text-base",
                   "hover:bg-primary-secondary/90 transition-colors"
                 )}>
-                {language === "en" ? "Let's Collaborate" : "Započnimo suradnju"}
+                {t("navButton")}
               </motion.button>
             </Link>
-
+            <LanguageSwitcher />
+            {/* 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <motion.button
@@ -279,7 +308,7 @@ const Navbar = () => {
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
-            </DropdownMenu>
+            </DropdownMenu> */}
           </div>
 
           {/* Mobile Menu */}
@@ -322,7 +351,7 @@ const Navbar = () => {
                     {navItems.map((item) => {
                       const isActive = pathname === item.href;
                       return item.dropdown ? (
-                        <DropdownMenu key={item.label[language]}>
+                        <DropdownMenu key={item.label}>
                           <DropdownMenuTrigger asChild>
                             <motion.button
                               whileHover={{ scale: 1.05 }}
@@ -333,7 +362,7 @@ const Navbar = () => {
                                   ? "text-primary-secondary"
                                   : "text-white hover:text-primary-secondary"
                               )}>
-                              {item.label[language]}
+                              {item.label}
                               <ChevronDown className="h-4 w-4" />
                             </motion.button>
                           </DropdownMenuTrigger>
@@ -342,11 +371,11 @@ const Navbar = () => {
                             align="start"
                             className="w-[200px] bg-white shadow-lg rounded-md">
                             {item.dropdown.map((subItem) => (
-                              <DropdownMenuItem key={subItem.label[language]}>
+                              <DropdownMenuItem key={subItem.label}>
                                 <Link
                                   href={subItem.href}
                                   className="block px-4 py-2 w-full text-primary hover:bg-gray-100">
-                                  {subItem.label[language]}
+                                  {subItem.label}
                                 </Link>
                               </DropdownMenuItem>
                             ))}
@@ -354,7 +383,7 @@ const Navbar = () => {
                         </DropdownMenu>
                       ) : (
                         <Link
-                          key={item.label[language]}
+                          key={item.label}
                           href={item.href}
                           className={cn(
                             "text-base font-semibold transition-all duration-200",
@@ -365,7 +394,7 @@ const Navbar = () => {
                               ? "text-primary-secondary after:scale-x-100"
                               : "text-white hover:text-primary-secondary"
                           )}>
-                          {item.label[language]}
+                          {item.label}
                         </Link>
                       );
                     })}
@@ -374,7 +403,8 @@ const Navbar = () => {
 
                 <div className="sticky bottom-0 pb-6 pt-4 bg-primary mt-auto border-t border-white/10">
                   <div className="flex flex-col gap-3">
-                    <DropdownMenu>
+                    <LanguageSwitcher />
+                    {/* <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <motion.button
                           whileHover={{ scale: 1.05 }}
@@ -421,7 +451,7 @@ const Navbar = () => {
                           </DropdownMenuItem>
                         ))}
                       </DropdownMenuContent>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
 
                     <Link href="/contact" className="w-full">
                       <motion.button
@@ -431,9 +461,7 @@ const Navbar = () => {
                           "bg-primary-secondary text-primary px-6 py-2 rounded-md w-full",
                           "hover:bg-primary-secondary/90 transition-colors"
                         )}>
-                        {language === "en"
-                          ? "Let's Collaborate"
-                          : "Započnimo suradnju"}
+                        {t("navButton")}
                       </motion.button>
                     </Link>
                   </div>

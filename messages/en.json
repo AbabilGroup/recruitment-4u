@@ -1,9 +1,20 @@
 {
-  "Navbar": {
+  "nav": {
     "home": "Home",
-    "about": "For Companies",
-    "solution": "Solution",
+    "forCompanies": "For Companies",
+    "solutions": "Solutions",
     "contact": "Contact",
-    "en": "EN"
+    "solutionsDropdown": {
+      "immigrationLaws": "Navigating Immigration Laws",
+      "seasonalWorkers": "Seasonal Workers",
+      "constructionWorkers": "Construction Workers",
+      "healthcareWorkers": "Healthcare Workers"
+    },
+    "navButton": "Let's Collaborate"
+  },
+  "hero": {
+    "title": "We connect the right workers with the right employers.",
+    "buttonText1": "Looking for Workers",
+    "buttonText2": "Looking for Employers"
   }
 }
