@@ -1,9 +1,9 @@
 {
   "Navbar": {
-    "home": "Home",
-    "about": "For Companies",
+    "home": "Accueil",
+    "about": "A propos",
     "solution": "Solution",
     "contact": "Contact",
-    "en": "EN"
+    "fr": "FR"
   }
 }

@@ -12,6 +12,7 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
+import { useLocale } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
 import {
@@ -35,6 +36,7 @@ const languages = [
 ] as const;
 
 const Navbar = () => {
+  const locale = useLocale(); //
   const pathname = usePathname();
   // const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
@@ -157,7 +159,10 @@ const Navbar = () => {
           {/* Desktop Navigation Items */}
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
             {navItems.map((item) => {
-              const isActive = pathname.replace(/^\/(en|hr)/, "") === item.href;
+              const localizedHref = `/${locale}${
+                item.href === "/" ? "" : item.href
+              }`;
+              const isActive = pathname === localizedHref;
               return item.dropdown ? (
                 // If it has a dropdown
                 <DropdownMenu key={item.label[language]}>
