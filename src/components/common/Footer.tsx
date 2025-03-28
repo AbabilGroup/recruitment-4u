@@ -99,7 +99,6 @@ const Footer = () => {
                   <div className="absolute -left-4 top-0 bottom-0 w-1 bg-primary-secondary rounded-full"></div>
                 </div>
               </div>
-
               {/* Social Icons */}
               <div className="flex flex-wrap gap-4 pt-4 md:pt-6">
                 {socialLinks.map((social, index) => (
@@ -109,7 +108,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      "p-2.5 rounded-full transition-all duration-300 transform",
+                      "p-2.5 rounded-full transition-all transform",
                       "bg-transparent hover:bg-primary",
                       "text-primary",
                       "hover:text-primary-secondary",
