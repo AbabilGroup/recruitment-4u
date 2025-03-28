@@ -1,11 +1,12 @@
 "use client";
 
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import Hero from "@/components/pages-layout/Home/Hero";
 import HomeEmploy from "@/components/pages-layout/Home/HomeEmploy";
 import AgencySection from "@/components/pages-layout/Home/AgencySection";
 import CommonBanner from "@/components/common/CommonBanner";
 import Solution from "@/components/pages-layout/Home/Solution";
+import Brand from "@/components/pages-layout/Home/Brand";
 import RecruitmentCenters from "@/components/pages-layout/Home/RecruitmentCenters";
 import Process from "@/components/pages-layout/Home/Process";
 
@@ -13,7 +14,7 @@ export default function Home() {
   const router = useRouter();
 
   const handleContactClick = () => {
-    router.push('/contact');
+    router.push("/contact");
   };
 
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <HomeEmploy />
       <AgencySection />
       <Solution />
+      <Brand />
       <RecruitmentCenters />
       <Process />
       <CommonBanner

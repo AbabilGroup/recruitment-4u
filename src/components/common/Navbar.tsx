@@ -36,7 +36,7 @@ const languages = [
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  // const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [language, setLanguage] = useState<"en" | "hr">("en");
@@ -88,6 +88,43 @@ const Navbar = () => {
     },
     {
       label: {
+        en: "Solutions",
+        hr: "Rješenja",
+      },
+      href: "/solutions",
+      dropdown: [
+        {
+          label: {
+            en: "Navigating immigration laws",
+            hr: "Navigacija kroz imigracijske zakone",
+          },
+          href: "/solutions/navigating-immigration-laws",
+        },
+        {
+          label: {
+            en: "Seasonal workers",
+            hr: "Sezonski radnici",
+          },
+          href: "/solutions/seasonal-workers",
+        },
+        {
+          label: {
+            en: "Construction workers",
+            hr: "Građevinski radnici",
+          },
+          href: "/solutions/construction-workers",
+        },
+        {
+          label: {
+            en: "Healthcare workers",
+            hr: "Zdravstveni radnici",
+          },
+          href: "/solutions/healthcare-workers",
+        },
+      ],
+    },
+    {
+      label: {
         en: "Contact",
         hr: "Kontakt",
       },
@@ -120,8 +157,43 @@ const Navbar = () => {
           {/* Desktop Navigation Items */}
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
             {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
+              const isActive = pathname.replace(/^\/(en|hr)/, "") === item.href;
+              return item.dropdown ? (
+                // If it has a dropdown
+                <DropdownMenu key={item.label[language]}>
+                  <DropdownMenuTrigger asChild>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}>
+                      <button
+                        className={cn(
+                          "relative text-base lg:text-lg font-semibold transition-all duration-200 flex items-center gap-1",
+                          isActive
+                            ? "text-primary-secondary"
+                            : "text-white hover:text-primary-secondary"
+                        )}>
+                        {item.label[language]}
+                        <ChevronDown className="h-4 w-4" />
+                      </button>
+                    </motion.div>
+                  </DropdownMenuTrigger>
+
+                  <DropdownMenuContent
+                    align="center"
+                    className="w-[200px] bg-white shadow-lg rounded-md">
+                    {item.dropdown.map((subItem) => (
+                      <DropdownMenuItem key={subItem.label[language]}>
+                        <Link
+                          href={subItem.href}
+                          className="block px-4 py-2 w-full text-primary hover:bg-gray-100">
+                          {subItem.label[language]}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                // If no dropdown, render a normal link
                 <motion.div
                   key={item.label[language]}
                   whileHover={{ scale: 1.05 }}
@@ -129,20 +201,14 @@ const Navbar = () => {
                   <Link
                     href={item.href}
                     className={cn(
-                      "text-base lg:text-lg font-semibold transition-all duration-200",
-                      "relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full",
+                      "text-base lg:text-lg font-semibold transition-all duration-200 relative",
+                      "after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full",
                       "after:origin-left after:scale-x-0 after:bg-primary-secondary",
                       "after:transition-transform after:duration-300 hover:after:scale-x-100",
                       isActive
                         ? "text-primary-secondary after:scale-x-100"
-                        : hoveredItem
-                        ? hoveredItem === item.label[language]
-                          ? "text-primary-secondary after:scale-x-100"
-                          : "text-white/60"
                         : "text-white hover:text-primary-secondary"
-                    )}
-                    onMouseEnter={() => setHoveredItem(item.label[language])}
-                    onMouseLeave={() => setHoveredItem(null)}>
+                    )}>
                     {item.label[language]}
                   </Link>
                 </motion.div>
@@ -250,7 +316,38 @@ const Navbar = () => {
                   <div className="flex flex-col gap-6">
                     {navItems.map((item) => {
                       const isActive = pathname === item.href;
-                      return (
+                      return item.dropdown ? (
+                        <DropdownMenu key={item.label[language]}>
+                          <DropdownMenuTrigger asChild>
+                            <motion.button
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className={cn(
+                                "text-base font-semibold transition-all duration-200 flex items-center gap-1",
+                                isActive
+                                  ? "text-primary-secondary"
+                                  : "text-white hover:text-primary-secondary"
+                              )}>
+                              {item.label[language]}
+                              <ChevronDown className="h-4 w-4" />
+                            </motion.button>
+                          </DropdownMenuTrigger>
+
+                          <DropdownMenuContent
+                            align="start"
+                            className="w-[200px] bg-white shadow-lg rounded-md">
+                            {item.dropdown.map((subItem) => (
+                              <DropdownMenuItem key={subItem.label[language]}>
+                                <Link
+                                  href={subItem.href}
+                                  className="block px-4 py-2 w-full text-primary hover:bg-gray-100">
+                                  {subItem.label[language]}
+                                </Link>
+                              </DropdownMenuItem>
+                            ))}
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      ) : (
                         <Link
                           key={item.label[language]}
                           href={item.href}
