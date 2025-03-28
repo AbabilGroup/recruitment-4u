@@ -6,7 +6,6 @@ import { ImageFrameBorder } from "@/animation/imageframeborder";
 // import { useRouter } from "next/router";
 
 const Hero = () => {
-  console.log("process.env.TOEMAIL", process.env.EMAIL_USER);
   const router = useRouter();
   const handleButtonClick = (path: string) => {
     router.push(path);

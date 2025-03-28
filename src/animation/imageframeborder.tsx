@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import HeroImage from "../../public/images/Heroimg.jpg";
 import Image from "next/image";
 
 export const ImageFrameBorder = () => {
@@ -60,12 +61,11 @@ export const ImageFrameBorder = () => {
           repeat: Infinity,
           ease: "linear",
           repeatType: "loop",
-        }}
-      >
+        }}>
         <div className="absolute inset-0 bg-black/10 z-10" />
         <div className="relative w-full h-full">
           <Image
-            src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=2340&auto=format&fit=crop"
+            src={HeroImage}
             alt="Professional team meeting in a modern corporate office"
             fill
             className="object-cover object-center"

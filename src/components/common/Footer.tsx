@@ -113,7 +113,6 @@ const Footer = () => {
                       "bg-transparent hover:bg-primary",
                       "text-primary",
                       "hover:text-primary-secondary",
-                      "hover:scale-110 active:scale-95",
                       "flex items-center justify-center"
                     )}
                     aria-label={social.label}>
