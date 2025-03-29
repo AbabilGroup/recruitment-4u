@@ -1,4 +1,3 @@
-"use client";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import {
@@ -9,15 +8,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 
-// const languages = [
-//   { code: "en", name: "English", flag: "https://flagcdn.com/w20/gb.png" },
-//   { code: "fr", name: "Français", flag: "https://flagcdn.com/w20/fr.png" },
-//   { code: "hr", name: "Hrvatski", flag: "https://flagcdn.com/w20/hr.png" },
-//   { code: "de", name: "Deutsch", flag: "https://flagcdn.com/w20/de.png" },
-// ] as const;
 const languages = [
   { code: "en", name: "English", flag: "https://flagcdn.com/w20/gb.png" },
-  // Added your 7 countries
   {
     code: "hr",
     name: "Hrvatski (Croatia)",
@@ -58,11 +50,21 @@ const LanguageSwitcher = () => {
   const handleLanguageChange = (
     lang: "en" | "hr" | "ro" | "sr" | "bs" | "mt" | "sl" | "sk"
   ) => {
-    router.push(`${lang}${pathname.replace(/^\/([a-z]{2})/, "") || "/"}`);
+    // Replace only the language part in the path
+    const newPathname = `/${lang}${pathname.replace(/^\/[a-z]{2}/, "")}`;
+    router.push(newPathname);
   };
 
   // Get the current language from the URL
-  const currentLang = pathname.split("/")[1] as "en" | "fr" | "hr" | "de";
+  const currentLang = pathname.split("/")[1] as
+    | "en"
+    | "hr"
+    | "ro"
+    | "sr"
+    | "bs"
+    | "mt"
+    | "sl"
+    | "sk";
   const activeLang =
     languages.find((l) => l.code === currentLang) || languages[0];
 
