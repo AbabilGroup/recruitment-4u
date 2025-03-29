@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Почетна",
+    "forCompanies": "За компаније",
+    "solutions": "Решења",
+    "contact": "Контакт",
+    "solutionsDropdown": {
+      "immigrationLaws": "Навигација имиграционим законима",
+      "seasonalWorkers": "Сезонски радници",
+      "constructionWorkers": "Грађевински радници",
+      "healthcareWorkers": "Здравствени радници"
+    },
+    "navButton": "Сарадња"
+  },
+  "hero": {
+    "title": "Повезујемо праве раднике са правим послодавцима.",
+    "buttonText1": "Тражим раднике",
+    "buttonText2": "Тражим послодавце"
+  }
+}

@@ -9,19 +9,56 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 
+// const languages = [
+//   { code: "en", name: "English", flag: "https://flagcdn.com/w20/gb.png" },
+//   { code: "fr", name: "Français", flag: "https://flagcdn.com/w20/fr.png" },
+//   { code: "hr", name: "Hrvatski", flag: "https://flagcdn.com/w20/hr.png" },
+//   { code: "de", name: "Deutsch", flag: "https://flagcdn.com/w20/de.png" },
+// ] as const;
 const languages = [
   { code: "en", name: "English", flag: "https://flagcdn.com/w20/gb.png" },
-  { code: "fr", name: "Français", flag: "https://flagcdn.com/w20/fr.png" },
-  { code: "hr", name: "Hrvatski", flag: "https://flagcdn.com/w20/hr.png" },
-  { code: "de", name: "Deutsch", flag: "https://flagcdn.com/w20/de.png" },
+  // Added your 7 countries
+  {
+    code: "hr",
+    name: "Hrvatski (Croatia)",
+    flag: "https://flagcdn.com/w20/hr.png",
+  },
+  {
+    code: "ro",
+    name: "Română (Romania)",
+    flag: "https://flagcdn.com/w20/ro.png",
+  },
+  {
+    code: "sr",
+    name: "Српски (Serbia)",
+    flag: "https://flagcdn.com/w20/rs.png",
+  },
+  {
+    code: "bs",
+    name: "Bosanski (Bosnia)",
+    flag: "https://flagcdn.com/w20/ba.png",
+  },
+  { code: "mt", name: "Malti (Malta)", flag: "https://flagcdn.com/w20/mt.png" },
+  {
+    code: "sl",
+    name: "Slovenščina (Slovenia)",
+    flag: "https://flagcdn.com/w20/si.png",
+  },
+  {
+    code: "sk",
+    name: "Slovenčina (Slovakia)",
+    flag: "https://flagcdn.com/w20/sk.png",
+  },
 ] as const;
 
 const LanguageSwitcher = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleLanguageChange = (lang: "en" | "fr" | "hr" | "de") => {
-    router.push(`/${lang}${pathname.replace(/^\/(en|fr|hr|de)/, "") || "/"}`);
+  const handleLanguageChange = (
+    lang: "en" | "hr" | "ro" | "sr" | "bs" | "mt" | "sl" | "sk"
+  ) => {
+    router.push(`${lang}${pathname.replace(/^\/([a-z]{2})/, "") || "/"}`);
   };
 
   // Get the current language from the URL

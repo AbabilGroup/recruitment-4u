@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Domov",
+    "forCompanies": "Pre spoločnosti",
+    "solutions": "Riešenia",
+    "contact": "Kontakt",
+    "solutionsDropdown": {
+      "immigrationLaws": "Navigácia imigračnými zákonmi",
+      "seasonalWorkers": "Sezónni pracovníci",
+      "constructionWorkers": "Stavební pracovníci",
+      "healthcareWorkers": "Zdravotnícki pracovníci"
+    },
+    "navButton": "Spolupracujme"
+  },
+  "hero": {
+    "title": "Spájame správnych pracovníkov so správnymi zamestnávateľmi.",
+    "buttonText1": "Hľadám pracovníkov",
+    "buttonText2": "Hľadám zamestnávateľov"
+  }
+}

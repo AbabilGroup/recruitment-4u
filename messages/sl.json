@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Domov",
+    "forCompanies": "Za podjetja",
+    "solutions": "Rešitve",
+    "contact": "Kontakt",
+    "solutionsDropdown": {
+      "immigrationLaws": "Navigacija po imigracijskih zakonih",
+      "seasonalWorkers": "Sezonski delavci",
+      "constructionWorkers": "Gradbeni delavci",
+      "healthcareWorkers": "Zdravstveni delavci"
+    },
+    "navButton": "Sodelujmo"
+  },
+  "hero": {
+    "title": "Povezujemo prave delavce s pravimi delodajalci.",
+    "buttonText1": "Iščem delavce",
+    "buttonText2": "Iščem delodajalce"
+  }
+}

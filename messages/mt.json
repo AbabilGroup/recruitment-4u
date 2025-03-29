@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Home",
+    "forCompanies": "Għal Kumpaniji",
+    "solutions": "Soluzzjonijiet",
+    "contact": "Kuntatt",
+    "solutionsDropdown": {
+      "immigrationLaws": "In-navigazzjoni tal-liġijiet tal-immigrazzjoni",
+      "seasonalWorkers": "Ħaddiema staġonali",
+      "constructionWorkers": "Ħaddiema tal-kostruzzjoni",
+      "healthcareWorkers": "Ħaddiema tas-saħħa"
+    },
+    "navButton": "Ejjew Nikollaboraw"
+  },
+  "hero": {
+    "title": "Aħna ngħaqqdu l-ħaddiema adattati mal-miniżtraturi adattati.",
+    "buttonText1": "Qed ifittex ħaddiema",
+    "buttonText2": "Qed ifittex min iħaddem"
+  }
+}
