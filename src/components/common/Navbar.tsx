@@ -1,5 +1,4 @@
 "use client";
-
 import { Link } from "@/i18n/navigation";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -81,7 +80,7 @@ const Navbar = () => {
       href: "/solutions",
       dropdown: [
         {
-          label: t("solutionsDropdown.immigrationLaws"),
+          label: t("Navigating Immigration Laws"),
           href: "/solutions/navigating-immigration-laws",
         },
         // ... other dropdown items
