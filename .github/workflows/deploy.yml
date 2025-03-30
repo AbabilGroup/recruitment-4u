@@ -2,89 +2,88 @@ name: Recruitment4U Deployment
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 🛠 Checkout Repository
-        uses: actions/checkout@v4 # Updated to v4
+      - uses: actions/checkout@v4
 
-      - name: 🔧 Set up Node.js
-        uses: actions/setup-node@v4 # Updated to v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: "20" # Recommended for Next.js 15
-          cache: 'npm' # Add caching for faster builds
+          node-version: "20"
+          cache: "npm"
 
-      - name: 📦 Install Dependencies
-        run: npm ci --legacy-peer-deps # Use npm ci for reproducible builds
+      - name: Install dependencies
+        run: |
+          npm cache clean --force
+          npm ci --legacy-peer-deps
+          if [ $? -ne 0 ]; then
+            echo "Dependency installation failed"
+            exit 1
+          fi
 
-      - name: 🔨 Build Next.js App
-        run: npm run build
+      - name: Build project
+        run: |
+          npm run build
+          if [ $? -ne 0 ]; then
+            echo "Build failed"
+            exit 1
+          fi
 
-      - name: � Run Tests (if applicable)
-        run: npm test # Add this if you have tests
-
-      - name: 📤 Upload Build Artifacts
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: next-build
+          name: production-files
           path: |
             .next
+            public
             package.json
             package-lock.json
-            public
             next.config.js
-            # .env should NOT be committed - use GitHub secrets instead
-            node_modules # Only include if using standalone output
+            node_modules
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📥 Download Build Artifacts
-        uses: actions/download-artifact@v4 # Updated to v4
+      - uses: actions/download-artifact@v4
         with:
-          name: next-build
+          name: production-files
           path: ./deploy
 
-      - name: 🚀 Deploy to VPS via SSH
-        uses: appleboy/ssh-action@v1.0.0 # More reliable than manual SSH
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            set -e  # Exit immediately if any command fails
+            echo "Starting deployment..."
             cd /var/www/recruitment4u
-            
-            echo "🛑 Stopping existing application..."
-            pm2 stop recruitment4u || true
-            pm2 delete recruitment4u || true
-            
-            echo "🧹 Cleaning old files..."
-            rm -rf .next
-            rm -rf public
-            rm -f package.json
-            rm -f package-lock.json
-            rm -f next.config.js
-            
-            echo "🚚 Moving new files..."
-            mv /home/${{ secrets.SSH_USER }}/deploy/* .
-            mv /home/${{ secrets.SSH_USER }}/deploy/.[^.]* .
-            
-            echo "📦 Installing dependencies..."
-            npm ci --production
-            
-            echo "🔄 Restarting application..."
-            pm2 start npm --name "recruitment4u" -- start
-            pm2 save
-            
-            echo "✅ Deployment complete!"
 
+            # Cleanup
+            echo "Cleaning previous deployment..."
+            rm -rf .next || true
+            rm -rf public || true
+
+            # Copy new files
+            echo "Copying new files..."
+            cp -r /home/${{ secrets.SSH_USER }}/deploy/* .
+            cp -r /home/${{ secrets.SSH_USER }}/deploy/.[^.]* .
+
+            # Install and start
+            echo "Installing production dependencies..."
+            npm ci --production
+
+            echo "Starting application..."
+            export NODE_ENV=production
+            pm2 restart recruitment4u --update-env || pm2 start npm --name "recruitment4u" -- start
+
+            echo "Deployment successful!"
 
 # name: Recruitment4U Deployment
 
