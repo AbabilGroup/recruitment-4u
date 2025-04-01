@@ -81,7 +81,7 @@ const Navbar = () => {
       dropdown: [
         {
           label: t("Navigating Immigration Laws"),
-          href: "/solutions/navigating-immigration-laws",
+          href: "/navigating-immigration-laws",
         },
         // ... other dropdown items
       ],
