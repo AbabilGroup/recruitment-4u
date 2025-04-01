@@ -97,17 +97,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🛠 Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: 🔧 Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: "18"
+          cache: "npm"
 
-      - name: 📦 Install Dependencies
-        run: npm install --legacy-peer-deps
-
+      - name: Install dependencies
+        run: |
+          npm cache clean --force
+          npm ci --legacy-peer-deps
+          if [ $? -ne 0 ]; then
+            echo "Dependency installation failed"
+            exit 1
+          fi
       - name: 🔨 Build Next.js App
         run: npm run build
 
