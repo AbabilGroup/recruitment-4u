@@ -106,9 +106,14 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      - name: 📦 Install Dependencies
+      - name: 🧹 Clear NPM Cache (Fixes Dependency Issues)
         run: |
           npm cache clean --force
+          rm -rf node_modules package-lock.json
+          git checkout package-lock.json  # Ensure lock file is present
+
+      - name: 📦 Install Dependencies
+        run: |
           npm install --legacy-peer-deps
           if [ $? -ne 0 ]; then
             echo "Dependency installation failed"
@@ -128,7 +133,8 @@ jobs:
             package-lock.json
             public
             next.config.js
-            .env  # Ensure your .env file is included if needed
+            .env  # Include .env file if needed
+          retention-days: 1 # Keep artifacts for 1 day
 
   deploy:
     needs: build
@@ -136,7 +142,7 @@ jobs:
 
     steps:
       - name: 📥 Download Build Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4 # ✅ Updated to v4
         with:
           name: next-build
           path: /tmp/recruitment4u
@@ -152,28 +158,19 @@ jobs:
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
           echo "📂 Copying build files to the server..."
+          scp -i private_key.pem -r /tmp/recruitment4u/* "$SSH_USER@$SSH_HOST:/var/www/recruitment4u"
+
+          echo "🔧 Connecting to server and setting up..."
           ssh -i private_key.pem "$SSH_USER@$SSH_HOST" << 'EOF'
             set -e
             APP_DIR="/var/www/recruitment4u"
 
             # Ensure directory exists
             mkdir -p $APP_DIR
-
-            # Navigate to project directory
             cd $APP_DIR
-
-            # Pull latest code
-            git pull origin main || true
-
-            # Copy build artifacts
-            rm -rf .next public next.config.js package.json package-lock.json
-            cp -r /tmp/recruitment4u/* $APP_DIR/
 
             # Install dependencies
             npm install --legacy-peer-deps
-
-            # Build Next.js app (optional, if not using pre-built artifacts)
-            npm run build
 
             # Restart application with PM2
             pm2 restart recruitment4u || pm2 start npm --name "recruitment4u" -- start
