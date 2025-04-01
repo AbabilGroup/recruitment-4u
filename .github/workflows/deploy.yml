@@ -85,8 +85,6 @@
 
 #             echo "Deployment successful!"
 
-
-
 name: Recruitment4U Deployment
 
 on:
@@ -108,17 +106,11 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      - name: 🧹 Clear NPM Cache (Fixes Dependency Issues)
-        run: |
-          npm cache clean --force
-          rm -rf node_modules package-lock.json
-          git checkout package-lock.json  # Ensure lock file is present
-
       - name: 📦 Install Dependencies
         run: |
-          npm install --legacy-peer-deps
+          npm ci --legacy-peer-deps
           if [ $? -ne 0 ]; then
-            echo "Dependency installation failed"
+            echo "Dependency installation failed!"
             exit 1
           fi
 
@@ -144,21 +136,26 @@ jobs:
 
     steps:
       - name: 📥 Download Build Artifacts
-        uses: actions/download-artifact@v4 # ✅ Updated to v4
+        uses: actions/download-artifact@v4
         with:
           name: next-build
           path: /tmp/recruitment4u
 
-      - name: 🚀 Deploy to VPS via SSH
+      - name: 🔑 Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh  # ✅ Ensure the .ssh directory exists
+          chmod 700 ~/.ssh  # ✅ Set correct permissions
+          echo "$SSH_PRIVATE_KEY" > private_key.pem
+          chmod 600 private_key.pem
+          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts  # ✅ Ensure correct permissions
+
+      - name: 🚀 Deploy to VPS
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
         run: |
-          echo "$SSH_PRIVATE_KEY" > private_key.pem
-          chmod 600 private_key.pem
-          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
-
           echo "📂 Copying build files to the server..."
           scp -i private_key.pem -r /tmp/recruitment4u/* "$SSH_USER@$SSH_HOST:/var/www/recruitment4u"
 
@@ -172,10 +169,14 @@ jobs:
             cd $APP_DIR
 
             # Install dependencies
-            npm install --legacy-peer-deps
+            npm ci --legacy-peer-deps
 
             # Restart application with PM2
-            pm2 restart recruitment4u || pm2 start npm --name "recruitment4u" -- start
+            if pm2 list | grep -q "recruitment4u"; then
+              pm2 restart recruitment4u
+            else
+              pm2 start npm --name "recruitment4u" -- start
+            fi
 
             echo "✅ Deployment completed successfully!"
           EOF
@@ -184,5 +185,4 @@ jobs:
         run: rm -f private_key.pem
 
       - name: 🎉 Success Notification
-        run: |
-          echo "✅ Deployment completed successfully!"
+        run: echo "✅ Deployment completed successfully!"
