@@ -12,33 +12,33 @@ const languages = [
   { code: "en", name: "English", flag: "https://flagcdn.com/w20/gb.png" },
   {
     code: "hr",
-    name: "Hrvatski (Croatia)",
+    name: "Hrvatski ",
     flag: "https://flagcdn.com/w20/hr.png",
   },
   {
     code: "ro",
-    name: "Română (Romania)",
+    name: "Română ",
     flag: "https://flagcdn.com/w20/ro.png",
   },
   {
     code: "sr",
-    name: "Српски (Serbia)",
+    name: "Српски ",
     flag: "https://flagcdn.com/w20/rs.png",
   },
   {
     code: "bs",
-    name: "Bosanski (Bosnia)",
+    name: "Bosanski",
     flag: "https://flagcdn.com/w20/ba.png",
   },
-  { code: "mt", name: "Malti (Malta)", flag: "https://flagcdn.com/w20/mt.png" },
+  // { code: "mt", name: "Malti", flag: "https://flagcdn.com/w20/mt.png" },
   {
     code: "sl",
-    name: "Slovenščina (Slovenia)",
+    name: "Slovenščina",
     flag: "https://flagcdn.com/w20/si.png",
   },
   {
     code: "sk",
-    name: "Slovenčina (Slovakia)",
+    name: "Slovenčina ",
     flag: "https://flagcdn.com/w20/sk.png",
   },
 ] as const;
@@ -48,7 +48,7 @@ const LanguageSwitcher = () => {
   const pathname = usePathname();
 
   const handleLanguageChange = (
-    lang: "en" | "hr" | "ro" | "sr" | "bs" | "mt" | "sl" | "sk"
+    lang: "en" | "hr" | "ro" | "sr" | "bs" | "sl" | "sk"
   ) => {
     // Replace only the language part in the path
     const newPathname = `/${lang}${pathname.replace(/^\/[a-z]{2}/, "")}`;
@@ -62,7 +62,6 @@ const LanguageSwitcher = () => {
     | "ro"
     | "sr"
     | "bs"
-    | "mt"
     | "sl"
     | "sk";
   const activeLang =

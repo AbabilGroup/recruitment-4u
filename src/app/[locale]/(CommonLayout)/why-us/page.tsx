@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <div>
-      <h1>Navigating Immigration Laws</h1>
+      <h1>Why Us</h1>
     </div>
   );
 }

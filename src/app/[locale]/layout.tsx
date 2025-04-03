@@ -1,9 +1,10 @@
-import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import "./globals.css";
+import { ReactNode } from "react"; // Add missing import
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.recruitment4u.co/"),
@@ -72,15 +73,19 @@ export default async function RootLayout({
   children,
   params,
 }: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  children: ReactNode;
+  params: {
+    locale: string;
+  };
 }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
   return (
     <html lang={locale} suppressHydrationWarning>
+      
       <body className="font-sans" suppressHydrationWarning>
         <NextIntlClientProvider locale={locale}>
           {children}

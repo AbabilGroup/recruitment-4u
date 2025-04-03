@@ -80,12 +80,13 @@ const Navbar = () => {
       href: "/solutions",
       dropdown: [
         {
-          label: t("Navigating Immigration Laws"),
-          href: "/navigating-immigration-laws",
+          label: "Navigating Immigration Laws",
+          href: "/solutions/navigating-immigration-laws",
         },
         // ... other dropdown items
       ],
     },
+    { label: "Why Us", href: "/why-us" },
     { label: t("contact"), href: "/contact" },
   ];
 

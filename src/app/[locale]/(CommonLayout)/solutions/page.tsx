@@ -1,5 +1,8 @@
 export default function Page() {
-    return (
-        <div></div>
-    );
+  return (
+    <div>
+      {" "}
+      <h1>Solutions</h1>
+    </div>
+  );
 }

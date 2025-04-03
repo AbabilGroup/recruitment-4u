@@ -56,8 +56,7 @@ const HomeEmploy = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="order-2 lg:order-1 space-y-6"
-          >
+            className="order-2 lg:order-1 space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-black">
               Your partner in{" "}
               <span className="text-primary block sm:inline">
@@ -102,29 +101,32 @@ const HomeEmploy = () => {
                 className={cn(
                   "p-4",
                   "bg-white shadow-sm",
-                  "relative group", 
+                  "relative group",
                   "hover:shadow-lg transition-all duration-300",
                   "transform hover:-translate-y-1",
                   "rounded-lg",
-                  "hover:bg-primary" 
-                )}
-              >
+                  "hover:bg-primary"
+                )}>
                 <div className="flex flex-row items-center gap-4 mb-4">
                   <div className="relative shrink-0">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center 
+                    <div
+                      className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center 
                       transition-all duration-300 group-hover:bg-white">
-                      <span className="text-2xl font-bold text-primary 
+                      <span
+                        className="text-2xl font-bold text-primary 
                         group-hover:text-primary transition-colors duration-300">
                         {stat.number}
                       </span>
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold text-black group-hover:text-white 
+                  <h3
+                    className="text-lg font-bold text-black group-hover:text-white 
                     transition-colors duration-300">
                     {stat.title}
                   </h3>
                 </div>
-                <p className="text-sm text-black pl-16 leading-relaxed 
+                <p
+                  className="text-sm text-black pl-16 leading-relaxed 
                   group-hover:text-white/90 transition-colors duration-300">
                   {stat.description}
                 </p>
