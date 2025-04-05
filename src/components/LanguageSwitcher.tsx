@@ -1,3 +1,4 @@
+"use client";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import {
@@ -7,53 +8,21 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const languages = [
   { code: "en", name: "English", flag: "https://flagcdn.com/w20/gb.png" },
-  {
-    code: "hr",
-    name: "Hrvatski ",
-    flag: "https://flagcdn.com/w20/hr.png",
-  },
-  {
-    code: "ro",
-    name: "Română ",
-    flag: "https://flagcdn.com/w20/ro.png",
-  },
-  {
-    code: "sr",
-    name: "Српски ",
-    flag: "https://flagcdn.com/w20/rs.png",
-  },
-  {
-    code: "bs",
-    name: "Bosanski",
-    flag: "https://flagcdn.com/w20/ba.png",
-  },
-  // { code: "mt", name: "Malti", flag: "https://flagcdn.com/w20/mt.png" },
-  {
-    code: "sl",
-    name: "Slovenščina",
-    flag: "https://flagcdn.com/w20/si.png",
-  },
-  {
-    code: "sk",
-    name: "Slovenčina ",
-    flag: "https://flagcdn.com/w20/sk.png",
-  },
+  { code: "hr", name: "Hrvatski", flag: "https://flagcdn.com/w20/hr.png" },
+  { code: "ro", name: "Română", flag: "https://flagcdn.com/w20/ro.png" },
+  { code: "sr", name: "Српски", flag: "https://flagcdn.com/w20/rs.png" },
+  { code: "bs", name: "Bosanski", flag: "https://flagcdn.com/w20/ba.png" },
+  { code: "sl", name: "Slovenščina", flag: "https://flagcdn.com/w20/si.png" },
+  { code: "sk", name: "Slovenčina", flag: "https://flagcdn.com/w20/sk.png" },
 ] as const;
 
 const LanguageSwitcher = () => {
   const router = useRouter();
   const pathname = usePathname();
-
-  const handleLanguageChange = (
-    lang: "en" | "hr" | "ro" | "sr" | "bs" | "sl" | "sk"
-  ) => {
-    // Replace only the language part in the path
-    const newPathname = `/${lang}${pathname.replace(/^\/[a-z]{2}/, "")}`;
-    router.push(newPathname);
-  };
 
   // Get the current language from the URL
   const currentLang = pathname.split("/")[1] as
@@ -66,6 +35,19 @@ const LanguageSwitcher = () => {
     | "sk";
   const activeLang =
     languages.find((l) => l.code === currentLang) || languages[0];
+
+  const handleLanguageChange = (lang: (typeof languages)[number]["code"]) => {
+    if (lang === currentLang) return; // Don't do anything if same language
+
+    // Get the current path without the language prefix
+    const pathWithoutLang = pathname.replace(/^\/[a-z]{2}/, "") || "/";
+
+    // Create the new path
+    const newPath = `/${lang}${pathWithoutLang}`;
+
+    // Use push instead of replace to maintain history
+    router.push(newPath);
+  };
 
   return (
     <DropdownMenu>
@@ -87,7 +69,11 @@ const LanguageSwitcher = () => {
           <DropdownMenuItem
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
-            className="flex items-center gap-2 cursor-pointer">
+            className={cn(
+              "flex items-center gap-2 cursor-pointer",
+              lang.code === currentLang && "opacity-50 cursor-not-allowed"
+            )}
+            disabled={lang.code === currentLang}>
             <Image
               src={lang.flag}
               alt={`${lang.name} flag`}
