@@ -43,13 +43,11 @@ const LanguageSwitcher = () => {
     const pathWithoutLang = pathname.replace(/^\/[a-z]{2}/, "") || "/";
 
     // Create the new path
-    const newPath = `/${lang}${pathWithoutLang}`;
+    const newPath = `${lang}${pathWithoutLang}`;
 
     // Use push instead of replace to maintain history
-    router.push(newPath);
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 0);
+   router.push(newPath);
+
   };
 
   return (
