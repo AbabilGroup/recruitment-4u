@@ -1,8 +1,3 @@
-export default function Page() {
-  return (
-    <div>
-      {" "}
-      <h1>Solutions</h1>
-    </div>
-  );
+export default function SolutionPage() {
+  return <main>{}</main>;
 }
