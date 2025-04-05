@@ -14,30 +14,16 @@ const Footer = () => {
   const locations = [
     {
       country: "Romania",
-      // address:
-      //   "Bulevardul Nicolae Titulescu, Nr. 1, Sector 1, Bucuresti, Romania",
+      address: "Str. Sg. Constantin Moise 5 D BUCURESTI, Loc. SECTORUL 6",
     },
     {
       country: "UAE [Dubai]",
-      // address: "Ar Rayyan, Al-Kharj 16277, Saudi Arabia",
+      address: "The One Tower, Fl.24, DUBAI,  UAE",
     },
     {
       country: "Qatar",
-      // address: "H # 34, R # 4 Sonargaon Janapath, Dhaka 1230",
+      address: "Global Business Center, Cornish Road, Doha, Qatar",
     },
-    // {
-    //   country: "Pakistan",
-    //   address:
-    //     "Quaid-E-Azam Rd, Block No. 8 Block 8, Dera Ghazi Khan, Punjab, Pakistan",
-    // },
-    // {
-    //   country: "Sri Lanka",
-    //   address: "136b High Level Rd, Nugegoda 10250, Sri Lanka",
-    // },
-    // {
-    //   country: "Nepal",
-    //   address: "Thamel Marg, Kathmandu 44600, Nepal",
-    // },
   ];
 
   const socialLinks = [
@@ -143,7 +129,7 @@ const Footer = () => {
                       {location.country}
                     </h4>
                     <p className="text-black group-hover:text-white/90 text-xs md:text-sm lg:text-base leading-relaxed transition-all duration-300">
-                      {/* {location.address} */}
+                      {location.address}
                     </p>
                   </div>
                 </div>

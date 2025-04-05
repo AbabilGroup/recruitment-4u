@@ -41,36 +41,33 @@ const Navbar = () => {
   const t = useTranslations("nav");
   const locale = useLocale();
   const pathname = usePathname();
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [opacity, setOpacity] = useState(1);
 
-  // Scroll behavior logic remains the same
   useEffect(() => {
-    const controlNavbar = () => {
+    const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY === 0 || currentScrollY < lastScrollY) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      }
-      setLastScrollY(currentScrollY);
+      // Calculate opacity based on scroll position
+      // 100% opacity at top (scrollY = 0), 25% opacity when scrolled down (scrollY > 100)
+      const newOpacity = Math.max(0.25, 1 - currentScrollY / 400); // Adjust 400 for faster/slower fade
+      setOpacity(newOpacity);
     };
 
+    // Add slight throttling to improve performance
     let timeoutId: NodeJS.Timeout;
-    const throttledControlNavbar = () => {
+    const throttledScroll = () => {
       if (timeoutId) return;
       timeoutId = setTimeout(() => {
-        controlNavbar();
+        handleScroll();
         timeoutId = undefined as unknown as NodeJS.Timeout;
       }, 50);
     };
 
-    window.addEventListener("scroll", throttledControlNavbar);
+    window.addEventListener("scroll", throttledScroll);
     return () => {
-      window.removeEventListener("scroll", throttledControlNavbar);
+      window.removeEventListener("scroll", throttledScroll);
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [lastScrollY]);
+  }, []);
 
   const navItems = [
     { label: t("home"), href: "/" },
@@ -86,17 +83,17 @@ const Navbar = () => {
         // ... other dropdown items
       ],
     },
-    { label: "Why Us", href: "/why-us" },
+    { label: t("whyUs"), href: "/why-us" },
     { label: t("contact"), href: "/contact" },
   ];
 
   return (
     <nav
       className={cn(
-        "fixed w-full top-0 z-50 bg-primary text-white backdrop-blur-sm shadow-sm",
-        !isVisible && "-translate-y-full",
-        "transition-transform duration-300"
-      )}>
+        "fixed w-full top-0 z-50 text-white backdrop-blur-sm shadow-sm transition-all duration-300"
+      )}
+      style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})` }}>
+      {/* Rest of your navbar content remains exactly the same */}
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 relative">
           {/* Logo */}

@@ -3,6 +3,7 @@
     "home": "Home",
     "forCompanies": "For Companies",
     "solutions": "Solutions",
+    "whyUs": "Why Us",
     "solutionsDropdown": {
       "immigrationLaws": "Navigating Immigration Laws",
       "seasonalWorkers": "Seasonal Workers",
@@ -18,6 +19,3 @@
     "buttonText2": "Looking for Employers"
   }
 }
-
-
-
