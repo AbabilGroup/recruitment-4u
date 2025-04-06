@@ -43,7 +43,7 @@ export default function AgencySection() {
                   className="w-12 h-12 sm:w-16 sm:h-16 text-primary-secondary"
                   strokeWidth={1.5}
                 />
-              </NoSelector>
+              </NoSelector> 
             </motion.div>
 
             <motion.div

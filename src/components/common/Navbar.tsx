@@ -181,7 +181,7 @@ const Navbar = () => {
 
           {/* Desktop CTA & Language Switcher */}
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/contact">
+            {/* <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -191,7 +191,7 @@ const Navbar = () => {
                 )}>
                 {t("navButton")}
               </motion.button>
-            </Link>
+            </Link> */}
             <LanguageSwitcher />
           </div>
 
@@ -297,7 +297,7 @@ const Navbar = () => {
                 <div className="sticky bottom-0 pb-6 pt-4 bg-primary mt-auto border-t border-white/10">
                   <div className="flex flex-col gap-3">
                     <LanguageSwitcher />
-                    <Link href="/contact" className="w-full">
+                    {/* <Link href="/contact" className="w-full">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -307,7 +307,7 @@ const Navbar = () => {
                         )}>
                         {t("navButton")}
                       </motion.button>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </SheetContent>

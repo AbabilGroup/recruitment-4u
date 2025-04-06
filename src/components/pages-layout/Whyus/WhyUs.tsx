@@ -21,7 +21,7 @@ const WhyUs = ({
             />
           </div>
           <div className="col-span-1 flex flex-col items-center justify-center text-center md:text-left">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-tight max-w-4xl">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-sans text-black leading-tight max-w-4xl">
               {title}
             </h1>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-black mt-4">

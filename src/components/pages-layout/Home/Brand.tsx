@@ -76,9 +76,9 @@ const Brand = () => {
           ))}
         </motion.div>
       </div>
-      <div className="container mx-auto flex justify-center items-center text-center mt-8">
+      <div className="container mx-auto flex max-md:flex-col  justify-center items-center text-center mt-8">
         <div>
-          <h5 className="text-black text-[40px] md:text-[50px] font-bold">
+          <h5 className="text-black text-[40px] max-md:text-[50px] font-bold">
             Contact Us
           </h5>
           <Button
@@ -87,7 +87,7 @@ const Brand = () => {
             Send inquiry
           </Button>
         </div>
-        <div>
+        <div className=" max-md:mt-8 max-md:ml-0">
           <Image
             src={FemaleImage}
             alt="brand"
