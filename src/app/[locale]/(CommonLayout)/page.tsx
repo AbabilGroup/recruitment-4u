@@ -2,6 +2,7 @@
 
 // import { useRouter } from "next/navigation";
 import Hero from "@/components/pages-layout/Home/Hero";
+import CardHome from "@/components/pages-layout/Home/CardHome";
 import HomeEmploy from "@/components/pages-layout/Home/HomeEmploy";
 import AgencySection from "@/components/pages-layout/Home/AgencySection";
 
@@ -16,8 +17,9 @@ export default function Home() {
   // };
 
   return (
-    <main>
+    <main >
       <Hero />
+      <CardHome />
       <HomeEmploy />
       <AgencySection />
       <Solution />

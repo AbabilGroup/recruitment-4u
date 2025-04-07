@@ -92,7 +92,7 @@ const Navbar = () => {
       className={cn(
         "fixed w-full top-0 z-50 text-white backdrop-blur-sm shadow-sm transition-all duration-300"
       )}
-      style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})` }}>
+      style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})`, zIndex: `1000` }}>
       {/* Rest of your navbar content remains exactly the same */}
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 relative">
