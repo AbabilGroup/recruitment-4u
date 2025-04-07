@@ -14,6 +14,7 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 import { useLocale, useTranslations } from "next-intl";
+import logo from "../../../public/logo/Recruitment4u.svg";
 import { Button } from "@/components/ui/button";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -84,6 +85,7 @@ const Navbar = () => {
       ],
     },
     { label: t("whyUs"), href: "/why-us" },
+    { label: t("behindthebrand"), href: "/Behind-the-Brand" },
     { label: t("contact"), href: "/contact" },
   ];
 
@@ -100,7 +102,7 @@ const Navbar = () => {
           <Link href="/" className="font-bold flex items-center">
             <div className="relative w-[100px] h-[40px] sm:w-[120px] sm:h-[40px] md:w-[180px] md:h-[80px] lg:w-[220px] lg:h-[100px]">
               <Image
-                src="logo/Recruitment4u.svg"
+                src={logo}
                 alt="Logo"
                 fill
                 className="object-contain"

@@ -1,7 +1,7 @@
 import ContactMapCard from "@/components/common/ContactMapCard";
 export default function ContactMap() {
   return (
-    <div>
+    <div id="offices">
       <ContactMapCard
         title="Romania "
         address="Str. Sg. Constantin Moise 5 D, SECTORUL 6, BUCHAREST"

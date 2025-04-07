@@ -4,6 +4,12 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 export default function ContactHeader() {
+  const HandleScrollToSection = () => {
+    const section = document.getElementById("offices");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div
       className={cn(
@@ -13,8 +19,7 @@ export default function ContactHeader() {
         "overflow-hidden",
         "bg-cover bg-center bg-no-repeat",
         "flex items-center" // Add flex to center content vertically
-      )}
-      >
+      )}>
       <motion.div
         className="container mx-auto px-4 sm:px-6 relative z-10"
         initial={{ opacity: 0, y: 20 }}
@@ -43,7 +48,9 @@ export default function ContactHeader() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}>
-            <Button className="bg-primary rounded-full text-white font-bold text-[25px] py-8 px-20">
+            <Button
+              onClick={HandleScrollToSection}
+              className="bg-primary rounded-full text-white font-bold text-[25px] py-8 px-20">
               Offices
             </Button>
           </motion.div>
