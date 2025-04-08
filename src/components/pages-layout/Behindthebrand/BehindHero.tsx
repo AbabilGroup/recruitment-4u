@@ -21,7 +21,6 @@ export default function BehindHero() {
               alt="Additional content image"
               width={400} // Adjust based on your needs
               height={400} // Adjust based on your needs
-              className="object-cover "
               style={{
                 maxWidth: "60%", // Controls how much space the image takes
                 maxHeight: "60%",
