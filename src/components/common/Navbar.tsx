@@ -81,11 +81,14 @@ const Navbar = () => {
           label: "Navigating Immigration Laws",
           href: "/solutions/navigating-immigration-laws",
         },
-        // ... other dropdown items
+        {
+          label: "Seasonal Workers",
+          href: "/solutions/seasonal-workers",
+        },
       ],
     },
     { label: t("whyUs"), href: "/why-us" },
-    { label: t("behindthebrand"), href: "/Behind-the-Brand" },
+    { label: t("behindthebrand"), href: "/behind-the-brand" },
     { label: t("contact"), href: "/contact" },
   ];
 
@@ -117,8 +120,8 @@ const Navbar = () => {
               const isActive = isPathActive(pathname, item.href, locale);
 
               return item.dropdown ? (
-                <DropdownMenu key={item.label}>
-                  <DropdownMenuTrigger asChild>
+                <DropdownMenu  key={item.label} >
+                  <DropdownMenuTrigger asChild >
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.2 }}>
@@ -134,7 +137,7 @@ const Navbar = () => {
                       </button>
                     </motion.div>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-[200px] bg-white shadow-lg rounded-md">
+                  <DropdownMenuContent className="w-[200px] z-[1000] bg-white shadow-lg rounded-md">
                     {item.dropdown.map((subItem) => {
                       const isSubActive = isPathActive(
                         pathname,
@@ -142,7 +145,7 @@ const Navbar = () => {
                         locale
                       );
                       return (
-                        <DropdownMenuItem key={subItem.label}>
+                        <DropdownMenuItem key={subItem.label} asChild>
                           <Link
                             href={subItem.href}
                             className={cn(

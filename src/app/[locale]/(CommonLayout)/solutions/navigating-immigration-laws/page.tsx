@@ -1,7 +1,10 @@
+import NavigatingHeader from "@/components/pages-layout/Solution/Navigating/NavigatingHeader";
+import NavigatingHero from "@/components/pages-layout/Solution/Navigating/NavigatingHero";
 export default function Page() {
-    return (
-        <main>
-            <h1>Navigating Immigration Laws</h1>
-        </main>
-    );
+  return (
+    <main>
+      <NavigatingHeader />
+      <NavigatingHero />
+    </main>
+  );
 }

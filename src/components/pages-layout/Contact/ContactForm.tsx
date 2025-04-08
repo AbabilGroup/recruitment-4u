@@ -1,7 +1,7 @@
 "use client";
 import { toast } from "sonner";
 import { useState } from "react";
-import { Mail, Phone, MapPin, MessageCircleMore } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import ContactCard from "@/components/common/ContactCard";
 export const ContactForm = () => {
@@ -97,23 +97,8 @@ export const ContactForm = () => {
                   icon={<MapPin className="w-10 h-10 text-primary" />}
                 />
               </div>
-              <h5 className="text-2xl mt-5 sm:text-3xl font-bold text-black">
-                Customer Care
-              </h5>
-              <div className="mt-6 sm:mt-8 space-y-4">
-                <ContactCard
-                  label="Phone"
-                  text=" +1 (123) 456-7890"
-                  icon={<Phone className="w-10 h-10 text-primary" />}
-                />
-              </div>
-              <div className="mt-6 sm:mt-8 space-y-4">
-                <ContactCard
-                  label="Whatsapp"
-                  text="+1 (123) 456-7890"
-                  icon={<MessageCircleMore className="w-10 h-10 text-primary" />}
-                />
-              </div>
+
+
             </div>
           </div>
           <div className="col-span-7 max-xl:col-span-12">

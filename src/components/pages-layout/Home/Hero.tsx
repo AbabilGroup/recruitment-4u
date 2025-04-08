@@ -73,7 +73,7 @@ const Hero = () => {
                   duration: 0.5,
                   delay: 0.6,
                 }}
-                className="text-sm sm:text-base lg:text-lg text-black max-w-xl">
+                className="text-sm sm:text-base lg:text-lg text-white max-w-xl">
                 Find the perfect match for your business needs or career goals
                 with our comprehensive platform.
               </motion.p>

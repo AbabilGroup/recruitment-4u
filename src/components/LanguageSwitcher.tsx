@@ -46,8 +46,7 @@ const LanguageSwitcher = () => {
     const newPath = `${lang}${pathWithoutLang}`;
 
     // Use push instead of replace to maintain history
-   router.push(newPath);
-
+    router.push(newPath);
   };
 
   return (
@@ -65,13 +64,13 @@ const LanguageSwitcher = () => {
           <ChevronDown className="h-4 w-4" />
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-[150px]">
+      <DropdownMenuContent align="end" className="w-[150px] z-[1000]">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
             className={cn(
-              "flex items-center gap-2 cursor-pointer",
+              "flex  items-center gap-2 cursor-pointer",
               lang.code === currentLang && "opacity-50 cursor-not-allowed"
             )}
             disabled={lang.code === currentLang}>
