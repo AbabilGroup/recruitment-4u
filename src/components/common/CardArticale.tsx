@@ -9,7 +9,7 @@ type CardProps = {
 
 const CardArticale: React.FC<CardProps> = ({ title, onClick, imageSrc }) => {
   return (
-    <div className="max-w-96 h-[400px] cursor-pointer rounded-2xl shadow-md bg-white overflow-hidden">
+    <div className="max-w-96 cursor-pointer rounded-2xl shadow-md bg-white overflow-hidden group transition">
       {/* Full-width responsive image */}
       <div className="relative w-full h-60">
         <Image
@@ -22,7 +22,9 @@ const CardArticale: React.FC<CardProps> = ({ title, onClick, imageSrc }) => {
 
       {/* Title and button section */}
       <div className="flex items-center justify-between p-5 py-6">
-        <h4 className="text-black text-[22px] font-bold">{title}</h4>
+        <h4 className="text-black group-hover:text-primary-secondary text-[22px] font-bold transition-colors duration-200">
+          {title}
+        </h4>
         <button
           onClick={onClick}
           className="w-14 h-14 bg-white text-[#071A42] rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition">

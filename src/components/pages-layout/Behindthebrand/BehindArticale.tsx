@@ -7,7 +7,7 @@ export default function BehindArticale() {
       <h2 className="text-[45px] text-black md:text-4xl font-bold text-center mb-12">
         Recruitment articles at their best
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid mt-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-10">
         <CardArticale
           title="Recruitment articles at their best"
           imageSrc="/images/articale1.jpg"
