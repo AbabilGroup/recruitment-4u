@@ -120,8 +120,8 @@ const Navbar = () => {
               const isActive = isPathActive(pathname, item.href, locale);
 
               return item.dropdown ? (
-                <DropdownMenu  key={item.label} >
-                  <DropdownMenuTrigger asChild >
+                <DropdownMenu key={item.label}>
+                  <DropdownMenuTrigger asChild>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.2 }}>

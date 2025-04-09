@@ -11,43 +11,73 @@ export default function BehindOurTeam() {
         <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
           <TeamCard
             title="CEO"
-            name="Vasco"
+            name="Andrei Popescu"
             imageSrc="/images/team1.jpg"
             emailLink="H8lXt@example.com"
-            linkedinLink="https://www.linkedin.com/in/vasco-oliveira-/"
             bgColor="bg-[#009AEE]"
           />
           <TeamCard
-            title="CEO"
-            name="Vasco"
+            title="Co-Founder"
+            name="Luka Jovanović"
             imageSrc="/images/team2.jpg"
             emailLink="H8lXt@example.com"
-            linkedinLink="https://www.linkedin.com/in/vasco-oliveira-/"
             bgColor="bg-[#009AEE]"
           />
           <TeamCard
-            title="CEO"
-            name="Vasco"
+            title="Project Manager"
+            name="Ivana Radić"
             imageSrc="/images/team3.jpg"
             emailLink="H8lXt@example.com"
-            linkedinLink="https://www.linkedin.com/in/vasco-oliveira-/"
             bgColor="bg-[#FFEA9A]"
           />
           <TeamCard
-            title="CEO"
-            name="Vasco"
+            title="Frontend Developer"
+            name="Matteo Borg"
             imageSrc="/images/team4.jpg"
             emailLink="H8lXt@example.com"
-            linkedinLink="https://www.linkedin.com/in/vasco-oliveira-/"
             bgColor="bg-[#FFEA9A]"
           />
           <TeamCard
-            title="CEO"
-            name="Vasco"
+            title="UI/UX Designer"
+            name="Stefan Ionescu"
             imageSrc="/images/team5.jpg"
             emailLink="H8lXt@example.com"
-            linkedinLink="https://www.linkedin.com/in/vasco-oliveira-/"
             bgColor="bg-[#009AEE]"
+          />
+          <TeamCard
+            title="Backend Developer"
+            name="Marko Petrović"
+            imageSrc="/images/team6.jpg"
+            emailLink="H8lXt@example.com"
+            bgColor="bg-[#FFEA9A]"
+          />
+          <TeamCard
+            title="Content Manager"
+            name="Ivan Kovačević"
+            imageSrc="/images/team7.jpg"
+            emailLink="H8lXt@example.com"
+            bgColor="bg-[#FFEA9A]"
+          />
+          <TeamCard
+            title="Graphic Designer"
+            name="Emma Camilleri"
+            imageSrc="/images/team8.jpg"
+            emailLink="H8lXt@example.com"
+            bgColor="bg-[#9CC8C0]"
+          />
+          <TeamCard
+            title="Director of Marketing"
+            name="Elena Marinescu"
+            imageSrc="/images/team9.jpg"
+            emailLink="H8lXt@example.com"
+            bgColor="bg-[#D388BE]"
+          />
+          <TeamCard
+            title="Graphic Designer"
+            name="Ana Stojanović"
+            imageSrc="/images/team10.jpg"
+            emailLink="H8lXt@example.com"
+            bgColor="bg-[#D388BE]"
           />
         </div>
       </div>

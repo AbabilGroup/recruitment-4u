@@ -2,14 +2,14 @@
 import Image from "next/image";
 import { FC } from "react";
 import { cn } from "@/lib/utils";
-import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 
 interface TeamCardProps {
   name: string;
   title: string;
   imageSrc: string;
   emailLink?: string;
-  linkedinLink?: string;
+  // linkedinLink?: string;
   bgColor?: string;
 }
 
@@ -18,7 +18,7 @@ const TeamCard: FC<TeamCardProps> = ({
   title,
   imageSrc,
   emailLink,
-  linkedinLink,
+  // linkedinLink,
   bgColor,
 }) => {
   return (
@@ -50,11 +50,11 @@ const TeamCard: FC<TeamCardProps> = ({
               <FaEnvelope className="hover:text-gray-700" />
             </a>
           )}
-          {linkedinLink && (
+          {/* {linkedinLink && (
             <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="hover:text-gray-700" />
             </a>
-          )}
+          )} */}
         </div>
       </div>
     </div>
