@@ -13,70 +13,70 @@ export default function BehindOurTeam() {
             title="CEO"
             name="Andrei Popescu"
             imageSrc="/images/team1.jpg"
-            emailLink="H8lXt@example.com"
+            emailLink="andrei.popescu@recruitment-4u.co"
             bgColor="bg-[#009AEE]"
           />
           <TeamCard
             title="Co-Founder"
-            name="Luka Jovanović"
-            imageSrc="/images/team2.jpg"
-            emailLink="H8lXt@example.com"
-            bgColor="bg-[#009AEE]"
-          />
-          <TeamCard
-            title="Project Manager"
-            name="Ivana Radić"
-            imageSrc="/images/team3.jpg"
-            emailLink="H8lXt@example.com"
-            bgColor="bg-[#FFEA9A]"
-          />
-          <TeamCard
-            title="Frontend Developer"
-            name="Matteo Borg"
-            imageSrc="/images/team4.jpg"
-            emailLink="H8lXt@example.com"
-            bgColor="bg-[#FFEA9A]"
-          />
-          <TeamCard
-            title="UI/UX Designer"
-            name="Stefan Ionescu"
-            imageSrc="/images/team5.jpg"
-            emailLink="H8lXt@example.com"
-            bgColor="bg-[#009AEE]"
-          />
-          <TeamCard
-            title="Backend Developer"
-            name="Marko Petrović"
-            imageSrc="/images/team6.jpg"
-            emailLink="H8lXt@example.com"
-            bgColor="bg-[#FFEA9A]"
-          />
-          <TeamCard
-            title="Content Manager"
             name="Ivan Kovačević"
             imageSrc="/images/team7.jpg"
-            emailLink="H8lXt@example.com"
+            emailLink="ivan@recruitment-4u.co"
             bgColor="bg-[#FFEA9A]"
           />
           <TeamCard
-            title="Graphic Designer"
+            title="Recruitment Consultant"
+            name="Luka Jovanović"
+            imageSrc="/images/team2.jpg"
+            emailLink="luka@recruitment-4u.co"
+            bgColor="bg-[#009AEE]"
+          />
+          <TeamCard
+            title="Talent Acquisition Specialist"
+            name="Ivana Radić"
+            imageSrc="/images/team3.jpg"
+            emailLink="ivana@recruitment-4u.co"
+            bgColor="bg-[#FFEA9A]"
+          />
+          <TeamCard
+            title="Sourcing Specialist"
+            name="Matteo Borg"
+            imageSrc="/images/team4.jpg"
+            emailLink="matteo@recruitment-4u.co"
+            bgColor="bg-[#FFEA9A]"
+          />
+          <TeamCard
+            title="Account Manager (Clients)"
+            name="Stefan Ionescu"
+            imageSrc="/images/team5.jpg"
+            emailLink="stefan@recruitment-4u.co"
+            bgColor="bg-[#009AEE]"
+          />
+          <TeamCard
+            title="Candidate Relationship Manager"
+            name="Marko Petrović"
+            imageSrc="/images/team6.jpg"
+            emailLink="marko@recruitment-4u.co"
+            bgColor="bg-[#FFEA9A]"
+          />
+          <TeamCard
+            title="Recruitment Coordinator"
             name="Emma Camilleri"
             imageSrc="/images/team8.jpg"
-            emailLink="H8lXt@example.com"
+            emailLink="emma@recruitment-4u.co"
             bgColor="bg-[#9CC8C0]"
           />
           <TeamCard
-            title="Director of Marketing"
+            title="Business Development Executive"
             name="Elena Marinescu"
             imageSrc="/images/team9.jpg"
-            emailLink="H8lXt@example.com"
+            emailLink="elena@recruitment-4u.co"
             bgColor="bg-[#D388BE]"
           />
           <TeamCard
-            title="Graphic Designer"
+            title="Employer Branding Specialist"
             name="Ana Stojanović"
             imageSrc="/images/team10.jpg"
-            emailLink="H8lXt@example.com"
+            emailLink="ana@recruitment-4u.co"
             bgColor="bg-[#D388BE]"
           />
         </div>

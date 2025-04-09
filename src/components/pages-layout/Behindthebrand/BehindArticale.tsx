@@ -9,16 +9,16 @@ export default function BehindArticale() {
       </h2>
       <div className="grid mt-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-10">
         <CardArticale
-          title="Recruitment articles at their best"
+          title="Subscription recruitment. Interview with the OnHires CEO about subscription recruiting"
           imageSrc="/images/articale1.jpg"
         />
         <CardArticale
-          title="Recruitment articles at their best"
-          imageSrc="/images/articale1.jpg"
+          title="Recruitment agencies: why they are important and how they work"
+          imageSrc="/images/articale2.jpg"
         />
         <CardArticale
-          title="Recruitment articles at their best"
-          imageSrc="/images/articale1.jpg"
+          title="Recruiters and sourcers: what’s the difference?"
+          imageSrc="/images/articale3.jpg"
         />
       </div>
     </section>
