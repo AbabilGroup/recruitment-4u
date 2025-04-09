@@ -14,7 +14,7 @@ const SolutionDetails: React.FC<SolutionDetailsProps> = ({
   onClick,
 }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 mt-20 gap-10 items-start">
+    <div className="grid  grid-cols-1 md:grid-cols-12 mt-52 max-sm:mt-20 gap-10 items-start">
       {/* Image */}
       <div className="md:col-span-6 relative w-full h-[300px] md:h-[600px]">
         <Image

@@ -85,6 +85,14 @@ const Navbar = () => {
           label: "Seasonal Workers",
           href: "/solutions/seasonal-workers",
         },
+        {
+          label: "Construction Workers",
+          href: "/solutions/construction-workers",
+        },
+        {
+          label: "Medical Workers",
+          href: "/solutions/medical-workers",
+        },
       ],
     },
     { label: t("whyUs"), href: "/why-us" },
@@ -151,8 +159,8 @@ const Navbar = () => {
                             className={cn(
                               "block px-4 py-2 w-full",
                               isSubActive
-                                ? "text-primary-secondary font-medium"
-                                : "text-primary hover:bg-gray-100"
+                                ? "text-primary-secondary font-semibold"
+                                : "text-primary font-semibold hover:bg-gray-100"
                             )}>
                             {subItem.label}
                           </Link>
