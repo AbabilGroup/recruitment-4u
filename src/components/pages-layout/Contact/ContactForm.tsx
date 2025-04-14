@@ -1,5 +1,5 @@
 "use client";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 import { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
@@ -18,44 +18,49 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsFormSubmitted(true); // Set form submission state
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          formType: "contact",
-          formData: formData,
-        }),
-      });
-
-      const data = await response.json();
-      if (!response.ok) {
-        setIsFormSubmitted(false); // Reset form submission state on error
-        toast.error(data.error || "Failed to submit form");
-        throw new Error(data.error || "Failed to submit form");
-      }
-
-      // Reset form on success
-      setFormData({
-        company: "",
-        email: "",
-        phone: "",
-        jobPositions: "",
-        workersCount: "",
-        note: "",
-        agreeToContact: false,
-      });
-      setIsFormSubmitted(false); // Reset form submission state
-      toast.success("submitted successfully");
-    } catch (error) {
-      console.error("Submission error:", error);
-      setIsFormSubmitted(false); // Reset form submission state on error
-      toast.error("Failed to submit form");
-    }
+    setIsFormSubmitted(true);
   };
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsFormSubmitted(true); // Set form submission state
+  //   try {
+  //     const response = await fetch("/api/contact", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         formType: "contact",
+  //         formData: formData,
+  //       }),
+  //     });
+
+  //     const data = await response.json();
+  //     if (!response.ok) {
+  //       setIsFormSubmitted(false); // Reset form submission state on error
+  //       toast.error(data.error || "Failed to submit form");
+  //       throw new Error(data.error || "Failed to submit form");
+  //     }
+
+  //     // Reset form on success
+  //     setFormData({
+  //       company: "",
+  //       email: "",
+  //       phone: "",
+  //       jobPositions: "",
+  //       workersCount: "",
+  //       note: "",
+  //       agreeToContact: false,
+  //     });
+  //     setIsFormSubmitted(false); // Reset form submission state
+  //     toast.success("submitted successfully");
+  //   } catch (error) {
+  //     console.error("Submission error:", error);
+  //     setIsFormSubmitted(false); // Reset form submission state on error
+  //     toast.error("Failed to submit form");
+  //   }
+  // };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -97,8 +102,6 @@ export const ContactForm = () => {
                   icon={<MapPin className="w-10 h-10 text-primary" />}
                 />
               </div>
-
-
             </div>
           </div>
           <div className="col-span-7 max-xl:col-span-12">

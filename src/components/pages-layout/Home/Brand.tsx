@@ -1,8 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import ImageSlider from "@/components/common/ImageSlider";
 // Import images
 import FemaleImage from "../../../../public/images/brandfemale.jpeg";
 import img1 from "../../../../public/images/11.png";
@@ -51,31 +52,8 @@ const Brand = () => {
           work.
         </h1>
       </div>
-
       {/* Smooth Scrolling Image Slider */}
-      <div className="relative w-full overflow-hidden">
-        <motion.div
-          className="flex space-x-8 w-max"
-          animate={{
-            x: ["0%", "-100%"],
-          }}
-          transition={{
-            ease: "linear",
-            duration: 50,
-            repeat: Infinity,
-            repeatType: "loop",
-          }}>
-          {[...images, ...images].map((img, index) => (
-            <div key={index} className="group">
-              <Image
-                src={img}
-                alt="brand"
-                className="w-auto h-32 object-contain transition-all duration-500 filter grayscale group-hover:grayscale-0"
-              />
-            </div>
-          ))}
-        </motion.div>
-      </div>
+      <ImageSlider images={images} height="h-32" speed={50} />
       <div className="container mx-auto flex max-md:flex-col  justify-center items-center text-center mt-8">
         <div>
           <h5 className="text-black text-[40px] max-md:text-[50px] font-bold">
@@ -87,7 +65,7 @@ const Brand = () => {
             Send inquiry
           </Button>
         </div>
-        <div className=" max-md:mt-8 max-md:ml-0">
+        <div className="max-md:mt-8 max-md:ml-0">
           <Image
             src={FemaleImage}
             alt="brand"

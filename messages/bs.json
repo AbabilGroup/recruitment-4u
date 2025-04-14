@@ -6,16 +6,17 @@
     "whyUs": "Zašto mi",
     "contact": "Kontakt",
     "solutionsDropdown": {
-      "immigrationLaws": "Navigacija imigracionim zakonima",
+      "immigrationLaws": "Navigacija kroz imigracijske zakone",
       "seasonalWorkers": "Sezonski radnici",
       "constructionWorkers": "Građevinski radnici",
-      "healthcareWorkers": "Zdravstveni radnici"
+      "medicalWorkers": "Zdravstveni radnici"
     },
     "behindthebrand": "Za nas",
     "navButton": "Saradnja"
   },
   "hero": {
     "title": "Povezujemo prave radnike sa pravim poslodavcima.",
+    "subtitle": "Pronači perfektno odgovor za svoj posao ili zadatak sa nasom kompletnom platformom.",
     "buttonText1": "Tražim radnike",
     "buttonText2": "Tražim poslodavce"
   }

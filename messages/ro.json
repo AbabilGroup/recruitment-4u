@@ -9,13 +9,14 @@
       "immigrationLaws": "Navigarea legilor de imigrare",
       "seasonalWorkers": "Muncitori sezonieri",
       "constructionWorkers": "Muncitori în construcții",
-      "healthcareWorkers": "Lucrători din sănătate"
+      "medicalWorkers": "Muncitori medicali"
     },
     "behindthebrand": "Despre noi",
     "navButton": "Să colaborăm"
   },
   "hero": {
     "title": "Conectăm lucrătorii potriviți cu angajatorii potriviți.",
+    "subtitle": "Gaseste cel mai bun match pentru nevoie de afaceri sau scopuri de cariere cu platforma noastra completa.",
     "buttonText1": "Caut muncitori",
     "buttonText2": "Caut angajatori"
   }

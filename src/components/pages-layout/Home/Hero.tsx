@@ -74,8 +74,7 @@ const Hero = () => {
                   delay: 0.6,
                 }}
                 className="text-sm sm:text-base lg:text-lg text-white max-w-xl">
-                Find the perfect match for your business needs or career goals
-                with our comprehensive platform.
+                {t("subtitle")}
               </motion.p>
 
               <motion.div
@@ -120,7 +119,6 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
-       
       </div>
     </section>
   );

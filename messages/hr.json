@@ -9,13 +9,14 @@
       "immigrationLaws": "Navigacija kroz imigracijske zakone",
       "seasonalWorkers": "Sezonski radnici",
       "constructionWorkers": "Građevinski radnici",
-      "healthcareWorkers": "Zdravstveni radnici"
+      "medicalWorkers": "Zdravstveni radnici"
     },
     "behindthebrand": "Iza brenda",
     "navButton": "Povezujemo"
   },
   "hero": {
     "title": "Povezujemo dobro radnike sa dobro radnoj mjestu.",
+    "subtitle": "Pronači perfektno odgovor za svoj posao ili zadatak sa nasom kompletnom platformom.",
     "buttonText1": "Trazim radnike",
     "buttonText2": "Trazim radno mjesto"
   }

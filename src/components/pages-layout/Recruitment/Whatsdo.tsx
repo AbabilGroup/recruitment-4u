@@ -1,50 +1,18 @@
 "use client";
-import { motion } from "framer-motion";
+import React from "react";
 import Card from "@/components/common/Card";
-import { useRouter } from "next/navigation";
-
+import { motion } from "framer-motion";
+// Define cardVariants for motion animations
 const cardVariants = {
-  offscreen: {
-    y: 50,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
 };
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const CardHome = () => {
-  const router = useRouter();
-  const handleButtonClick = (path: string) => {
-    router.push(path);
-  };
-  return (
-    <motion.div
-      className="container mx-auto px-4 py-20"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={containerVariants}>
+export default function Whatsdo() {
+  <section className="bg-[#009AEE] py-12">
+    <div className="container">
       <motion.div className="flex justify-center items-center max-md:flex-col gap-4 md:gap-8">
         <motion.div
-          onClick={() => handleButtonClick("/recruitment")}
           className="w-full sm:w-[360px] cursor-pointer"
           variants={cardVariants}>
           <Card
@@ -59,7 +27,6 @@ const CardHome = () => {
         </motion.div>
 
         <motion.div
-          onClick={() => handleButtonClick("/hr-consulting")}
           className="w-full sm:w-[360px] cursor-pointer"
           variants={cardVariants}>
           <Card
@@ -69,12 +36,12 @@ const CardHome = () => {
               "https://randomuser.me/api/portraits/women/1.jpg",
               "https://randomuser.me/api/portraits/women/2.jpg",
             ]}
-            bgColor="bg-[#009AEE]"
+            bgColor="bg-[#FFFFFF]"
           />
         </motion.div>
 
         <motion.div
-          onClick={() => handleButtonClick("/outstaffing")}
+          // onClick={() => handleButtonClick("/outstaffing")}
           className="w-full sm:w-[360px] cursor-pointer"
           variants={cardVariants}>
           <Card
@@ -88,8 +55,6 @@ const CardHome = () => {
           />
         </motion.div>
       </motion.div>
-    </motion.div>
-  );
-};
-
-export default CardHome;
+    </div>
+  </section>;
+}

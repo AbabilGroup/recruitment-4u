@@ -78,19 +78,19 @@ const Navbar = () => {
       href: "/solutions",
       dropdown: [
         {
-          label: "Navigating Immigration Laws",
+          label: t("solutionsDropdown.immigrationLaws"),
           href: "/solutions/navigating-immigration-laws",
         },
         {
-          label: "Seasonal Workers",
+          label: t("solutionsDropdown.seasonalWorkers"),
           href: "/solutions/seasonal-workers",
         },
         {
-          label: "Construction Workers",
+          label: t("solutionsDropdown.constructionWorkers"),
           href: "/solutions/construction-workers",
         },
         {
-          label: "Medical Workers",
+          label: t("solutionsDropdown.medicalWorkers"),
           href: "/solutions/medical-workers",
         },
       ],

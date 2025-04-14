@@ -9,13 +9,14 @@
       "immigrationLaws": "Navigacija po imigracijskih zakonih",
       "seasonalWorkers": "Sezonski delavci",
       "constructionWorkers": "Gradbeni delavci",
-      "healthcareWorkers": "Zdravstveni delavci"
+      "medicalWorkers": "Zdravstveni delavci"
     },
     "behindthebrand": "O nas",
     "navButton": "Sodelujmo"
   },
   "hero": {
     "title": "Povezujemo prave delavce s pravimi delodajalci.",
+    "subtitle": "Najdite perfektno odgovor za svoj del ali cil s nasom kompletno platformo.",
     "buttonText1": "Iščem delavce",
     "buttonText2": "Iščem delodajalce"
   }
