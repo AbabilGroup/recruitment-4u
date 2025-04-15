@@ -71,11 +71,15 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
-        <div className=" flex justify-center items-center gap-5">
-          <h5 className="text-black text-[22px] md:text-[24px] font-bold mb-6">
-            Client:
-          </h5>
-          <ImageSlider images={images} height="h-28" speed={50} />
+      </div>
+      <div className=" bg-white ">
+        <div className="container mx-auto">
+          <div className="flex justify-center items-center gap-5">
+            <h5 className="text-black text-[22px] md:text-[24px] font-bold mb-6">
+              Client:
+            </h5>
+            <ImageSlider images={images} height="h-28" speed={50} />
+          </div>
         </div>
       </div>
     </section>

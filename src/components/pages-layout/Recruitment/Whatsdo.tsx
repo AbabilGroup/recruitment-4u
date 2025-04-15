@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "@/components/common/Card";
+
 import { motion } from "framer-motion";
 // Define cardVariants for motion animations
 const cardVariants = {
@@ -9,50 +9,100 @@ const cardVariants = {
 
 const Whatsdo = () => {
   return (
-    <section className="bg-[#009AEE] py-12">
-      <div className="container">
-        <motion.div className="flex justify-center items-center max-md:flex-col gap-4 md:gap-8">
+    <section className="bg-[#009AEE] py-12 w-screen ml-[-10vw]">
+      <div className="container mx-auto ">
+        <h1 className="text-[40px] text-center text-white font-bold">
+          What we do
+        </h1>
+        <motion.div className="py-10 flex justify-center items-center max-md:flex-col gap-4 md:gap-8">
           <motion.div
             className="w-full sm:w-[360px] cursor-pointer"
             variants={cardVariants}>
-            <Card
-              title="Recruitment"
-              description="We provide full-cycle recruiting & HR services that are tailored to the business needs."
-              avatars={[
-                "https://randomuser.me/api/portraits/women/1.jpg",
-                "https://randomuser.me/api/portraits/women/2.jpg",
-              ]}
-              bgColor="bg-[#05123F]"
-            />
+            <div
+              className={`text-white p-10 rounded-[2rem] w-full h-[450px] max-w-sm bg-[#071A42] shadow-lg`}>
+              <div className="flex flex-col  justify-between h-full">
+                <div>
+                  <h2 className="text-[28px] font-bold mb-2">Recruiting</h2>
+                  <p className="text-[18px] font-normal text-white mt-6">
+                    We provide full-cycle recruiting services that free up time
+                    and save money.
+                  </p>
+                  <p className="text-[18px] font-normal text-white mt-6">
+                    We provide full-cycle recruiting services that free up time
+                    and save money.
+                  </p>
+                </div>
+                <div className="flex items-center  justify-between">
+                  <div className="flex -space-x-3"></div>
+                  <button
+                    // onClick={onClick}
+                    className="w-14 h-14  text-[#0489EF] rounded-full flex items-center justify-center ">
+                    More -{">"}
+                  </button>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
             className="w-full sm:w-[360px] cursor-pointer"
             variants={cardVariants}>
-            <Card
-              title="HR-consulting"
-              description="We help companies create a well-known brand that will stand out on the market and boost hiring metrics."
-              avatars={[
-                "https://randomuser.me/api/portraits/women/1.jpg",
-                "https://randomuser.me/api/portraits/women/2.jpg",
-              ]}
-              bgColor="bg-[#FFFFFF]"
-            />
+            <div
+              className={`text-black p-10 rounded-[2rem] w-full h-[450px] max-w-sm bg-[#FFFFFF] shadow-lg`}>
+              <div className="flex flex-col  justify-between h-full">
+                <div>
+                  <h2 className="text-[28px] text-black  font-bold mb-2">
+                    Subscription-based recruiting
+                  </h2>
+                  <p className="text-[18px]  text-black font-normal  mt-6">
+                    We provide full-cycle recruiting services that free up time
+                    and save money.
+                  </p>
+                  <p className="text-[18px] font-normal text-black mt-6">
+                    We provide full-cycle recruiting services that free up time
+                    and save money.
+                  </p>
+                </div>
+                <div className="flex items-center  justify-between">
+                  <div className="flex -space-x-3"></div>
+                  <button
+                    // onClick={onClick}
+                    className="w-14 h-14  text-[#0489EF] rounded-full flex items-center justify-center ">
+                    More -{">"}
+                  </button>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
             // onClick={() => handleButtonClick("/outstaffing")}
-            className="w-full sm:w-[360px] cursor-pointer"
+            className="w-full sm:w-[360px]  cursor-pointer"
             variants={cardVariants}>
-            <Card
-              title="Outstaffing"
-              description="We provide outstaffing for fast-growing companies, help to grow companies' teams and increase their productivity"
-              avatars={[
-                "https://randomuser.me/api/portraits/women/1.jpg",
-                "https://randomuser.me/api/portraits/women/2.jpg",
-              ]}
-              bgColor="bg-[#90DA7B]"
-            />
+            <div
+              className={`text-black p-10 rounded-[2rem] w-full h-[450px] max-w-sm bg-[#84D66F] shadow-lg`}>
+              <div className="flex flex-col  justify-between h-full">
+                <div>
+                  <h2 className="text-[28px] text-black  font-bold mb-2">
+                    Recruitment Process Outsourcing
+                  </h2>
+                  <p className="text-[18px]  text-black font-normal  mt-6">
+                    RPO is outsourcing the recruitment processor a partial or
+                    complete transfer bythe employer of the search and
+                    selectionprocess to a specialized contractor withina
+                    project, department, or company.
+                  </p>
+                </div>
+                <div className="flex items-center  justify-between">
+                  <div className="flex -space-x-3"></div>
+                  <button
+                    // onClick={onClick}
+                    className="w-14 h-14  text-[#0489EF] rounded-full flex items-center justify-center ">
+                    More -{">"}
+                  </button>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>
