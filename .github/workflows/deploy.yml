@@ -90,7 +90,11 @@ name: Recruitment4U Deployment
 on:
   push:
     branches:
-      - main # Trigger deployment on push to the main branch
+      - main
+
+env:
+  APP_DIR: "/var/www/recruitment4u"
+  NODE_ENV: "production"
 
 jobs:
   build:
@@ -108,14 +112,20 @@ jobs:
 
       - name: 📦 Install Dependencies
         run: |
+          npm cache clean --force
           npm ci --legacy-peer-deps
           if [ $? -ne 0 ]; then
-            echo "Dependency installation failed!"
+            echo "::error::Dependency installation failed!"
             exit 1
           fi
 
       - name: 🔨 Build Next.js App
         run: npm run build
+        env:
+          NEXT_PUBLIC_VERSION: ${{ github.sha }}
+
+      - name: 🧪 Run Tests (Optional)
+        run: npm test
 
       - name: 📤 Upload Build Artifacts
         uses: actions/upload-artifact@v4
@@ -127,8 +137,8 @@ jobs:
             package-lock.json
             public
             next.config.js
-            .env  # Include .env file if needed
-          retention-days: 1 # Keep artifacts for 1 day
+            # Note: .env should be handled via secrets
+          retention-days: 1
 
   deploy:
     needs: build
@@ -139,50 +149,62 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: next-build
-          path: /tmp/recruitment4u
+          path: ./deploy
 
-      - name: 🔑 Setup SSH Key
+      - name: 🔑 Setup SSH
         run: |
-          mkdir -p ~/.ssh  # ✅ Ensure the .ssh directory exists
-          chmod 700 ~/.ssh  # ✅ Set correct permissions
-          echo "$SSH_PRIVATE_KEY" > private_key.pem
-          chmod 600 private_key.pem
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts  # ✅ Ensure correct permissions
+          chmod 644 ~/.ssh/known_hosts
 
       - name: 🚀 Deploy to VPS
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-        run: |
-          echo "📂 Copying build files to the server..."
-          scp -i private_key.pem -r /tmp/recruitment4u/* "$SSH_USER@$SSH_HOST:/var/www/recruitment4u"
-
-          echo "🔧 Connecting to server and setting up..."
-          ssh -i private_key.pem "$SSH_USER@$SSH_HOST" << 'EOF'
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
             set -e
-            APP_DIR="/var/www/recruitment4u"
+            echo "📂 Preparing deployment..."
 
-            # Ensure directory exists
-            mkdir -p $APP_DIR
-            cd $APP_DIR
+            # Create directory if not exists
+            sudo mkdir -p $APP_DIR
+            sudo chown -R $USER:$USER $APP_DIR
+
+            # Backup current deployment
+            echo "📦 Creating backup..."
+            tar -czf /tmp/recruitment4u-backup-$(date +%Y%m%d%H%M%S).tar.gz -C $APP_DIR .
+
+            # Clean deployment directory
+            echo "🧹 Cleaning old files..."
+            rm -rf $APP_DIR/*
+
+            # Copy new files
+            echo "🚚 Moving new files..."
+            cp -r /home/${{ secrets.SSH_USER }}/deploy/* $APP_DIR/
 
             # Install dependencies
-            npm ci --legacy-peer-deps
+            echo "📦 Installing dependencies..."
+            cd $APP_DIR
+            npm ci --production
 
-            # Restart application with PM2
-            if pm2 list | grep -q "recruitment4u"; then
-              pm2 restart recruitment4u
+            # Environment setup
+            echo "🔧 Setting up environment..."
+            echo "NODE_ENV=production" > .env
+            echo "VERSION=${{ github.sha }}" >> .env
+
+            # PM2 Process management
+            echo "🔄 Managing application process..."
+            if pm2 describe recruitment4u >/dev/null 2>&1; then
+              pm2 reload recruitment4u --update-env
             else
               pm2 start npm --name "recruitment4u" -- start
             fi
+            pm2 save
+            pm2 startup
 
             echo "✅ Deployment completed successfully!"
-          EOF
-
-      - name: 🧹 Cleanup
-        run: rm -f private_key.pem
-
-      - name: 🎉 Success Notification
-        run: echo "✅ Deployment completed successfully!"
+            echo "Application URL: http://${{ secrets.SSH_HOST }}:3000"
