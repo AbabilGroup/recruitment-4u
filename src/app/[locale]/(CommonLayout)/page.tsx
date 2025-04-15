@@ -1,6 +1,5 @@
 "use client";
 
-// import { useRouter } from "next/navigation";
 import Hero from "@/components/pages-layout/Home/Hero";
 import CardHome from "@/components/pages-layout/Home/CardHome";
 import HomeEmploy from "@/components/pages-layout/Home/HomeEmploy";
@@ -12,9 +11,7 @@ import RecruitmentCenters from "@/components/pages-layout/Home/RecruitmentCenter
 import Process from "@/components/pages-layout/Home/Process";
 
 export default function Home() {
-  // const handleContactClick = () => {
-  //   router.push("/contact");
-  // };
+
 
   return (
     <main >
@@ -26,11 +23,6 @@ export default function Home() {
       <Brand />
       <RecruitmentCenters />
       <Process />
-      {/* <CommonBanner
-        title="Our mission is to connect the right workers with the right employers."
-        buttonText="Let's Cooperation"
-        onButtonClick={handleContactClick}
-      /> */}
     </main>
   );
 }
