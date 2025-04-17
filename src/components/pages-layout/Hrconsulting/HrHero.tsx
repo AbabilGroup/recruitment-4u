@@ -48,7 +48,7 @@ export default function Hero() {
               We help companies create a well-known brand that will stand out on
               the market and boost hiring metrics.
             </p>
-            <button className="bg-[#039AEF] text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:bg-blue-700 transition-all">
+            <button className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all">
               Book a call
             </button>
           </div>
