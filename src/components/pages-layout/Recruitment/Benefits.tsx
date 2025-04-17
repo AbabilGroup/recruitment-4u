@@ -55,7 +55,9 @@ export default function Benefits() {
 
   return (
     <section className="py-12 container mx-auto px-4">
-      <h1 className="text-[40px] font-bold text-center text-black mb-12">Benefits</h1>
+      <h1 className="text-[40px] font-bold text-center text-black mb-12">
+        Benefits
+      </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {benefits.map((benefit) => (
@@ -68,7 +70,9 @@ export default function Benefits() {
                 alt={benefit.title}
                 className="w-16 h-16 mb-4 object-contain"
               />
-              <h2 className="text-xl text-black font-semibold mb-2">{benefit.title}</h2>
+              <h2 className="text-xl text-black font-semibold mb-2">
+                {benefit.title}
+              </h2>
               <p className="text-gray-600">{benefit.description}</p>
             </div>
           </div>

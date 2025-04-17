@@ -1,5 +1,4 @@
-// HrBenefits.tsx
-import React from "react";
+import FeatureCard from "@/components/common/FeatureCard";
 import {
   FileText,
   BarChart2,
@@ -8,7 +7,6 @@ import {
   DollarSign,
   ThumbsUp,
 } from "lucide-react";
-import FeatureCard from "../../common/FeatureCard";
 
 interface FeatureItem {
   icon: React.ReactNode;
@@ -55,7 +53,9 @@ const features: FeatureItem[] = [
   },
 ];
 
-const HrBenefits: React.FC = () => {
+import React from "react";
+
+const OutBenefits: React.FC = () => {
   return (
     <section className="bg-white py-16 px-6">
       <h1 className="text-4xl font-bold text-center text-black mb-12">
@@ -81,4 +81,4 @@ const HrBenefits: React.FC = () => {
   );
 };
 
-export default HrBenefits;
+export default OutBenefits;
