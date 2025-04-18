@@ -1,20 +1,20 @@
 import Image from "next/image";
 import HRImage from "../../../../public/images/hrconsultingleft.jpg"; // or use another overlay image
-import img1 from "../../../../public/images/11.png";
-import img2 from "../../../../public/images/22.png";
-import img3 from "../../../../public/images/adria_grupa.png";
-import img4 from "../../../../public/images/alh.png";
-import img5 from "../../../../public/images/Alu-flex-pack-logo-1.png";
-import img6 from "../../../../public/images/Anilox.png";
-import img7 from "../../../../public/images/aquaterm-logo.png";
-import img8 from "../../../../public/images/arena.png";
-import img9 from "../../../../public/images/autotrans-logo.png";
+import img1 from "../../../../public/images/brand1.png";
+import img2 from "../../../../public/images/brand2.png";
+import img3 from "../../../../public/images/brand3.png";
+import img4 from "../../../../public/images/brand4.png";
+import img5 from "../../../../public/images/brand5.png";
+import img6 from "../../../../public/images/brand6.png";
+import img7 from "../../../../public/images/brand7.png";
+import img8 from "../../../../public/images/brand8.png";
+import img9 from "../../../../public/images/brand9.png";
+import ImageSlider from "@/components/common/ImageSlider";
 import img10 from "../../../../public/images/batak.png";
 import img11 from "../../../../public/images/duplico.png";
 import img12 from "../../../../public/images/euromarkt.png";
 import img13 from "../../../../public/images/gavrilovic.png";
 import img14 from "../../../../public/images/good_food.png";
-import ImageSlider from "@/components/common/ImageSlider";
 
 const images = [
   img1,
@@ -69,7 +69,7 @@ export default function Hero() {
             <h5 className="text-black text-[22px] md:text-[24px] font-bold mb-6">
               Trusted by top brands
             </h5>
-            <ImageSlider images={images} height="h-28" speed={50} />
+            <ImageSlider images={images} height="h-20" speed={50} />
           </div>
         </div>
       </div>

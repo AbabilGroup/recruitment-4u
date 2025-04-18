@@ -1,22 +1,22 @@
 import React from "react";
 import Image from "next/image";
+import { DollarSign, ThumbsUp, Users } from "lucide-react";
 import ImageSlider from "@/components/common/ImageSlider";
 import Outstaffing from "../../../../public/images/Outstaffing.jpg";
-import img1 from "../../../../public/images/11.png";
-import img2 from "../../../../public/images/22.png";
-import img3 from "../../../../public/images/adria_grupa.png";
-import img4 from "../../../../public/images/alh.png";
-import img5 from "../../../../public/images/Alu-flex-pack-logo-1.png";
-import img6 from "../../../../public/images/Anilox.png";
-import img7 from "../../../../public/images/aquaterm-logo.png";
-import img8 from "../../../../public/images/arena.png";
-import img9 from "../../../../public/images/autotrans-logo.png";
+import img1 from "../../../../public/images/brand1.png";
+import img2 from "../../../../public/images/brand2.png";
+import img3 from "../../../../public/images/brand3.png";
+import img4 from "../../../../public/images/brand4.png";
+import img5 from "../../../../public/images/brand5.png";
+import img6 from "../../../../public/images/brand6.png";
+import img7 from "../../../../public/images/brand7.png";
+import img8 from "../../../../public/images/brand8.png";
+import img9 from "../../../../public/images/brand9.png";
 import img10 from "../../../../public/images/batak.png";
 import img11 from "../../../../public/images/duplico.png";
 import img12 from "../../../../public/images/euromarkt.png";
 import img13 from "../../../../public/images/gavrilovic.png";
 import img14 from "../../../../public/images/good_food.png";
-import { DollarSign, ThumbsUp, Users } from "lucide-react";
 
 const images = [
   img1,
