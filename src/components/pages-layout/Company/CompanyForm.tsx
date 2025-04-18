@@ -3,14 +3,6 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  MessageCirclePlus,
-  PhoneCall,
-} from "lucide-react";
-import ContactCard from "@/components/common/ContactCard";
 
 type FormData = {
   company: string;
@@ -18,6 +10,7 @@ type FormData = {
   email: string;
   phone: string;
   message: string;
+  agreeToContact: boolean;
 };
 
 export default function CompanyForm() {
@@ -27,6 +20,7 @@ export default function CompanyForm() {
     email: "",
     phone: "",
     message: "",
+    agreeToContact: false,
   });
 
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -60,6 +54,7 @@ export default function CompanyForm() {
         name: "",
         phone: "",
         message: "",
+        agreeToContact: false,
       });
       setIsFormSubmitted(false); // Reset form submission state
       toast.success("submitted successfully");
@@ -96,13 +91,21 @@ export default function CompanyForm() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}>
-          <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-center text-white pt-16 sm:pt-20"
+          <motion.p
+            className="text-4xl sm:text-[28px] md:text-[20px] font-bold text-center text-white pt-16 sm:pt-20"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}>
-            Your Partner
-          </motion.h1>
+            Whether You&apos;re considering hiring foreign workers for the first
+            time, or You&apos;d like to do it better this time, we are here to
+            hear You out and offer the unique and fast solution. Share with us a
+            few details and we will come back to You in no time. We will come to
+            You with a quick and solid fix for Your situation, and we will not
+            waste Your valuable time. Meet our team member from Your country by
+            sharing with us the following: Form as it is (no change needed) *
+            can we/should we add a tickbox: I would like to be contacted by a
+            Recruitment 4U representative from my country
+          </motion.p>
           <motion.div
             className="w-24 sm:w-32 h-1 bg-white/20 mx-auto rounded-full mt-4 mb-6 sm:mb-8"
             initial={{ width: 0, opacity: 0 }}
@@ -114,51 +117,7 @@ export default function CompanyForm() {
 
       <div className="container mx-auto px-4 sm:px-6 relative">
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-5 max-xl:col-span-12">
-            <div className=" border border-gray-200 rounded-lg p-6 sm:p-8 lg:p-10 bg-white ">
-              <h5 className="text-2xl sm:text-3xl font-bold text-black">
-                Let’s Connect
-              </h5>
-              <div className="mt-6 sm:mt-8 space-y-4">
-                <ContactCard
-                  label="Mobile"
-                  text="+1 (123) 456-7890"
-                  icon={<Phone className="w-10 h-10 text-primary" />}
-                />
-              </div>
-              <div className="mt-6 sm:mt-8 space-y-4">
-                <ContactCard
-                  label="Office Phone"
-                  text="+1 (123) 456-7890"
-                  icon={<PhoneCall className="w-10 h-10 text-primary" />}
-                />
-              </div>
-              <div className="mt-6 sm:mt-8 space-y-4">
-                <ContactCard
-                  label="Whats App"
-                  text="+1 (123) 456-7890"
-                  icon={
-                    <MessageCirclePlus className="w-10 h-10 text-primary" />
-                  }
-                />
-              </div>
-              <div className="mt-6 sm:mt-8 space-y-4">
-                <ContactCard
-                  label="E-mail"
-                  text="mHd8w@example.com"
-                  icon={<Mail className="w-10 h-10 text-primary" />}
-                />
-              </div>
-              <div className="mt-6 sm:mt-8 space-y-4">
-                <ContactCard
-                  label="Head Office"
-                  text="The One Tower, Fl.24, DUBAI, UAE"
-                  icon={<MapPin className="w-10 h-10 text-primary" />}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-span-7 max-xl:col-span-12">
+          <div className="col-span-12 max-xl:col-span-12">
             <motion.div
               className="max-w-4xl mx-auto bg-white rounded-xl border border-gray-200 overflow-hidden "
               initial={{ opacity: 0, y: 20 }}
@@ -220,7 +179,23 @@ export default function CompanyForm() {
                       />
                     </div>
                   </div>
-
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="agreeToContact"
+                      name="agreeToContact"
+                      checked={formData.agreeToContact}
+                      onChange={handleChange}
+                      className="mt-1.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                      required
+                    />
+                    <label
+                      htmlFor="agreeToContact"
+                      className="text-xs mt-1 sm:text-sm leading-relaxed text-black max-w-2xl">
+                      I would like to be contacted by a Recruitment 4U
+                      representative from my country
+                    </label>
+                  </div>
                   <motion.button
                     type="submit"
                     className="w-full bg-primary text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg hover:bg-primary/90 transition-all duration-200 font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl"

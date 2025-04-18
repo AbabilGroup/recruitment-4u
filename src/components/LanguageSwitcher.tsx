@@ -12,11 +12,11 @@ import { cn } from "@/lib/utils";
 
 const languages = [
   { code: "en", name: "English", flag: "https://flagcdn.com/w20/gb.png" },
-  { code: "hr", name: "Hrvatski", flag: "https://flagcdn.com/w20/hr.png" },
-  { code: "ro", name: "Română", flag: "https://flagcdn.com/w20/ro.png" },
-  { code: "sr", name: "Српски", flag: "https://flagcdn.com/w20/rs.png" },
   { code: "bg", name: "Български", flag: "https://flagcdn.com/w20/bg.png" },
   { code: "bs", name: "Bosanski", flag: "https://flagcdn.com/w20/ba.png" },
+  { code: "sr", name: "Српски", flag: "https://flagcdn.com/w20/rs.png" },
+  { code: "hr", name: "Hrvatski", flag: "https://flagcdn.com/w20/hr.png" },
+  { code: "ro", name: "Română", flag: "https://flagcdn.com/w20/ro.png" },
   { code: "sl", name: "Slovenščina", flag: "https://flagcdn.com/w20/si.png" },
   { code: "sk", name: "Slovenčina", flag: "https://flagcdn.com/w20/sk.png" },
 ] as const;
@@ -28,11 +28,11 @@ const LanguageSwitcher = () => {
   // Get the current language from the URL
   const currentLang = pathname.split("/")[1] as
     | "en"
-    | "hr"
-    | "ro"
-    | "sr"
     | "bg"
     | "bs"
+    | "sr"
+    | "hr"
+    | "ro"
     | "sl"
     | "sk";
   const activeLang =

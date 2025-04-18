@@ -117,7 +117,7 @@ export const ContactForm = () => {
               <div className="mt-6 sm:mt-8 space-y-4">
                 <ContactCard
                   label="Head Office"
-                  text="The One Tower, Fl.24, DUBAI, UAE"
+                  text="Str. Sg. Constantin Moise 5 D BUCURESTI, Loc. SECTORUL 6"
                   icon={<MapPin className="w-10 h-10 text-primary" />}
                 />
               </div>
