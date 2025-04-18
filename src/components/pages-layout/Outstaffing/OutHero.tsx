@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { DollarSign, ThumbsUp, Users } from "lucide-react";
 import ImageSlider from "@/components/common/ImageSlider";
 import Outstaffing from "../../../../public/images/Outstaffing.jpg";
@@ -47,12 +46,12 @@ export default function OutHero() {
               We provide outstaffing for fast-growing companies, help to grow
               companies’ teams and increase their productivity
             </p>
-            <Link
+            <a
               className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all"
               href="https://calendly.com/chairmanababilgroup/30min?back=1&month=2025-04"
               target="_blank">
               Book a call
-            </Link>
+            </a>
           </div>
           {/* Right image */}
           <div className="hidden md:block">

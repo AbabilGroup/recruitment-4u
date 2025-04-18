@@ -45,9 +45,12 @@ export default function BehindHero() {
               We supply our clients with exclusive recruitment services helping
               businesses scale and prosper
             </p>
-            <button className="bg-primary hover:bg-primary-dark text-white font-medium py-3 px-8 rounded-lg transition-colors duration-300">
+            <a
+              className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all"
+              href="https://calendly.com/chairmanababilgroup/30min?back=1&month=2025-04"
+              target="_blank">
               Book a call
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>
