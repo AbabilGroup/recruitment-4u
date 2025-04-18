@@ -15,6 +15,7 @@ import img11 from "../../../../public/images/duplico.png";
 import img12 from "../../../../public/images/euromarkt.png";
 import img13 from "../../../../public/images/gavrilovic.png";
 import img14 from "../../../../public/images/good_food.png";
+import { Link } from "lucide-react";
 
 const images = [
   img1,
@@ -48,9 +49,12 @@ export default function Hero() {
               We help companies create a well-known brand that will stand out on
               the market and boost hiring metrics.
             </p>
-            <button className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all">
+            <Link
+              className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all"
+              href="https://calendly.com/chairmanababilgroup/30min?back=1&month=2025-04"
+              target="_blank">
               Book a call
-            </button>
+            </Link>
           </div>
           {/* Right image */}
           <div className="hidden md:block">

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { DollarSign, ThumbsUp, Users } from "lucide-react";
 import ImageSlider from "@/components/common/ImageSlider";
 import Outstaffing from "../../../../public/images/Outstaffing.jpg";
@@ -12,9 +13,9 @@ import img6 from "../../../../public/images/brand6.png";
 import img7 from "../../../../public/images/brand7.png";
 import img8 from "../../../../public/images/brand8.png";
 import img9 from "../../../../public/images/brand9.png";
-import img10 from "../../../../public/images/batak.png";
-import img11 from "../../../../public/images/duplico.png";
-import img12 from "../../../../public/images/euromarkt.png";
+import img10 from "../../../../public/images/brand10.png";
+import img11 from "../../../../public/images/brand11.png";
+import img12 from "../../../../public/images/brand12.png";
 import img13 from "../../../../public/images/gavrilovic.png";
 import img14 from "../../../../public/images/good_food.png";
 
@@ -46,9 +47,12 @@ export default function OutHero() {
               We provide outstaffing for fast-growing companies, help to grow
               companies’ teams and increase their productivity
             </p>
-            <button className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all">
+            <Link
+              className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all"
+              href="https://calendly.com/chairmanababilgroup/30min?back=1&month=2025-04"
+              target="_blank">
               Book a call
-            </button>
+            </Link>
           </div>
           {/* Right image */}
           <div className="hidden md:block">
@@ -67,7 +71,7 @@ export default function OutHero() {
             <h5 className="text-black text-[22px] md:text-[24px] font-bold mb-6">
               Trusted by top brands
             </h5>
-            <ImageSlider images={images} height="h-28" speed={50} />
+            <ImageSlider images={images} height="h-16" speed={50} />
           </div>
         </div>
       </div>

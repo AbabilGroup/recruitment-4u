@@ -10,23 +10,14 @@ import img6 from "../../../../public/images/brand6.png";
 import img7 from "../../../../public/images/brand7.png";
 import img8 from "../../../../public/images/brand8.png";
 import img9 from "../../../../public/images/brand9.png";
+import { Link } from "lucide-react";
 // import img10 from "../../../../public/images/batak.png";
 // import img11 from "../../../../public/images/duplico.png";
 // import img12 from "../../../../public/images/euromarkt.png";
 // import img13 from "../../../../public/images/gavrilovic.png";
 // import img14 from "../../../../public/images/good_food.png";
 
-const images = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 export default function Hero() {
   return (
     <section className="relative bg-[#E8F5F4] ml-[-10vw]  w-screen overflow-hidden">
@@ -60,9 +51,12 @@ export default function Hero() {
               <p className="text-lg md:text-xl text-gray-700 mb-6">
                 Find the talent you need to keep growing your business.
               </p>
-              <button className="bg-primary hover:bg-primary-dark text-white font-medium py-3 px-8 rounded-lg transition-colors duration-300">
+              <Link
+                className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all"
+                href="https://calendly.com/chairmanababilgroup/30min?back=1&month=2025-04"
+                target="_blank">
                 Book a call
-              </button>
+              </Link>
             </motion.div>
           </div>
         </div>
