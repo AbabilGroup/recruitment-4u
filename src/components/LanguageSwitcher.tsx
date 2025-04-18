@@ -15,6 +15,7 @@ const languages = [
   { code: "hr", name: "Hrvatski", flag: "https://flagcdn.com/w20/hr.png" },
   { code: "ro", name: "Română", flag: "https://flagcdn.com/w20/ro.png" },
   { code: "sr", name: "Српски", flag: "https://flagcdn.com/w20/rs.png" },
+  { code: "bg", name: "Български", flag: "https://flagcdn.com/w20/bg.png" },
   { code: "bs", name: "Bosanski", flag: "https://flagcdn.com/w20/ba.png" },
   { code: "sl", name: "Slovenščina", flag: "https://flagcdn.com/w20/si.png" },
   { code: "sk", name: "Slovenčina", flag: "https://flagcdn.com/w20/sk.png" },
@@ -30,6 +31,7 @@ const LanguageSwitcher = () => {
     | "hr"
     | "ro"
     | "sr"
+    | "bg"
     | "bs"
     | "sl"
     | "sk";
@@ -70,7 +72,7 @@ const LanguageSwitcher = () => {
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
             className={cn(
-              "flex  items-center gap-2 cursor-pointer",
+              "flex items-center gap-2 cursor-pointer",
               lang.code === currentLang && "opacity-50 cursor-not-allowed"
             )}
             disabled={lang.code === currentLang}>

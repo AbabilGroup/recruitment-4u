@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Почетна",
+    "forCompanies": "За компаније",
+    "solutions": "Решења",
+    "whyUs": "Зашто ми",
+    "contact": "Контакт",
+    "solutionsDropdown": {
+      "immigrationLaws": "Навигација имиграционим законима",
+      "seasonalWorkers": "Сезонски радници",
+      "constructionWorkers": "Грађевински радници",
+      "medicalWorkers": "Здравствени радници"
+    },
+    "behindthebrand": "За нас",
+    "navButton": "Споделимо"
+  },
+  "hero": {
+    "title": "Повежемо добри радници со добри радници.",
+    "subtitle": "Намерете перфектен отговор за вашата работа или задача со нашата комплетна платформа.",
+    "buttonText1": "Тражим радници",
+    "buttonText2": "Тражим радници"
+  }
+}
