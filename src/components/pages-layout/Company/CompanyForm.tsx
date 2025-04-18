@@ -3,26 +3,30 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  MessageCirclePlus,
+  PhoneCall,
+} from "lucide-react";
+import ContactCard from "@/components/common/ContactCard";
 
 type FormData = {
   company: string;
+  name: string;
   email: string;
   phone: string;
-  jobPositions: string;
-  workersCount: string;
-  note: string;
-  agreeToContact: boolean;
+  message: string;
 };
 
 export default function CompanyForm() {
   const [formData, setFormData] = useState<FormData>({
     company: "",
+    name: "",
     email: "",
     phone: "",
-    jobPositions: "",
-    workersCount: "",
-    note: "",
-    agreeToContact: false,
+    message: "",
   });
 
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -53,11 +57,9 @@ export default function CompanyForm() {
       setFormData({
         company: "",
         email: "",
+        name: "",
         phone: "",
-        jobPositions: "",
-        workersCount: "",
-        note: "",
-        agreeToContact: false,
+        message: "",
       });
       setIsFormSubmitted(false); // Reset form submission state
       toast.success("submitted successfully");
@@ -110,237 +112,126 @@ export default function CompanyForm() {
         </motion.div>
       </div>
 
-      <div className="w-full py-6 sm:py-8 lg:py-10 relative">
-        <div className="container mx-auto px-4 sm:px-6 relative">
-          <motion.div
-            className="max-w-4xl mx-auto bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl overflow-hidden -mt-16 sm:-mt-20 lg:-mt-28"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}>
-            <div className="p-6 sm:p-8 lg:p-10">
-              <div className="text-center mb-6 sm:mb-8">
-                <h2 className="text-2xl sm:text-3xl font-bold text-black mb-3">
-                  Send us an inquiry
-                </h2>
-                <p className="text-base sm:text-lg text-black">
-                  We will respond as soon as possible.
-                </p>
+      <div className="container mx-auto px-4 sm:px-6 relative">
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-5 max-xl:col-span-12">
+            <div className=" border border-gray-200 rounded-lg p-6 sm:p-8 lg:p-10 bg-white ">
+              <h5 className="text-2xl sm:text-3xl font-bold text-black">
+                Let’s Connect
+              </h5>
+              <div className="mt-6 sm:mt-8 space-y-4">
+                <ContactCard
+                  label="Mobile"
+                  text="+1 (123) 456-7890"
+                  icon={<Phone className="w-10 h-10 text-primary" />}
+                />
               </div>
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                <div className="space-y-4">
-                  {[
-                    { id: "company", label: "Company", type: "text" },
-                    { id: "email", label: "Email Address", type: "email" },
-                    { id: "phone", label: "Phone Number", type: "tel" },
-                    {
-                      id: "jobPositions",
-                      label: "Requested Job Positions",
-                      type: "text",
-                    },
-                    {
-                      id: "workersCount",
-                      label: "Approximate Number of Workers",
-                      type: "text",
-                    },
-                  ].map((field) => (
-                    <div key={field.id}>
+              <div className="mt-6 sm:mt-8 space-y-4">
+                <ContactCard
+                  label="Office Phone"
+                  text="+1 (123) 456-7890"
+                  icon={<PhoneCall className="w-10 h-10 text-primary" />}
+                />
+              </div>
+              <div className="mt-6 sm:mt-8 space-y-4">
+                <ContactCard
+                  label="Whats App"
+                  text="+1 (123) 456-7890"
+                  icon={
+                    <MessageCirclePlus className="w-10 h-10 text-primary" />
+                  }
+                />
+              </div>
+              <div className="mt-6 sm:mt-8 space-y-4">
+                <ContactCard
+                  label="E-mail"
+                  text="mHd8w@example.com"
+                  icon={<Mail className="w-10 h-10 text-primary" />}
+                />
+              </div>
+              <div className="mt-6 sm:mt-8 space-y-4">
+                <ContactCard
+                  label="Head Office"
+                  text="The One Tower, Fl.24, DUBAI, UAE"
+                  icon={<MapPin className="w-10 h-10 text-primary" />}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-span-7 max-xl:col-span-12">
+            <motion.div
+              className="max-w-4xl mx-auto bg-white rounded-xl border border-gray-200 overflow-hidden "
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}>
+              <div className="p-6 sm:p-8 lg:p-10">
+                <div className="text-center mb-6 sm:mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-black mb-3">
+                    Request A Business Consultation
+                  </h2>
+                </div>
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-4 sm:space-y-6">
+                  <div className="space-y-4">
+                    {[
+                      { id: "company", label: "Company Name", type: "text" },
+                      { id: "name", label: "Name & SurName", type: "text" },
+                      { id: "email", label: "Email", type: "email" },
+                      {
+                        id: "phone",
+                        label: "Country Code with Phone Number",
+                        type: "tel",
+                      },
+                    ].map((field) => (
+                      <div key={field.id}>
+                        <label
+                          htmlFor={field.id}
+                          className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
+                          {field.label}
+                        </label>
+                        <input
+                          type={field.type}
+                          id={field.id}
+                          name={field.id}
+                          value={String(
+                            formData[field.id as keyof typeof formData]
+                          )}
+                          onChange={handleChange}
+                          className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm sm:text-base text-black"
+                          required
+                        />
+                      </div>
+                    ))}
+
+                    <div>
                       <label
-                        htmlFor={field.id}
+                        htmlFor="note"
                         className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
-                        {field.label}
+                        Your Message
                       </label>
-                      <input
-                        type={field.type}
-                        id={field.id}
-                        name={field.id}
-                        value={String(
-                          formData[field.id as keyof typeof formData]
-                        )}
+                      <textarea
+                        id="note"
+                        name="note"
+                        value={formData.message}
                         onChange={handleChange}
+                        rows={4}
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm sm:text-base text-black"
-                        required
                       />
                     </div>
-                  ))}
-
-                  <div>
-                    <label
-                      htmlFor="note"
-                      className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
-                      Note
-                    </label>
-                    <textarea
-                      id="note"
-                      name="note"
-                      value={formData.note}
-                      onChange={handleChange}
-                      rows={4}
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm sm:text-base text-black"
-                    />
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <input
-                      type="checkbox"
-                      id="agreeToContact"
-                      name="agreeToContact"
-                      checked={formData.agreeToContact}
-                      onChange={handleChange}
-                      className="mt-1.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-                      required
-                    />
-                    <label
-                      htmlFor="agreeToContact"
-                      className="text-xs sm:text-sm leading-relaxed text-black max-w-2xl">
-                      I agree to be contacted regarding my inquiry. This new
-                      page structure provides clear communication about
-                      job-seeking services while ensuring users feel secure in
-                      their interactions with Recruitment4u.
-                    </label>
-                  </div>
-                </div>
-
-                <motion.button
-                  type="submit"
-                  className="w-full bg-primary text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg hover:bg-primary/90 transition-all duration-200 font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.98 }}>
-                  {isFormSubmitted ? "Submitting..." : "Send Inquiry"}
-                </motion.button>
-              </form>
-              {/* <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                  <div>
-                    <label
-                      htmlFor="company"
-                      className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm sm:text-base"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm sm:text-base"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm sm:text-base"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="jobPositions"
-                      className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
-                      Requested Job Positions
-                    </label>
-                    <input
-                      type="text"
-                      id="jobPositions"
-                      name="jobPositions"
-                      value={formData.jobPositions}
-                      onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm sm:text-base"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="workersCount"
-                      className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
-                      Approximate Number of Workers
-                    </label>
-                    <input
-                      type="number"
-                      id="workersCount"
-                      name="workersCount"
-                      value={formData.workersCount}
-                      onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm sm:text-base"
-                      required
-                      min="1"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="note"
-                    className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
-                    Note
-                  </label>
-                  <textarea
-                    id="note"
-                    name="note"
-                    value={formData.note}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm sm:text-base"
-                  />
-                </div>
-
-                <div className="flex items-start space-x-2 sm:space-x-3">
-                  <input
-                    type="checkbox"
-                    id="agreeToContact"
-                    name="agreeToContact"
-                    checked={formData.agreeToContact}
-                    onChange={handleChange}
-                    className="mt-1 h-4 w-4 sm:h-5 sm:w-5 rounded border-gray-300 text-primary focus:ring-primary"
-                    required
-                  />
-                  <label
-                    htmlFor="agreeToContact"
-                    className="text-xs sm:text-sm text-black">
-                    I agree to be contacted regarding my inquiry. More
-                    information can be found in our Privacy Policy.
-                  </label>
-                </div>
-
-                <motion.button
-                  type="submit"
-                  className="w-full bg-primary text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg hover:bg-primary/90 transition-all duration-200 font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.98 }}>
-                  Send Inquiry
-                </motion.button>
-              </form> */}
-            </div>
-          </motion.div>
+                  <motion.button
+                    type="submit"
+                    className="w-full bg-primary text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg hover:bg-primary/90 transition-all duration-200 font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl"
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.98 }}>
+                    {isFormSubmitted ? "Submitting..." : "Send"}
+                  </motion.button>
+                </form>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </>

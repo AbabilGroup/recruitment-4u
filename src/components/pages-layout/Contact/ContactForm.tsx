@@ -1,18 +1,22 @@
 "use client";
 // import { toast } from "sonner";
 import { useState } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  MessageCirclePlus,
+  PhoneCall,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import ContactCard from "@/components/common/ContactCard";
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     company: "",
+    name: "",
     email: "",
     phone: "",
-    jobPositions: "",
-    workersCount: "",
-    note: "",
-    agreeToContact: false,
+    message: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
@@ -83,9 +87,25 @@ export const ContactForm = () => {
               </h5>
               <div className="mt-6 sm:mt-8 space-y-4">
                 <ContactCard
-                  label="Phone"
+                  label="Mobile"
                   text="+1 (123) 456-7890"
                   icon={<Phone className="w-10 h-10 text-primary" />}
+                />
+              </div>
+              <div className="mt-6 sm:mt-8 space-y-4">
+                <ContactCard
+                  label="Office Phone"
+                  text="+1 (123) 456-7890"
+                  icon={<PhoneCall className="w-10 h-10 text-primary" />}
+                />
+              </div>
+              <div className="mt-6 sm:mt-8 space-y-4">
+                <ContactCard
+                  label="Whats App"
+                  text="+1 (123) 456-7890"
+                  icon={
+                    <MessageCirclePlus className="w-10 h-10 text-primary" />
+                  }
                 />
               </div>
               <div className="mt-6 sm:mt-8 space-y-4">
@@ -121,18 +141,13 @@ export const ContactForm = () => {
                   className="space-y-4 sm:space-y-6">
                   <div className="space-y-4">
                     {[
-                      { id: "company", label: "Company", type: "text" },
-                      { id: "email", label: "Email Address", type: "email" },
-                      { id: "phone", label: "Phone Number", type: "tel" },
+                      { id: "company", label: "Company Name", type: "text" },
+                      { id: "name", label: "Name & SurName", type: "text" },
+                      { id: "email", label: "Email", type: "email" },
                       {
-                        id: "jobPositions",
-                        label: "Requested Job Positions",
-                        type: "text",
-                      },
-                      {
-                        id: "workersCount",
-                        label: "Approximate Number of Workers",
-                        type: "text",
+                        id: "phone",
+                        label: "Country Code with Phone Number",
+                        type: "tel",
                       },
                     ].map((field) => (
                       <div key={field.id}>
@@ -159,36 +174,16 @@ export const ContactForm = () => {
                       <label
                         htmlFor="note"
                         className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
-                        Note
+                        Your Message
                       </label>
                       <textarea
                         id="note"
                         name="note"
-                        value={formData.note}
+                        value={formData.message}
                         onChange={handleChange}
                         rows={4}
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm sm:text-base text-black"
                       />
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <input
-                        type="checkbox"
-                        id="agreeToContact"
-                        name="agreeToContact"
-                        checked={formData.agreeToContact}
-                        onChange={handleChange}
-                        className="mt-1.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-                        required
-                      />
-                      <label
-                        htmlFor="agreeToContact"
-                        className="text-xs sm:text-sm leading-relaxed text-black max-w-2xl">
-                        I agree to be contacted regarding my inquiry. This new
-                        page structure provides clear communication about
-                        job-seeking services while ensuring users feel secure in
-                        their interactions with Recruitment4u.
-                      </label>
                     </div>
                   </div>
 
