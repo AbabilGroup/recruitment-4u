@@ -19,22 +19,10 @@ const FORM_CONFIGS: Record<string, FormConfig> = {
     emailSubject: "New Contact Form Submission",
     fields: {
       company: { label: "Company", required: true },
+      name: { label: "Name", required: true },
       email: { label: "Email Address", required: true },
       phone: { label: "Phone Number" },
-      jobPositions: { label: "Requested Job Positions" },
-      workersCount: { label: "Number of Workers" },
-      note: { label: "Note" },
-      agreeToContact: { label: "Agreed to contact" },
-    },
-  },
-  jobApplication: {
-    emailSubject: "New Job Application",
-    fields: {
-      fullName: { label: "Full Name", required: true },
-      email: { label: "Email", required: true },
-      position: { label: "Position Applied For", required: true },
-      resume: { label: "Resume URL" },
-      coverLetter: { label: "Cover Letter" },
+      note: { label: " Your Message" },
     },
   },
   // Add more form types as needed
@@ -110,13 +98,7 @@ export async function POST(request: Request) {
           formData[field] !== undefined &&
           formData[field] !== "" &&
           formData[field] !== false
-            ? `<p><strong>${fieldConfig.label}:</strong> ${
-                typeof formData[field] === "boolean"
-                  ? formData[field]
-                    ? "Yes"
-                    : "No"
-                  : formData[field]
-              }</p>`
+            ? `<p><strong>${fieldConfig.label}:</strong> ${formData[field]}</p>`
             : ""
         )
         .join("")}

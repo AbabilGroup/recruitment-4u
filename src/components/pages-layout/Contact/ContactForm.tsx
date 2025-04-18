@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import ContactCard from "@/components/common/ContactCard";
+import { toast } from "sonner";
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     company: "",
@@ -20,51 +21,49 @@ export const ContactForm = () => {
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsFormSubmitted(true);
-  };
-
   // const handleSubmit = async (e: React.FormEvent) => {
   //   e.preventDefault();
-  //   setIsFormSubmitted(true); // Set form submission state
-  //   try {
-  //     const response = await fetch("/api/contact", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         formType: "contact",
-  //         formData: formData,
-  //       }),
-  //     });
-
-  //     const data = await response.json();
-  //     if (!response.ok) {
-  //       setIsFormSubmitted(false); // Reset form submission state on error
-  //       toast.error(data.error || "Failed to submit form");
-  //       throw new Error(data.error || "Failed to submit form");
-  //     }
-
-  //     // Reset form on success
-  //     setFormData({
-  //       company: "",
-  //       email: "",
-  //       phone: "",
-  //       jobPositions: "",
-  //       workersCount: "",
-  //       note: "",
-  //       agreeToContact: false,
-  //     });
-  //     setIsFormSubmitted(false); // Reset form submission state
-  //     toast.success("submitted successfully");
-  //   } catch (error) {
-  //     console.error("Submission error:", error);
-  //     setIsFormSubmitted(false); // Reset form submission state on error
-  //     toast.error("Failed to submit form");
-  //   }
+  //   setIsFormSubmitted(true);
   // };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsFormSubmitted(true); // Set form submission state
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formType: "contact",
+          formData: formData,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        setIsFormSubmitted(false); // Reset form submission state on error
+
+        throw new Error(data.error || "Failed to submit form");
+      }
+
+      // Reset form on success
+      setFormData({
+        company: "",
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      setIsFormSubmitted(false); // Reset form submission state
+      toast.success("submitted successfully");
+    } catch (error) {
+      console.error("Submission error:", error);
+      setIsFormSubmitted(false); // Reset form submission state on error
+      toast.error("Failed to submit form");
+    }
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -147,7 +146,7 @@ export const ContactForm = () => {
                       {
                         id: "phone",
                         label: "Country Code with Phone Number",
-                        type: "tel",
+                        type: "text",
                       },
                     ].map((field) => (
                       <div key={field.id}>
@@ -172,13 +171,13 @@ export const ContactForm = () => {
 
                     <div>
                       <label
-                        htmlFor="note"
+                        htmlFor="message"
                         className="block text-sm font-medium text-black mb-1.5 sm:mb-2">
                         Your Message
                       </label>
                       <textarea
-                        id="note"
-                        name="note"
+                        id="message"
+                        name="message"
                         value={formData.message}
                         onChange={handleChange}
                         rows={4}
