@@ -142,8 +142,8 @@ const Footer = () => {
         <div className="border-t border-primary/10 mt-12 md:mt-16 pt-6 md:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-xs md:text-sm lg:text-base text-black text-center md:text-left">
-              Copyright © {new Date().getFullYear()} Recruitment4u LLC. All
-              rights reserved.
+              Copyright © {new Date().getFullYear()} Recruitment4u . All rights
+              reserved.
             </div>
             <div className="flex items-center space-x-6">
               <Link
