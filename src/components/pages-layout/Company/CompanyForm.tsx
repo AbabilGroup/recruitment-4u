@@ -1,8 +1,11 @@
 "use client";
+import Image from "next/image";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { motion } from "framer-motion";
+
+import ForCompaniImg from "../../../../public/images/forcompanis.jpg";
 
 type FormData = {
   company: string;
@@ -91,7 +94,15 @@ export default function CompanyForm() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}>
-          <motion.p
+          <Image
+            src={ForCompaniImg}
+            alt="forcompanis"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-auto"
+          />
+          {/* <motion.p
             className="text-4xl sm:text-[28px] md:text-[20px] font-bold text-center text-white pt-16 sm:pt-20"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -103,9 +114,9 @@ export default function CompanyForm() {
             You with a quick and solid fix for Your situation, and we will not
             waste Your valuable time. Meet our team member from Your country by
             sharing with us the following
-          </motion.p>
+          </motion.p> */}
           <motion.div
-            className="w-24 sm:w-32 h-1 bg-white/20 mx-auto rounded-full mt-4 mb-6 sm:mb-8"
+            className="w-24 sm:w-32 h-1  mx-auto rounded-full mt-4 mb-6 sm:mb-8"
             initial={{ width: 0, opacity: 0 }}
             animate={{ width: "8rem", opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
