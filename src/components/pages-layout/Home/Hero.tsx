@@ -24,9 +24,9 @@ const Hero = () => {
       )}>
       <div className="container mx-auto px-4 pt-12 sm:pt-16 md:pt-20 lg:pt-24 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center">
-          {/* Image - Right Side */}
+          {/* Image - Left Side on Desktop */}
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
               duration: 0.7,
@@ -38,16 +38,16 @@ const Hero = () => {
               "max-w-[220px] xs:max-w-[260px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[550px]",
               "aspect-square",
               "mx-auto",
-              "order-1 lg:order-2",
+              "order-1 lg:order-1", // 👈 Now image is first on all screens
               "-mt-6 sm:mt-0 mb-6 sm:mb-0"
             )}>
             <ImageFrameBorder />
           </motion.div>
 
-          {/* Content - Left Side */}
-          <div className="order-2 lg:order-1 relative z-10">
+          {/* Content - Right Side on Desktop */}
+          <div className="order-2 lg:order-2 relative z-10">
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
+              initial={{ opacity: 0, x: 100 }} // 👈 animate from right now
               animate={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 0.7,
@@ -85,7 +85,7 @@ const Hero = () => {
                   delay: 0.7,
                 }}
                 className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-2 sm:pt-4">
-                {/* Left Button */}
+                {/* Buttons */}
                 <motion.button
                   onClick={() => handleButtonClick("/contact")}
                   whileHover={{ y: -5, scale: 1.02 }}
@@ -100,7 +100,6 @@ const Hero = () => {
                   {t("buttonText1")}
                 </motion.button>
 
-                {/* Right Button */}
                 <motion.button
                   onClick={() => handleButtonClick("/for-companies")}
                   whileHover={{ y: -5, scale: 1.02 }}

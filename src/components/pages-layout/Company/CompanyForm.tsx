@@ -124,7 +124,7 @@ export default function CompanyForm() {
         </motion.div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative">
+      <div className="container mx-auto py-12 px-4 sm:px-6 relative">
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12 max-xl:col-span-12">
             <motion.div

@@ -62,7 +62,7 @@ export default function Hero() {
             <h5 className="text-black text-[22px] md:text-[24px] font-bold">
               Client:
             </h5>
-            <ImageSlider images={images} height="h-16" speed={50} />
+            <ImageSlider images={images} height="h-8" speed={50} />
           </div>
         </div>
       </div>

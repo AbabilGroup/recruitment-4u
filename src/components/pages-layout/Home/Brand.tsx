@@ -27,31 +27,31 @@ const Brand = () => {
   };
   return (
     <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 overflow-hidden">
-      <div className="container mx-auto text-center">
-        <h1 className="text-black text-[40px] md:text-[50px] font-bold mb-6">
+      <div className="container mb-10 mx-auto text-center">
+        <h1 className="text-black text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
           We have secured the trust of numerous clients with the quality of our
           work.
         </h1>
       </div>
       {/* Smooth Scrolling Image Slider */}
-      <ImageSlider images={images} height="h-16" speed={50} />
-      <div className="container mx-auto flex max-md:flex-col  justify-center items-center text-center mt-8">
-        <div>
-          <h5 className="text-black text-[40px] max-md:text-[50px] font-bold">
-            Contact Us
-          </h5>
-          <Button
-            onClick={() => handleButtonClick("/contact")}
-            className="bg-primary text-[32px] mt-5 px-12 py-8 font-bold">
-            Send inquiry
-          </Button>
-        </div>
+      <ImageSlider images={images} height="h-8" speed={50} />
+      <div className="container py-12 mx-auto flex max-md:flex-col  justify-center items-center text-center mt-8">
         <div className="max-md:mt-8 max-md:ml-0">
           <Image
             src={FemaleImage}
             alt="brand"
             className="w-full h-full object-contain"
           />
+        </div>
+        <div>
+          <h5 className="text-black text-[32px] max-md:text-[32px] font-bold">
+            Contact Us
+          </h5>
+          <Button
+            onClick={() => handleButtonClick("/contact")}
+            className="bg-primary text-[30px] mt-5 px-12 py-8 font-bold">
+            Send inquiry
+          </Button>
         </div>
       </div>
     </section>

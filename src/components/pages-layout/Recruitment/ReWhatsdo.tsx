@@ -34,11 +34,11 @@ const Whatsdo = () => {
                 </div>
                 <div className="flex items-center  justify-between">
                   <div className="flex -space-x-3"></div>
-                  <button
+                  {/* <button
                     // onClick={onClick}
                     className="w-14 h-14  text-[#0489EF] rounded-full flex items-center justify-center ">
                     More -{">"}
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -65,11 +65,11 @@ const Whatsdo = () => {
                 </div>
                 <div className="flex items-center  justify-between">
                   <div className="flex -space-x-3"></div>
-                  <button
+                  {/* <button
                     // onClick={onClick}
                     className="w-14 h-14  text-[#0489EF] rounded-full flex items-center justify-center ">
                     More -{">"}
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -95,11 +95,11 @@ const Whatsdo = () => {
                 </div>
                 <div className="flex items-center  justify-between">
                   <div className="flex -space-x-3"></div>
-                  <button
+                  {/* <button
                     // onClick={onClick}
                     className="w-14 h-14  text-[#0489EF] rounded-full flex items-center justify-center ">
                     More -{">"}
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

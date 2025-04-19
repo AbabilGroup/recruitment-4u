@@ -51,7 +51,7 @@ export default function OutHero() {
             <h5 className="text-black text-[22px] md:text-[24px] font-bold mb-6">
               Trusted by top brands
             </h5>
-            <ImageSlider images={images} height="h-16" speed={50} />
+            <ImageSlider images={images} height="h-8" speed={50} />
           </div>
         </div>
       </div>
