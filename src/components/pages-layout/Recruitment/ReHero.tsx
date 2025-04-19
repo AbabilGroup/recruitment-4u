@@ -10,13 +10,9 @@ import img6 from "../../../../public/images/brand6.png";
 import img7 from "../../../../public/images/brand7.png";
 import img8 from "../../../../public/images/brand8.png";
 import img9 from "../../../../public/images/brand9.png";
-// import img10 from "../../../../public/images/batak.png";
-// import img11 from "../../../../public/images/duplico.png";
-// import img12 from "../../../../public/images/euromarkt.png";
-// import img13 from "../../../../public/images/gavrilovic.png";
-// import img14 from "../../../../public/images/good_food.png";
+import img10 from "../../../../public/images/brand10.png";
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 export default function Hero() {
   return (
     <section className="relative bg-[#E8F5F4] ml-[-10vw]  w-screen overflow-hidden">

@@ -102,9 +102,7 @@ export default function CompanyForm() {
             few details and we will come back to You in no time. We will come to
             You with a quick and solid fix for Your situation, and we will not
             waste Your valuable time. Meet our team member from Your country by
-            sharing with us the following: Form as it is (no change needed) *
-            can we/should we add a tickbox: I would like to be contacted by a
-            Recruitment 4U representative from my country
+            sharing with us the following
           </motion.p>
           <motion.div
             className="w-24 sm:w-32 h-1 bg-white/20 mx-auto rounded-full mt-4 mb-6 sm:mb-8"

@@ -13,27 +13,8 @@ import img7 from "../../../../public/images/brand7.png";
 import img8 from "../../../../public/images/brand8.png";
 import img9 from "../../../../public/images/brand9.png";
 import img10 from "../../../../public/images/brand10.png";
-import img11 from "../../../../public/images/brand11.png";
-import img12 from "../../../../public/images/brand12.png";
-import img13 from "../../../../public/images/gavrilovic.png";
-import img14 from "../../../../public/images/good_food.png";
 
-const images = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-  img13,
-  img14,
-];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 export default function OutHero() {
   return (
     <section>

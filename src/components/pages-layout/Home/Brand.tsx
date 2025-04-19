@@ -6,38 +6,19 @@ import { Button } from "@/components/ui/button";
 import ImageSlider from "@/components/common/ImageSlider";
 // Import images
 import FemaleImage from "../../../../public/images/brandfemale.jpeg";
-import img1 from "../../../../public/images/11.png";
-import img2 from "../../../../public/images/22.png";
-import img3 from "../../../../public/images/adria_grupa.png";
-import img4 from "../../../../public/images/alh.png";
-import img5 from "../../../../public/images/Alu-flex-pack-logo-1.png";
-import img6 from "../../../../public/images/Anilox.png";
-import img7 from "../../../../public/images/aquaterm-logo.png";
-import img8 from "../../../../public/images/arena.png";
-import img9 from "../../../../public/images/autotrans-logo.png";
-import img10 from "../../../../public/images/batak.png";
-import img11 from "../../../../public/images/duplico.png";
-import img12 from "../../../../public/images/euromarkt.png";
-import img13 from "../../../../public/images/gavrilovic.png";
-import img14 from "../../../../public/images/good_food.png";
+import img1 from "../../../../public/images/brand1.png";
+import img2 from "../../../../public/images/brand2.png";
+import img3 from "../../../../public/images/brand3.png";
+import img4 from "../../../../public/images/brand4.png";
+import img5 from "../../../../public/images/brand5.png";
+import img6 from "../../../../public/images/brand6.png";
+import img7 from "../../../../public/images/brand7.png";
+import img8 from "../../../../public/images/brand8.png";
+import img9 from "../../../../public/images/brand9.png";
+import img10 from "../../../../public/images/brand10.png";
 
 // Store images in an array
-const images = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-  img13,
-  img14,
-];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 
 const Brand = () => {
   const router = useRouter();
@@ -53,7 +34,7 @@ const Brand = () => {
         </h1>
       </div>
       {/* Smooth Scrolling Image Slider */}
-      <ImageSlider images={images} height="h-32" speed={50} />
+      <ImageSlider images={images} height="h-16" speed={50} />
       <div className="container mx-auto flex max-md:flex-col  justify-center items-center text-center mt-8">
         <div>
           <h5 className="text-black text-[40px] max-md:text-[50px] font-bold">

@@ -13,7 +13,7 @@ interface ImageSliderProps {
 const ImageSlider: React.FC<ImageSliderProps> = ({
   images,
   speed = 50,
-  height = "h-32",
+  height = "h-16",
 }) => {
   return (
     <div className="relative w-full overflow-hidden py-4">
@@ -26,7 +26,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
           repeat: Infinity,
         }}>
         {[...images, ...images].map((img, index) => (
-          <div key={index} className="group">
+          <div key={index} className="group mx-2">
             <Image
               src={img}
               alt={`slider-img-${index}`}
