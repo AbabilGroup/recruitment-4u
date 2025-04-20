@@ -45,12 +45,12 @@ const Brand = () => {
         </div>
         <div>
           <h5 className="text-black text-[32px] max-md:text-[32px] font-bold">
-            Contact Us
+            Got Questions?
           </h5>
           <Button
             onClick={() => handleButtonClick("/contact")}
             className="bg-primary text-[30px] mt-5 px-12 py-8 font-bold">
-            Send inquiry
+            Let’s Solve.
           </Button>
         </div>
       </div>
