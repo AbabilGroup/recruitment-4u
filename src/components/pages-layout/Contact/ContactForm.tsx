@@ -132,7 +132,7 @@ export const ContactForm = () => {
               <div className="p-6 sm:p-8 lg:p-10">
                 <div className="text-center mb-6 sm:mb-8">
                   <h2 className="text-2xl sm:text-3xl font-bold text-black mb-3">
-                    Request A Business Consultation
+                    Consult. Plan. Win.
                   </h2>
                 </div>
                 <form
