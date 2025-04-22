@@ -1,61 +1,42 @@
-// components/TeamCard.tsx
-import Image from "next/image";
 import { FC } from "react";
-import { cn } from "@/lib/utils";
-import { FaEnvelope } from "react-icons/fa";
 
 interface TeamCardProps {
   name: string;
   title: string;
-  imageSrc: string;
+  description?: string;
   emailLink?: string;
-  // linkedinLink?: string;
   bgColor?: string;
 }
 
 const TeamCard: FC<TeamCardProps> = ({
   name,
   title,
-  imageSrc,
+  description,
   emailLink,
-  // linkedinLink,
-  bgColor,
+  bgColor = "bg-blue-500",
 }) => {
   return (
-    <div className="w-[200px] max-h-[280px] rounded-xl overflow-hidden shadow-md bg-white">
-      {/* Image */}
-      <div className="w-full h-[220px] relative">
-        <Image
-          src={imageSrc}
-          alt={name}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-t-xl"
-        />
+    <div
+      className={`w-[200px] h-[240px] ${bgColor} text-white rounded-[30px] flex flex-col justify-between  p-5`}>
+      <div>
+        <h3 className="text-xl font-bold leading-tight">{name}</h3>
+        <p className="text-md mt-1">({title})</p>
       </div>
 
-      {/* Info */}
-      <div
-        className={cn(
-          "p-4 mt-[-50px] rounded-tr-[50px] h-[100px] relative",
-          bgColor
-        )}>
-        <h3 className="font-bold text-lg text-black">{name}</h3>
-        <p className="text-sm text-gray-800">{title}</p>
-
-        {/* Icons */}
-        <div className="absolute bottom-4 right-4 flex gap-2 text-black">
-          {emailLink && (
-            <a href={`mailto:${emailLink}`}>
-              <FaEnvelope className="hover:text-gray-700" />
-            </a>
-          )}
-          {/* {linkedinLink && (
-            <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="hover:text-gray-700" />
-            </a>
-          )} */}
+      {description && (
+        <div className="text-sm mt-5">
+          {description.split("\n").map((line, i) => (
+            <p key={i}>{line}</p>
+          ))}
         </div>
+      )}
+
+      <div className="mt-auto text-base font-semibold">
+        <a
+          href={emailLink ? `mailto:${emailLink}` : "#"}
+          className="inline-flex items-center gap-1 hover:underline">
+          Learn more →
+        </a>
       </div>
     </div>
   );

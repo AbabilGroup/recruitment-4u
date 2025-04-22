@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Card from "@/components/common/Card";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const cardVariants = {
   offscreen: {
@@ -31,6 +32,10 @@ const containerVariants = {
 };
 
 const CardHome = () => {
+  const card1 = useTranslations("cardhome1");
+  const card2 = useTranslations("cardhome2");
+  const card3 = useTranslations("cardhome3");
+
   const router = useRouter();
   const handleButtonClick = (path: string) => {
     router.push(path);
@@ -48,8 +53,8 @@ const CardHome = () => {
           className="w-full sm:w-[360px] cursor-pointer"
           variants={cardVariants}>
           <Card
-            title="Recruitment"
-            description="We provide full-cycle recruiting & HR services that are tailored to the business needs."
+            title={card1("title")}
+            description={card1("description")}
             avatars={[
               "https://randomuser.me/api/portraits/women/1.jpg",
               "https://randomuser.me/api/portraits/women/2.jpg",
@@ -63,8 +68,8 @@ const CardHome = () => {
           className="w-full sm:w-[360px] cursor-pointer"
           variants={cardVariants}>
           <Card
-            title="HR-consulting"
-            description="We help companies create a well-known brand that will stand out on the market and boost hiring metrics."
+            title={card2("title")}
+            description={card2("description")}
             avatars={[
               "https://randomuser.me/api/portraits/women/1.jpg",
               "https://randomuser.me/api/portraits/women/2.jpg",
@@ -78,8 +83,8 @@ const CardHome = () => {
           className="w-full sm:w-[360px] cursor-pointer"
           variants={cardVariants}>
           <Card
-            title="Outstaffing"
-            description="We provide outstaffing for fast-growing companies, help to grow companies' teams and increase their productivity"
+            title={card3("title")}
+            description={card3("description")}
             avatars={[
               "https://randomuser.me/api/portraits/women/1.jpg",
               "https://randomuser.me/api/portraits/women/2.jpg",

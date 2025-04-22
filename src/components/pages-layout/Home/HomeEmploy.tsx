@@ -3,8 +3,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { CardContainer, CardBody } from "@/components/ui/3d-card";
+import { useTranslations } from "next-intl";
 
 const HomeEmploy = () => {
+  const t = useTranslations("homepartner");
   const stats = [
     {
       number: "1",
@@ -33,14 +35,14 @@ const HomeEmploy = () => {
           {/* Image Container remains unchanged */}
           <div className="order-1 lg:order-2 mb-8 lg:mb-0 max-w-[300px] sm:max-w-full mx-auto">
             <CardContainer className="w-full !p-0" containerClassName="!py-0">
-              <CardBody className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-lg overflow-hidden">
+              <CardBody className="relative bg-primary-secondary w-full aspect-[4/3] sm:aspect-[16/9] rounded-lg overflow-hidden">
                 {/* Updated background gradient using primary-secondary */}
                 <div className="absolute inset-0 ">
                   <Image
                     src="/images/partner.jpg"
                     alt="Employment Services"
                     fill
-                    className="p-2 border-4 border-primary-secondary  object-contain sm:p-4 rounded-lg  hover:opacity-90 transition-all duration-300"
+                    className="p-2  object-contain sm:p-4 rounded-lg  hover:opacity-90 transition-all duration-300"
                     priority
                   />
                 </div>
@@ -57,13 +59,25 @@ const HomeEmploy = () => {
             transition={{ duration: 0.5 }}
             className="order-2 lg:order-1 space-y-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-black">
-              Your partner in{" "}
-              <span className="text-primary block sm:inline">
-                talent recruitment
-              </span>
+              {t("partner")}
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed">
-              We specialize in recruiting and selecting foreign workers from
+              {/* We are a leading agency in mediating the employment of foreign workers. */}
+              {/* {t.rich("partnerdesc", {
+                asia: (chunks) => <strong>{chunks}</strong>,
+                gulf: (chunks) => <strong>{chunks}</strong>,
+                americas: (chunks) => <strong>{chunks}</strong>,
+                africa: (chunks) => <strong>{chunks}</strong>,
+                dubai: (chunks) => <strong>{chunks}</strong>,
+                uk: (chunks) => <strong>{chunks}</strong>,
+                croatia: (chunks) => <strong>{chunks}</strong>,
+                malta: (chunks) => <strong>{chunks}</strong>,
+                bulgaria: (chunks) => <strong>{chunks}</strong>,
+                poland: (chunks) => <strong>{chunks}</strong>,
+                romania: (chunks) => <strong>{chunks}</strong>,
+                european: (chunks) => <strong>{chunks}</strong>,
+              })} */}
+              {/* We specialize in recruiting and selecting foreign workers from
               various regions, including <strong>Asia</strong>, the{" "}
               <strong>Gulf</strong>, <strong>North and South America</strong>,
               and <strong>Africa</strong>. Operating from our central offices in{" "}
@@ -71,7 +85,7 @@ const HomeEmploy = () => {
               <strong>UK</strong>, <strong>Croatia</strong>,{" "}
               <strong>Malta</strong>, <strong>Bulgaria</strong>,{" "}
               <strong>Poland</strong>, <strong>Romania</strong>, and other{" "}
-              <strong>European</strong> nations.
+              <strong>European</strong> nations. */}
             </p>
           </motion.div>
         </div>

@@ -1,23 +1,38 @@
 {
   "nav": {
     "home": "Početna",
-    "forCompanies": "Za kompanije",
+    "forCompanies": "Za Kompanije",
     "solutions": "Rješenja",
-    "whyUs": "Zašto mi",
-    "contact": "Kontakt",
+    "whyUs": "Zašto Mi",
     "solutionsDropdown": {
-      "immigrationLaws": "Navigacija kroz imigracijske zakone",
+      "immigrationLaws": "Navigacija kroz imigracione zakone",
       "seasonalWorkers": "Sezonski radnici",
       "constructionWorkers": "Građevinski radnici",
-      "medicalWorkers": "Zdravstveni radnici"
+      "medicalWorkers": "Medicinski radnici"
     },
-    "behindthebrand": "Za nas",
-    "navButton": "Saradnja"
+    "behindthebrand": "Iza Branda",
+    "contact": "Kontakt"
   },
   "hero": {
-    "title": "Povezujemo prave radnike sa pravim poslodavcima.",
-    "subtitle": "Pronači perfektno odgovor za svoj posao ili zadatak sa nasom kompletnom platformom.",
-    "buttonText1": "Tražim radnike",
-    "buttonText2": "Tražim poslodavce"
+    "title": "Povezujemo prave radnike s pravim poslodavcima.",
+    "subtitle": "Pronađite savršen spoj za potrebe vašeg poslovanja ili karijere uz našu sveobuhvatnu platformu.",
+    "buttonText1": "Tražite kvalifikovane radnike",
+    "buttonText2": "Tražite zaposlenje"
+  },
+  "cardhome1": {
+    "title": "Zapošljavanje",
+    "description": "Pružamo usluge punog ciklusa zapošljavanja i HR savjetovanja prilagođene poslovnim potrebama."
+  },
+  "cardhome2": {
+    "title": "HR-konsalting",
+    "description": "Pomažemo kompanijama da stvore prepoznatljiv brend koji se ističe na tržištu i poboljšava zapošljavanje."
+  },
+  "cardhome3": {
+    "title": "Outstaffing",
+    "description": "Pružamo usluge outstaffinga za brzorastuće kompanije i pomažemo u povećanju timske produktivnosti."
+  },
+  "homepartner": {
+    "partner": "Vaš partner u zapošljavanju talenata",
+    "partnerdesc": "Specijalizovani smo za regrutaciju stranih radnika iz različitih regiona, uključujući {asia}, {gulf}, {americas} i {africa}. Iz naših kancelarija u {dubai}, zapošljavamo radnike u zemljama kao što su {uk}, {croatia}, {malta}, {bulgaria}, {poland}, {romania} i druge {european} zemlje."
   }
 }

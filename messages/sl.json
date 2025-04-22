@@ -4,20 +4,35 @@
     "forCompanies": "Za podjetja",
     "solutions": "Rešitve",
     "whyUs": "Zakaj mi",
-    "contact": "Kontakt",
     "solutionsDropdown": {
-      "immigrationLaws": "Navigacija po imigracijskih zakonih",
+      "immigrationLaws": "Navigacija zakonov o priseljevanju",
       "seasonalWorkers": "Sezonski delavci",
       "constructionWorkers": "Gradbeni delavci",
-      "medicalWorkers": "Zdravstveni delavci"
+      "medicalWorkers": "Medicinski delavci"
     },
-    "behindthebrand": "O nas",
-    "navButton": "Sodelujmo"
+    "behindthebrand": "Zgodba blagovne znamke",
+    "contact": "Kontakt"
   },
   "hero": {
     "title": "Povezujemo prave delavce s pravimi delodajalci.",
-    "subtitle": "Najdite perfektno odgovor za svoj del ali cil s nasom kompletno platformo.",
-    "buttonText1": "Iščem delavce",
-    "buttonText2": "Iščem delodajalce"
+    "subtitle": "Naši platformi vam pomagata najti idealen kader ali karierno priložnost.",
+    "buttonText1": "Iščem kvalificirane delavce",
+    "buttonText2": "Iščem zaposlitev"
+  },
+  "cardhome1": {
+    "title": "Zaposlovanje",
+    "description": "Nudimo celostne storitve zaposlovanja in kadrovskega svetovanja, prilagojene poslovnim potrebam."
+  },
+  "cardhome2": {
+    "title": "HR svetovanje",
+    "description": "Pomagamo podjetjem ustvariti prepoznavno blagovno znamko, ki izstopa na trgu in izboljša zaposlovanje."
+  },
+  "cardhome3": {
+    "title": "Outstaffing",
+    "description": "Nudimo outstaffing za hitro rastoča podjetja za povečanje timske produktivnosti."
+  },
+  "homepartner": {
+    "partner": "Vaš partner pri zaposlovanju talentov",
+    "partnerdesc": "Specializirani smo za zaposlovanje tujih delavcev iz različnih regij, vključno z {asia}, {gulf}, {americas} in {africa}. Iz naših osrednjih pisarn v {dubai} zaposlujemo delavce v {uk}, {croatia}, {malta}, {bulgaria}, {poland}, {romania} in drugih {european} državah."
   }
 }

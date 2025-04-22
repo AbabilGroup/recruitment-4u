@@ -19,5 +19,21 @@
     "subtitle": "Find the perfect match for your business needs or career goals with our comprehensive platform.",
     "buttonText1": "Seeking Skilled Workers",
     "buttonText2": "Searching for Employment"
+  },
+  "cardhome1": {
+    "title": "Recruitment",
+    "description": "We provide full-cycle recruiting & HR services that are tailored to the business needs."
+  },
+  "cardhome2": {
+    "title": "HR-consulting",
+    "description": "We help companies create a well-known brand that will stand out on the market and boost hiring metrics."
+  },
+  "cardhome3": {
+    "title": "Outstaffing",
+    "description": "We provide outstaffing for fast-growing companies, help to grow companies' teams and increase their productivity."
+  },
+  "homepartner": {
+    "partner": "Your partner in talent recruitment",
+    "partnerdesc": "We specialize in recruiting and selecting foreign workers from various regions, including {asia}, {gulf}, {americas}, and {africa}. Operating from our central offices in {dubai}, we place workers in countries such as the {uk}, {croatia}, {malta}, {bulgaria}, {poland}, {romania}, and other {european} nations."
   }
 }

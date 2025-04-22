@@ -1,23 +1,38 @@
 {
   "nav": {
     "home": "Početna",
-    "forCompanies": "Za tvrtke",
+    "forCompanies": "Za Tvrtke",
     "solutions": "Rješenja",
-    "whyUs": "Zašto mi",
-    "contact": "Kontakt",
+    "whyUs": "Zašto Mi",
     "solutionsDropdown": {
-      "immigrationLaws": "Navigacija kroz imigracijske zakone",
+      "immigrationLaws": "Navigacija imigracijskim zakonima",
       "seasonalWorkers": "Sezonski radnici",
       "constructionWorkers": "Građevinski radnici",
-      "medicalWorkers": "Zdravstveni radnici"
+      "medicalWorkers": "Medicinski radnici"
     },
-    "behindthebrand": "Iza brenda",
-    "navButton": "Povezujemo"
+    "behindthebrand": "Iza Branda",
+    "contact": "Kontakt"
   },
   "hero": {
-    "title": "Povezujemo dobro radnike sa dobro radnoj mjestu.",
-    "subtitle": "Pronači perfektno odgovor za svoj posao ili zadatak sa nasom kompletnom platformom.",
-    "buttonText1": "Trazim radnike",
-    "buttonText2": "Trazim radno mjesto"
+    "title": "Povezujemo prave radnike s pravim poslodavcima.",
+    "subtitle": "Pronađite idealnog kandidata za svoje poslovne potrebe ili karijerne ciljeve putem naše platforme.",
+    "buttonText1": "Tražim kvalificirane radnike",
+    "buttonText2": "Tražim posao"
+  },
+  "cardhome1": {
+    "title": "Zapošljavanje",
+    "description": "Pružamo potpune usluge zapošljavanja i HR savjetovanja prilagođene vašim potrebama."
+  },
+  "cardhome2": {
+    "title": "HR savjetovanje",
+    "description": "Pomažemo tvrtkama izgraditi prepoznatljiv brend koji se ističe na tržištu i poboljšava zapošljavanje."
+  },
+  "cardhome3": {
+    "title": "Outstaffing",
+    "description": "Pomažemo brzo rastućim tvrtkama da prošire timove i povećaju produktivnost putem outstaffinga."
+  },
+  "homepartner": {
+    "partner": "Vaš partner u zapošljavanju talenata",
+    "partnerdesc": "Specijalizirani smo za regrutaciju stranih radnika iz različitih regija, uključujući {asia}, {gulf}, {americas} i {africa}. Iz naših središnjih ureda u {dubai}, zapošljavamo radnike u {uk}, {croatia}, {malta}, {bulgaria}, {poland}, {romania} i drugim {european} zemljama."
   }
 }
