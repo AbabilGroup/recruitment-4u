@@ -10,7 +10,7 @@ const HomeEmploy = () => {
       number: "1",
       title: "3000 EMPLOYED WORKERS",
       description:
-        "In the past two years, we have brought over 5000 third-country nationals to European Countries. With over 10% of the total market for foreign workers, we are a leading agency in mediating the employment of foreign workers.",
+        "In the past two years, we have brought over 5000 third-country nationals to  European Countries. With over 10% of the total market for foreign workers, we are a leading agency in mediating the employment of foreign workers.",
     },
     {
       number: "2",
@@ -37,7 +37,7 @@ const HomeEmploy = () => {
                 {/* Updated background gradient using primary-secondary */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-secondary/60 to-primary-secondary/70">
                   <Image
-                    src="/images/employ-1.png"
+                    src="/images/partner.jpg"
                     alt="Employment Services"
                     fill
                     className="object-contain p-2 sm:p-4 rounded-lg opacity-85 mix-blend-multiply hover:opacity-90 transition-all duration-300"
@@ -65,17 +65,14 @@ const HomeEmploy = () => {
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed">
               We specialize in recruiting and selecting foreign workers from
-              recruitment centers such as <strong>Bangladesh</strong>, the{" "}
-              <strong>Philippines</strong>, <strong>India</strong>,
-              <strong>Nepal</strong>, <strong>Malaysia</strong>,{" "}
-              <strong>Singapore</strong>, <strong>KSA</strong>,{" "}
-              <strong>Qatar</strong>, and the{" "}
-              <strong>United Arab Emirates</strong>. From our central offices in{" "}
+              various regions, including <strong>Asia</strong>, the{" "}
+              <strong>Gulf</strong>, <strong>North and South America</strong>,
+              and <strong>Africa</strong>. Operating from our central offices in{" "}
               <strong>Dubai</strong>, we place workers in countries such as the{" "}
               <strong>UK</strong>, <strong>Croatia</strong>,{" "}
               <strong>Malta</strong>, <strong>Bulgaria</strong>,{" "}
-              <strong>Poland</strong>,<strong>Romania</strong>, and other
-              European Countries.
+              <strong>Poland</strong>, <strong>Romania</strong>, and other{" "}
+              <strong>European</strong> nations.
             </p>
           </motion.div>
         </div>

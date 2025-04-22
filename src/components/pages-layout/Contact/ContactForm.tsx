@@ -17,6 +17,7 @@ export const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
+    country: "",
     message: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -54,6 +55,7 @@ export const ContactForm = () => {
         name: "",
         email: "",
         phone: "",
+        country: "",
         message: "",
       });
       setIsFormSubmitted(false); // Reset form submission state
@@ -148,6 +150,7 @@ export const ContactForm = () => {
                         label: "Country Code with Phone Number",
                         type: "text",
                       },
+                      { id: "country", label: "Country Name", type: "text" },
                     ].map((field) => (
                       <div key={field.id}>
                         <label

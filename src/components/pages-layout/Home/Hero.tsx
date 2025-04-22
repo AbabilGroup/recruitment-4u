@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { ImageFrameBorder } from "@/animation/imageframeborder";
 // import { useRouter } from "next/router";
 
 const Hero = () => {
@@ -41,7 +40,18 @@ const Hero = () => {
               "order-1 lg:order-1", // 👈 Now image is first on all screens
               "-mt-6 sm:mt-0 mb-6 sm:mb-0"
             )}>
-            <ImageFrameBorder />
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute left-0 top-0 h-full w-full object-cover">
+              <source
+                src="https://res.cloudinary.com/dcsle5kwm/video/upload/v1745317162/full_final_ogxrrx.mp4"
+                type="video/mp4"
+              />
+            </video>
+            {/* <ImageFrameBorder> */}
           </motion.div>
 
           {/* Content - Right Side on Desktop */}

@@ -23,7 +23,7 @@ const processSteps = [
     title: "Issuing Permits",
     duration: "up to 90 days",
     description:
-      "Once we have precisely defined your needs and identified suitable workers, we can begin the process of issuing permits for them to work in the UK, Croatia, Malta, Bulgaria, Poland, Romania, and other European countries. This process is carried out in cooperation with relevant authorities.",
+      "Once we have precisely defined your needs and identified suitable workers, we can begin the process of issuing permits for them to work in the <strong>UK</strong>, <strong>Croatia</strong>, <strong>Malta</strong>, <strong>Bulgaria</strong>, <strong>Poland</strong>, <strong>Romania</strong>, and other <strong>European countries</strong>. This process is carried out in cooperation with relevant authorities, including the <strong>Croatian Employment Service (HZZ)</strong>, the <strong>UK Home Office</strong>, <strong>Jobsplus Malta</strong>, the <strong>Bulgarian Employment Agency</strong>, the <strong>Polish Office for Foreigners</strong>, the <strong>Romanian General Inspectorate for Immigration</strong>, as well as the <strong>Ministry of Interior</strong>, <strong>Ministry of Foreign Affairs</strong>, and other institutions in the worker’s home country.",
   },
   {
     icon: Plane,
@@ -201,9 +201,8 @@ const ProcessCard = ({
       {/* Description */}
       <p
         className="text-black text-sm leading-relaxed mt-3
-        group-hover:text-white/90 transition-colors duration-300">
-        {step.description}
-      </p>
+        group-hover:text-white/90 transition-colors duration-300"
+        dangerouslySetInnerHTML={{ __html: step.description }}></p>
     </CardBody>
   );
 };

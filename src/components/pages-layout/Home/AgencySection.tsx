@@ -21,37 +21,36 @@ export default function AgencySection() {
     {
       title: "Innovate selection processes.",
       content:
-        "When hiring foreign workers, it is important to consider the efforts of both parties involved: both the worker and the employer. To ensure that this effort is not in vain, we have developed a multi-phase selection process through which candidates must pass to meet the highest criteria for work in such as the UK, Croatia, Malta, Bulgaria, Poland, Romania, and other European Countries.",
+        "When hiring foreign workers, it is important to consider the efforts of both parties involved: both the worker and the employer. To ensure that this effort is not in vain, we have developed a multi-phase selection process through which candidates must pass to meet the highest criteria for work in such countries as the <strong>UK</strong>, <strong>Croatia</strong>, <strong>Malta</strong>, <strong>Bulgaria</strong>, <strong>Poland</strong>, <strong>Romania</strong>, and other <strong>European Countries</strong>.",
     },
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-18 w-full overflow-hidden"> 
+    <section className="py-12 sm:py-16 lg:py-18 w-full overflow-hidden">
       <div className="container mx-auto px-4 py-6 sm:py-8 lg:py-12 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Icons Section */}
-          <div className="relative order-1 lg:order-1 grid grid-cols-2 gap-4 w-full max-w-md mx-auto lg:mt-4"> {/* Reduced top margin */}
+          <div className="relative order-1 lg:order-1 grid grid-cols-2 gap-4 w-full max-w-md mx-auto lg:mt-4">
+            {" "}
+            {/* Reduced top margin */}
             {/* Top row - Two cards side by side */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="aspect-square bg-primary flex items-center justify-center p-6 sm:p-8"
-            >
+              className="aspect-square bg-primary flex items-center justify-center p-6 sm:p-8">
               <NoSelector>
                 <Building2
                   className="w-12 h-12 sm:w-16 sm:h-16 text-primary-secondary"
                   strokeWidth={1.5}
                 />
-              </NoSelector> 
+              </NoSelector>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="aspect-square bg-primary flex items-center justify-center p-6 sm:p-8 -mt-4 sm:-mt-8"
-            >
+              className="aspect-square bg-primary flex items-center justify-center p-6 sm:p-8 -mt-4 sm:-mt-8">
               <NoSelector>
                 <Users2
                   className="w-12 h-12 sm:w-16 sm:h-16 text-primary-secondary"
@@ -59,14 +58,12 @@ export default function AgencySection() {
                 />
               </NoSelector>
             </motion.div>
-
             {/* Bottom row - Centered card */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="col-span-2 aspect-square bg-primary flex items-center justify-center p-6 sm:p-8 w-1/2 -mt-10 sm:-mt-14 ml-16 sm:ml-24"
-            >
+              className="col-span-2 aspect-square bg-primary flex items-center justify-center p-6 sm:p-8 w-1/2 -mt-10 sm:-mt-14 ml-16 sm:ml-24">
               <NoSelector>
                 <Filter
                   className="w-12 h-12 sm:w-16 sm:h-16 text-primary-secondary"
@@ -94,12 +91,10 @@ export default function AgencySection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="border-b border-black/10"
-                >
+                  className="border-b border-black/10">
                   <button
                     onClick={() => setOpenItem(openItem === index ? -1 : index)}
-                    className="w-full py-2 sm:py-3 lg:py-4 flex justify-between items-center group hover:text-primary transition-colors"
-                  >
+                    className="w-full py-2 sm:py-3 lg:py-4 flex justify-between items-center group hover:text-primary transition-colors">
                     <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-left text-black">
                       {item.title}
                     </h3>
@@ -117,10 +112,12 @@ export default function AgencySection() {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
+                        className="overflow-hidden">
                         <div className="pb-2 sm:pb-3 lg:pb-4 text-xs sm:text-sm lg:text-base text-black">
-                          {item.content}
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: item.content,
+                            }}></p>
                         </div>
                       </motion.div>
                     )}
