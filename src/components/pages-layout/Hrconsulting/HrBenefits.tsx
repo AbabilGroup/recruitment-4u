@@ -21,37 +21,37 @@ const features: FeatureItem[] = [
     icon: <FileText size={40} />,
     title: "HR audit",
     description:
-      "Examine the processes in the field of personnel management, determine which improvements are needed",
+      "Analyze your personnel management practices to identify areas for enhancement.",
   },
   {
     icon: <BarChart2 size={40} />,
     title: "Insights",
     description:
-      "Highlight the strengths and weaknesses of your HR department, tell about the latest trends",
+      "Pinpoint strengths and weaknesses within your HR framework while staying informed on industry trends.",
   },
   {
     icon: <Lightbulb size={40} />,
     title: "Solutions",
     description:
-      "Build the company’s HR strategy in the shortest time and with the perfect result",
+      "Develop a robust HR strategy swiftly, tailored for optimal results.",
   },
   {
     icon: <User size={40} />,
     title: "Experience",
     description:
-      "We professionally create an employer brand strategy for attracting talents and retaining employees",
+      "Expertly strategize employer branding to secure and retain top talent.",
   },
   {
     icon: <DollarSign size={40} />,
     title: "Flexible Payments",
     description:
-      "Different tariff plans to choose from and a variety of payment methods from wire to crypto transfers",
+      "Choose from various pricing plans and payment options, including wire transfers and cryptocurrency.",
   },
   {
     icon: <ThumbsUp size={40} />,
     title: "Effective Recruitment",
     description:
-      "We can help in the area of recruiting by optimizing a recruitment strategy as well as assisting in hiring",
+      "Enhance recruitment strategies and support hiring efforts for superior results",
   },
 ];
 
@@ -62,8 +62,8 @@ const HrBenefits: React.FC = () => {
         Benefits
       </h1>
       <p className=" text-[26px] text-center mb-12 text-primary">
-        We help 70+ companies improve their HR processes, achieve goals and get
-        a profit.
+        We’ve partnered with over 70 organizations to optimize HR operations,
+        meet objectives, and drive profitability.
       </p>
       <div className="container max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">

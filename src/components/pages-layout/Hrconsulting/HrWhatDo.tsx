@@ -19,11 +19,11 @@ export default function HrWhatDo() {
                   Employer branding
                 </h4>
                 <p className="text-[20px] text-black font-normal">
-                  We create an attractive perception of your company for job
-                  seekers and employees.
+                  We craft a compelling image of your organization for
+                  prospective hires and current employees,
                 </p>
                 <p className="mt-5 text-primary text-[20px] font-normal">
-                  It will help you to hire and retain top talents.
+                  enabling you to attract and retain top-tier talent.
                 </p>
               </div>
             </div>
@@ -38,11 +38,11 @@ export default function HrWhatDo() {
               <UserCheck height={60} width={70} className="text-primary" />
               <div className="mt-10">
                 <h4 className="text-black text-[30px] font-bold">
-                  Employee experience
+                  Employee Experience
                 </h4>
                 <p className="text-[20px] text-black font-normal">
-                  We develop and structure employee experience so they promote
-                  your brand and attract new talents.
+                  We’ve partnered with over 70 organizations to optimize HR
+                  operations, meet objectives, and drive profitability.
                 </p>
               </div>
             </div>

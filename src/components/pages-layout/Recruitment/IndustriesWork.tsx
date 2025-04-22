@@ -36,7 +36,7 @@ const industries = [
   { name: "Gaming, VR & AR", icon: <Gamepad2 />, color: "bg-blue-600" },
   { name: "Edtech", icon: <GraduationCap />, color: "bg-pink-500" },
   { name: "Medtech & Pharma", icon: <Syringe />, color: "bg-teal-200" },
-  { name: "Lifestyle & fashion", icon: <Shirt />, color: "bg-green-200" },
+  { name: "Lifestyle & Fashion", icon: <Shirt />, color: "bg-green-200" },
 ];
 
 export default function IndustriesWork() {

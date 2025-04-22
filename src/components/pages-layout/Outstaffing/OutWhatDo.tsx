@@ -12,31 +12,31 @@ export default function OutWhatDo() {
     {
       title: "IT Staff Augmentation",
       description:
-        "We offer highly skilled employees to expand your company's capacity and close positions in the shortest possible time.",
+        "Get highly qualified professionals to strengthen your team and fill critical roles swiftly.",
       icon: <Users size={70} className="text-primary" />,
     },
     {
       title: "Project-based outstaffing",
       description:
-        "We will provide a team to work on the project and manage the project from the start to the finish.",
+        "Receive a dedicated team to manage projects from inception to completion efficiently.",
       icon: <GitBranch size={70} className="text-primary" />,
     },
     {
-      title: "R&D Center",
+      title: "R&D Center Development",
       description:
-        "We have expertise in building R&D centers and are ready to deliver the best talents for your business.",
+        "Leverage our expertise in establishing R&D centers with top-tier talent tailored to your needs.",
       icon: <FlaskConical size={70} className="text-primary" />,
     },
     {
-      title: "QA Team",
+      title: "QA Team Building",
       description:
-        "We can help you hire a QA talent to complete your QA team or build a QA team consisting of a few highly qualified and experienced specialists.",
+        "Hire individual QA specialists or create a full team of experienced professionals for thorough quality assurance.",
       icon: <ShieldCheck size={70} className="text-primary" />,
     },
     {
-      title: "Technical Support Center",
+      title: "Technical Support Center Setup",
       description:
-        "Address us in case you need to create a Technical support department or fill the gaps in the team.",
+        "Let us help you build or enhance your technical support department with skilled staff.",
       icon: <Headphones size={70} className="text-primary" />,
     },
   ];
@@ -47,8 +47,8 @@ export default function OutWhatDo() {
         What we do
       </h1>
       <p className=" text-[26px] text-center mb-12 text-primary">
-        We help companies to grow faster, improve business processes, achieve
-        goals <br /> and get additional profit.
+        We help businesses expand quickly, enhance operations, achieve
+        objectives, and boost profitability.
       </p>
       <div className="container pb-20 mx-auto px-4">
         {/* Top row - 3 boxes */}

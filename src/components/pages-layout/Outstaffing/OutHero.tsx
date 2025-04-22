@@ -24,8 +24,8 @@ export default function OutHero() {
           <div className="text-black">
             <h1 className="text-[52px] font-bold mb-6">Outstaffing</h1>
             <p className="text-[25px] mb-6 max-w-lg">
-              We provide outstaffing for fast-growing companies, help to grow
-              companies’ teams and increase their productivity
+              We offer outstaffing solutions for rapidly growing businesses,
+              enabling team expansion and boosting productivity.
             </p>
             <a
               className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all"
@@ -66,12 +66,12 @@ export default function OutHero() {
                 <DollarSign height={60} width={70} className="text-primary" />
                 <div className="mt-10">
                   <h4 className="text-black text-[30px] font-bold">
-                    $0 pre-payment
+                    Zero Upfront Costs
                   </h4>
                   <p className="text-[20px] text-black font-normal">
-                    The hiring process is cost-effective, fast and easy. We are
-                    ready to start immediately, and we take care of payrolls and
-                    taxes
+                    Start hiring with no upfront costs. Our process is
+                    efficient, fast, and hassle-free. We handle payroll and
+                    taxes so you can focus on your business.
                   </p>
                 </div>
               </div>
@@ -83,12 +83,12 @@ export default function OutHero() {
                 <ThumbsUp height={60} width={70} className="text-primary" />
                 <div className="mt-10">
                   <h4 className="text-black text-[30px] font-bold">
-                    Flexibility and scalability
+                    Flexible Workforce Management
                   </h4>
                   <p className="text-[20px] text-black font-normal">
-                    We provide temporary staff for short-term projects, or help
-                    with long-term hiring needs. Plus, we can quickly scale the
-                    workforce up or down
+                    Whether you need temporary staff for short-term projects or
+                    long-term hires, we adapt to your needs. Scale your
+                    workforce up or down with ease.
                   </p>
                 </div>
               </div>
@@ -99,12 +99,11 @@ export default function OutHero() {
                 <Users height={60} width={70} className="text-primary" />
                 <div className="mt-10">
                   <h4 className="text-black text-[30px] font-bold">
-                    Employee retention
+                    Long-Term Partnerships
                   </h4>
                   <p className="text-[20px] text-black font-normal">
-                    We focuse on building long-term relationships and strive to
-                    provide remote workers who fit into the client&apos;s
-                    culture
+                    We prioritize long-term relationships by providing remote
+                    workers who seamlessly integrate into your company culture.
                   </p>
                 </div>
               </div>

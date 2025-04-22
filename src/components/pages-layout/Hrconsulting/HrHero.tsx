@@ -25,8 +25,8 @@ export default function Hero() {
           <div className="text-black">
             <h1 className="text-[52px] font-bold mb-6">HR consulting</h1>
             <p className="text-[25px] mb-6 max-w-lg">
-              We help companies create a well-known brand that will stand out on
-              the market and boost hiring metrics.
+              We assist businesses in building a distinguished reputation that
+              enhances visibility in the market and improves hiring outcomes.
             </p>
             <a
               className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all"

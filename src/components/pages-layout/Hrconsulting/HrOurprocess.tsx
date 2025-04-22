@@ -3,29 +3,29 @@ import { Check } from "lucide-react";
 const steps = [
   {
     number: 1,
-    title: "Tell us about you",
+    title: "Tell Us About Yourself",
     items: [
-      "Company intro",
-      "Employer brand/experience audit",
-      "UVP for workers",
+      "Company overview",
+      "Employer brand and experience analysis",
+      "Unique Value Proposition (UVP) for employees",
     ],
   },
   {
     number: 2,
-    title: "We drive changes",
+    title: "We Drive Transformation",
     items: [
-      "Define staff touchpoints",
-      "Build employee lifecycle stages",
-      "Establish processes",
+      "Identify employee touchpoints",
+      "Map out employee lifecycle stages",
+      "Establish streamlined processes",
     ],
   },
   {
     number: 3,
-    title: "We finalize",
+    title: "We Deliver Results",
     items: [
-      "Invest in the right technology",
-      "Provide leadership training",
-      "Presenting results",
+      "Implement cutting-edge technology",
+      "Conduct leadership training sessions",
+      "Present outcomes effectively",
     ],
   },
 ];
@@ -36,8 +36,8 @@ export default function HrOurprocess() {
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-[52px] font-bold mb-4">Our process</h2>
         <p className="text-[26px] font-normal mb-12">
-          Reduce time to hire. We’ll provide you with the first candidates’{" "}
-          <br /> CVs within 3–5 days.
+          Accelerate hiring timelines—we’ll deliver initial candidate profiles
+          within 3-5 days.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -53,7 +53,9 @@ export default function HrOurprocess() {
               <h3 className="font-semibold text-lg mb-3">{step.title}</h3>
               <ul className="space-y-2">
                 {step.items.map((item, index) => (
-                  <li key={index} className="flex text-[22px] items-start space-x-2">
+                  <li
+                    key={index}
+                    className="flex text-[22px] items-start space-x-2">
                     <Check className="text-green-600 mt-1" size={18} />
                     <span>{item}</span>
                   </li>

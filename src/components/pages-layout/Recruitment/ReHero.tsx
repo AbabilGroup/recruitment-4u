@@ -40,11 +40,11 @@ export default function Hero() {
                 Recruitment
               </h1>
               <p className="text-lg md:text-xl text-gray-700 mb-6">
-                We provide full-cycle recruiting services that free up time and
-                save money.
+                Optimize your time and resources with our comprehensive
+                recruitment solutions.
               </p>
               <p className="text-lg md:text-xl text-gray-700 mb-6">
-                Find the talent you need to keep growing your business.
+                Find the talent you need to drive business growth.
               </p>
               <a
                 className="bg-primary text-[25px] font-bold mt-5 text-white px-8 py-4 rounded-md hover:text-slate-700 transition-all"

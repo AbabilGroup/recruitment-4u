@@ -7,28 +7,20 @@ export default function OurProcess() {
   const processSteps = [
     {
       id: 1,
-      title: "Tell us about you",
-      duration: "(1-2 days)",
-      tasks: [
-        "✔ Company intro",
-        "✔ Vacancy description",
-        "✔ Signing a contract",
-      ],
+      title: "Understanding Your Needs",
+      duration: "(1-3 days)",
+      tasks: ["✔ Company Overview", "✔ Vacancy Details", "✔ Contract Signing"],
     },
     {
       id: 2,
-      title: "Full cycle recruiting",
+      title: "Full-Cycle Recruiting",
       duration: "(1-4 weeks)",
-      tasks: [
-        "✔ Sourcing",
-        "✔ Pre-screening, scheduling, and interviewing",
-        "✔ Weekly reports and support",
-      ],
+      tasks: ["✔ Sourcing", "✔ Pre-screening, Interviews", "✔ Weekly Updates"],
     },
     {
       id: 3,
-      title: "Finalizing the hire",
-      duration: "(1-6 weeks)",
+      title: "Finalizing the Hire",
+      duration: "(4-6 weeks)",
       tasks: [
         "✔ Offer negotiations",
         "✔ Signing NDA with a candidate",

@@ -11,44 +11,41 @@ export default function Benefits() {
   const benefits = [
     {
       id: 1,
-      title: "Huge Talent Pool",
+      title: "Access to Top Talent",
       description:
-        "130,000+ candidates in our database. Top talents with different stacks for all types of companies and products",
+        "Over 130,000 candidates in our database, featuring diverse skill sets.",
       image: Benefits1,
     },
     {
       id: 2,
-      title: "Insights",
+      title: "Expertise You Can Trust",
       description:
-        "We conduct technical interviews. Also, our recruiters give an extensive summary after each interview",
+        "Proprietary screening methodology and 30+ recruitment channels.",
       image: Benefits2,
     },
     {
       id: 3,
-      title: "Experience",
-      description:
-        "We prescreen candidates with our unique methodology and use 30+ channels for recruiting",
+      title: "Transparent Process",
+      description: "Real-time CRM access to monitor the recruitment funnel.",
       image: Benefits3,
     },
     {
       id: 4,
-      title: "Flexible Payments",
-      description:
-        "Different tariff plans to choose from and a variety of payment methods from wire to crypto transfers",
+      title: "In-Depth Insights",
+      description: "Thorough technical interviews with detailed summaries.",
       image: Benefits4,
     },
     {
       id: 5,
-      title: "Transparency",
+      title: "Flexible Payment Options",
       description:
-        "Live access to CRM during the recruiting process, so you can review the recruiting funnel",
+        "Various tariff plans and payment methods, including cryptocurrencies.",
       image: Benefits5,
     },
     {
       id: 6,
-      title: "Supervision",
-      description:
-        "We provide a personal manager and professional recruiter for each client",
+      title: "Personalized Support",
+      description: "Dedicated manager and recruiter for each client.",
       image: Benefits6,
     },
   ];

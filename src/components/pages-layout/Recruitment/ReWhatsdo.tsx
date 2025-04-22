@@ -22,14 +22,15 @@ const Whatsdo = () => {
               className={`text-white p-10 rounded-[2rem] w-full h-[450px] max-w-sm bg-[#071A42] shadow-lg`}>
               <div className="flex flex-col  justify-between h-full">
                 <div>
-                  <h2 className="text-[28px] font-bold mb-2">Recruiting</h2>
+                  <h2 className="text-[28px] font-bold mb-2">
+                    Results-Driven Recruiting
+                  </h2>
                   <p className="text-[18px] font-normal text-white mt-6">
-                    We provide full-cycle recruiting services that free up time
-                    and save money.
+                    We manage the recruitment process from start to finish.
                   </p>
                   <p className="text-[18px] font-normal text-white mt-6">
-                    We provide full-cycle recruiting services that free up time
-                    and save money.
+                    We follow a pay-per-hire model where you only pay for
+                    successful placements.
                   </p>
                 </div>
                 <div className="flex items-center  justify-between">
@@ -52,15 +53,14 @@ const Whatsdo = () => {
               <div className="flex flex-col  justify-between h-full">
                 <div>
                   <h2 className="text-[28px] text-black  font-bold mb-2">
-                    Subscription-based recruiting
+                    Subscription-Based Solutions
                   </h2>
                   <p className="text-[18px]  text-black font-normal  mt-6">
-                    We provide full-cycle recruiting services that free up time
-                    and save money.
+                    Enjoy full-cycle recruitment services with flexible
+                    subscription plans.
                   </p>
                   <p className="text-[18px] font-normal text-black mt-6">
-                    We provide full-cycle recruiting services that free up time
-                    and save money.
+                    We tailored workers for you Globally as per your need.
                   </p>
                 </div>
                 <div className="flex items-center  justify-between">
@@ -84,13 +84,11 @@ const Whatsdo = () => {
               <div className="flex flex-col  justify-between h-full">
                 <div>
                   <h2 className="text-[28px] text-black  font-bold mb-2">
-                    Recruitment Process Outsourcing
+                    Recruitment Process Outsourcing (ROP)
                   </h2>
                   <p className="text-[18px]  text-black font-normal  mt-6">
-                    RPO is outsourcing the recruitment processor a partial or
-                    complete transfer bythe employer of the search and
-                    selectionprocess to a specialized contractor withina
-                    project, department, or company.
+                    Outsource part or all of your recruitment process to
+                    streamline hiring operations.
                   </p>
                 </div>
                 <div className="flex items-center  justify-between">

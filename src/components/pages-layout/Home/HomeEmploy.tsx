@@ -35,18 +35,17 @@ const HomeEmploy = () => {
             <CardContainer className="w-full !p-0" containerClassName="!py-0">
               <CardBody className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-lg overflow-hidden">
                 {/* Updated background gradient using primary-secondary */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-secondary/60 to-primary-secondary/70">
+                <div className="absolute inset-0 ">
                   <Image
                     src="/images/partner.jpg"
                     alt="Employment Services"
                     fill
-                    className="object-contain p-2 sm:p-4 rounded-lg opacity-85 mix-blend-multiply hover:opacity-90 transition-all duration-300"
-                    sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, 40vw"
+                    className="p-2 border-4 border-primary-secondary  object-contain sm:p-4 rounded-lg  hover:opacity-90 transition-all duration-300"
                     priority
                   />
                 </div>
                 {/* Updated overlay gradient */}
-                <div className="absolute inset-0 rounded-lg shadow-xl bg-gradient-to-r from-primary-secondary/10 to-transparent" />
+                {/* <div className="absolute inset-0 rounded-lg shadow-xl bg-gradient-to-r from-primary-secondary/10 to-transparent" /> */}
               </CardBody>
             </CardContainer>
           </div>
