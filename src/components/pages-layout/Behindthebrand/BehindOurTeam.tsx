@@ -5,67 +5,69 @@ export default function BehindOurTeam() {
   return (
     <section className="py-12 px-4 sm:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-[45px] text-black md:text-4xl font-bold text-center mb-12"></h2>
+        <h2 className="text-[45px] text-black md:text-4xl font-bold text-center mb-12">
+          Looking for a job? <br /> Join our team
+        </h2>
         <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
           <TeamCard
             name="Chief Sales Officer"
             title="CSO"
-            description={`Drive growth.\nLead success.`}
+            description={`Drive growth. Lead success.`}
             emailLink="sales@company.com"
           />
           <TeamCard
             name="Chief Executive Officer"
             title="CEO"
-            description={`Drive growth.\nLead success.`}
+            description={`Drive growth.Lead success.`}
             emailLink="sales@company.com"
           />
           <TeamCard
             name="Chief Technology Officer"
             title="CTO"
-            description={`Drive growth.\nLead success.`}
+            description={`Drive growth.Lead success.`}
             emailLink="sales@company.com"
           />
           <TeamCard
             name="Chief Marketing Officer"
             title="CMO"
-            description={`Drive growth.\nLead success.`}
+            description={`Drive growth.Lead success.`}
             emailLink="sales@company.com"
           />
           <TeamCard
             name="Chief Financial Officer"
             title="CFO"
-            description={`Drive growth.\nLead success.`}
+            description={`Drive growth.Lead success.`}
             emailLink="sales@company.com"
           />
           <TeamCard
             name="Chief Operating Officer"
             title="COO"
-            description={`Drive growth.\nLead success.`}
+            description={`Drive growth.Lead success.`}
             emailLink="sales@company.com"
           />
           <TeamCard
             name="Chief Technology Officer"
             title="CTO"
-            description={`Drive growth.\nLead success.`}
+            description={`Drive growth.Lead success.`}
             emailLink="sales@company.com"
           />
           <TeamCard
             name="Chief Information Officer"
             title="CIO"
-            description={`Drive growth.\nLead success.`}
+            description={`Drive growth.Lead success.`}
             emailLink="sales@company.com"
           />
 
           <TeamCard
             name="Chief Product Officer"
             title="CPO"
-            description={`Drive growth.\nLead success.`}
+            description={`Drive growth.Lead success.`}
             emailLink="sales@company.com"
           />
           <TeamCard
             name="Chief Data Officer"
             title="CDO"
-            description={`Drive growth.\nLead success.`}
+            description={`Drive growth.Lead success.`}
             emailLink="sales@company.com"
           />
 

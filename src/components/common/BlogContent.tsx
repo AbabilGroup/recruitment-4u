@@ -1,40 +1,58 @@
-import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import React, { JSX } from "react";
 
 interface BlogContentProps {
-  title: string;
-  paragraphs: string[];
-  image: StaticImageData;
-  imageAlt?: string;
+  content: {
+    paragraphs: Array<
+      | {
+          type: "text";
+          content: string;
+        }
+      | {
+          type: "image";
+          src: string;
+          alt: string;
+          caption?: string;
+        }
+    >;
+  };
 }
-
-const BlogContent: React.FC<BlogContentProps> = ({
-  title,
-  paragraphs,
-  image,
-  imageAlt,
-}) => {
+export function BlogContent({ content }: BlogContentProps): JSX.Element {
   return (
-    <section className="bg-white text-gray-800 px-4 md:px-20 py-12">
-      <div className="max-w-4xl mx-auto space-y-8">
-        {paragraphs.map((para, index) => (
-          <p key={index} dangerouslySetInnerHTML={{ __html: para }} />
-        ))}
-
-        <h2 className="text-2xl md:text-3xl font-semibold">{title}</h2>
-
-        <div className="flex justify-center">
-          <Image
-            src={image}
-            alt={imageAlt || "Blog Image"}
-            width={800}
-            height={400}
-            className="rounded-lg shadow-md"
-          />
-        </div>
-      </div>
-    </section>
+    <div className="max-w-3xl mt-10 mx-auto space-y-6">
+      {content.paragraphs.map((item, index) => {
+        if (item.type === "text") {
+          return (
+            <p
+              key={index}
+              className="text-lg text-primary leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: item.content }}
+            />
+          );
+        }
+        if (item.type === "image") {
+          return (
+            <div key={index} className="my-8">
+              <div className="relative aspect-video w-full rounded-lg overflow-hidden">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  priority={index === 0} // Optional: prioritize first image load
+                />
+              </div>
+              {item.caption && (
+                <p className="mt-2 text-sm text-center text-gray-600">
+                  {item.caption}
+                </p>
+              )}
+            </div>
+          );
+        }
+        return null;
+      })}
+    </div>
   );
-};
-
-export default BlogContent;
+}

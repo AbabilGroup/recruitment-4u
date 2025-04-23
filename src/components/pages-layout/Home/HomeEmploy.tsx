@@ -39,7 +39,7 @@ const HomeEmploy = () => {
                 {/* Updated background gradient using primary-secondary */}
                 <div className="absolute inset-0 ">
                   <Image
-                    src="/images/partner.jpg"
+                    src="/images/partner.png"
                     alt="Employment Services"
                     fill
                     className="p-2  object-contain sm:p-4 rounded-lg  hover:opacity-90 transition-all duration-300"
@@ -77,7 +77,7 @@ const HomeEmploy = () => {
                 romania: (chunks) => <strong>{chunks}</strong>,
                 european: (chunks) => <strong>{chunks}</strong>,
               })} */}
-              {/* We specialize in recruiting and selecting foreign workers from
+              We specialize in recruiting and selecting foreign workers from
               various regions, including <strong>Asia</strong>, the{" "}
               <strong>Gulf</strong>, <strong>North and South America</strong>,
               and <strong>Africa</strong>. Operating from our central offices in{" "}
@@ -85,7 +85,7 @@ const HomeEmploy = () => {
               <strong>UK</strong>, <strong>Croatia</strong>,{" "}
               <strong>Malta</strong>, <strong>Bulgaria</strong>,{" "}
               <strong>Poland</strong>, <strong>Romania</strong>, and other{" "}
-              <strong>European</strong> nations. */}
+              <strong>European</strong> nations.
             </p>
           </motion.div>
         </div>
