@@ -1,20 +1,28 @@
 import Image from "next/image";
 import React, { JSX } from "react";
 
+type TextParagraph = {
+  type: "text";
+  content: string;
+};
+
+type ImageParagraph = {
+  type: "image";
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
+type HtmlParagraph = {
+  type: "html";
+  content: string;
+};
+
+type ParagraphItem = TextParagraph | ImageParagraph | HtmlParagraph;
+
 interface BlogContentProps {
   content: {
-    paragraphs: Array<
-      | {
-          type: "text";
-          content: string;
-        }
-      | {
-          type: "image";
-          src: string;
-          alt: string;
-          caption?: string;
-        }
-    >;
+    paragraphs: ParagraphItem[];
   };
 }
 export function BlogContent({ content }: BlogContentProps): JSX.Element {
@@ -51,6 +59,19 @@ export function BlogContent({ content }: BlogContentProps): JSX.Element {
             </div>
           );
         }
+        if (item.type === "html") {
+          return (
+            <ul key={index} className="space-y-2 my-4">
+              <li key={index} className="flex items-start">
+                <span
+                  className="text-lg text-primary"
+                  dangerouslySetInnerHTML={{ __html: item.content }}
+                />
+              </li>
+            </ul>
+          );
+        }
+
         return null;
       })}
     </div>

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function BehindHero() {
   return (
@@ -14,20 +13,7 @@ export default function BehindHero() {
           style={{ backgroundPosition: "50% center" }}></div>
 
         {/* Right image - now with relative positioning for the child Image */}
-        <div className="w-1/2 relative bg-[url('/images/behind2.jpg')] bg-cover bg-no-repeat bg-center">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image
-              src="/images/behind3.jpg"
-              alt="Additional content image"
-              width={400} // Adjust based on your needs
-              height={400} // Adjust based on your needs
-              style={{
-                maxWidth: "60%", // Controls how much space the image takes
-                maxHeight: "60%",
-              }}
-            />
-          </div>
-        </div>
+        <div className="w-1/2 relative bg-[url('/images/behind2.jpg')] bg-cover bg-no-repeat bg-center"></div>
       </div>
 
       {/* Text overlay */}
