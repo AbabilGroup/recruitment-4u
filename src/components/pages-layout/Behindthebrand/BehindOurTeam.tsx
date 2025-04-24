@@ -6,7 +6,7 @@ export default function BehindOurTeam() {
     <section className="py-12 px-4 sm:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-[45px] text-black md:text-4xl font-bold text-center mb-12">
-          Looking for a job? <br /> Join our team
+          Ready to level up? Join us
         </h2>
         <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
           <TeamCard
