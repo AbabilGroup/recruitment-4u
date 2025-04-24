@@ -1,16 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 // import { useRouter } from "next/router";
 
 const Hero = () => {
   const t = useTranslations("hero");
-  const router = useRouter();
-  const handleButtonClick = (path: string) => {
-    router.push(path);
-  };
+  // const router = useRouter();
+  // const handleButtonClick = (path: string) => {
+  //   router.push(path);
+  // };
   return (
     <section
       className={cn(
@@ -96,7 +96,7 @@ const Hero = () => {
                 }}
                 className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-2 sm:pt-4">
                 {/* Buttons */}
-                <motion.button
+                {/* <motion.button
                   onClick={() => handleButtonClick("/contact")}
                   whileHover={{ y: -5, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -108,9 +108,9 @@ const Hero = () => {
                     "hover:bg-primary-secondary/90"
                   )}>
                   {t("buttonText1")}
-                </motion.button>
+                </motion.button> */}
 
-                <motion.button
+                {/* <motion.button
                   onClick={() => handleButtonClick("/for-companies")}
                   whileHover={{ y: -5, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -123,7 +123,7 @@ const Hero = () => {
                     "hover:bg-primary-secondary/10"
                   )}>
                   {t("buttonText2")}
-                </motion.button>
+                </motion.button> */}
               </motion.div>
             </motion.div>
           </div>

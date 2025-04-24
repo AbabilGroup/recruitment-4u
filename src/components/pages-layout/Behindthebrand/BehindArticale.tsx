@@ -1,7 +1,13 @@
-import CardArticale from "@/components/common/CardArticale";
+"use client";
 import React from "react";
+import CardArticale from "@/components/common/CardArticale";
+import { useRouter } from "next/navigation";
 
 export default function BehindArticale() {
+  const router = useRouter();
+  const handleButtonClick = (path: string) => {
+    router.push(path);
+  };
   return (
     <section className="py-12 px-4 sm:px-6 bg-white">
       <h2 className="text-[45px] text-black md:text-4xl font-bold text-center mb-12">
@@ -9,6 +15,7 @@ export default function BehindArticale() {
       </h2>
       <div className="grid mt-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-10">
         <CardArticale
+          onClick={() => handleButtonClick("/rercuitment-blog-1")}
           title="Which Nationality Should You Prefer When You Think Outside Europe?"
           imageSrc="/images/articale1.jpg"
         />

@@ -82,7 +82,7 @@ const Solution = () => {
     const animate = () => {
       const now = Date.now();
       if (now - lastAnimationTime >= intervalTime) {
-        setTitleIndex(prev => prev === 0 ? 1 : 0);
+        setTitleIndex((prev) => (prev === 0 ? 1 : 0));
         lastAnimationTime = now;
       }
       rafId = requestAnimationFrame(animate);
@@ -124,63 +124,67 @@ const Solution = () => {
       }, 150);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
       if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     };
   }, [api, isInView, startAutoplay]);
 
-  const cardStyles = useMemo(() => cn(
-    "border-none h-full carousel-card",
-    "hover:bg-primary hover:text-white transition-all duration-300", 
-    "cursor-grab active:cursor-grabbing",
-    "transform-gpu will-change-transform"
-  ), []);
+  const cardStyles = useMemo(
+    () =>
+      cn(
+        "border-none h-full carousel-card",
+        "hover:bg-primary hover:text-white transition-all duration-300",
+        "cursor-grab active:cursor-grabbing",
+        "transform-gpu will-change-transform"
+      ),
+    []
+  );
 
-  const renderCard = useCallback((solution: Solution, index: number) => (
-    <CarouselItem
-      key={index}
-      className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 will-change-transform"
-    >
-      <Card className={cardStyles}>
-        <CardContent className="p-6 flex flex-col h-full group">
-          <div className="space-y-6 flex-1 flex flex-col">
-            {/* Icon container */}
-            <div className="p-4 rounded-lg bg-primary w-fit">
-              <AnimatedSvgIcon
-                iconSrc={solution.icon}
-                className="w-10 h-10 sm:w-12 sm:h-12 relative transform-gpu"
-              />
-            </div>
-            <NoSelector>
-              <div className="flex-1 flex flex-col justify-between space-y-4">
-                {/* Title with hover effect */}
-                <h3 className="text-xl sm:text-2xl font-semibold text-black group-hover:text-white transition-colors duration-300 line-clamp-2">
-                  {solution.title}
-                </h3>
-                {/* Description with hover effect */}
-                <p className="text-black group-hover:text-white/90 transition-colors duration-300 leading-relaxed text-sm sm:text-base">
-                  {solution.description}
-                </p>
+  const renderCard = useCallback(
+    (solution: Solution, index: number) => (
+      <CarouselItem
+        key={index}
+        className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 will-change-transform">
+        <Card className={cardStyles}>
+          <CardContent className="p-6 flex flex-col h-full group">
+            <div className="space-y-6 flex-1 flex flex-col">
+              {/* Icon container */}
+              <div className="p-4 rounded-lg shadow-xl w-fit">
+                <AnimatedSvgIcon
+                  iconSrc={solution.icon}
+                  className="w-10 h-10 sm:w-12 sm:h-12 relative transform-gpu"
+                />
               </div>
-            </NoSelector>
-          </div>
-        </CardContent>
-      </Card>
-    </CarouselItem>
-  ), [cardStyles]);
+              <NoSelector>
+                <div className="flex-1 flex flex-col justify-between space-y-4">
+                  {/* Title with hover effect */}
+                  <h3 className="text-xl sm:text-2xl font-semibold text-black group-hover:text-white transition-colors duration-300 line-clamp-2">
+                    {solution.title}
+                  </h3>
+                  {/* Description with hover effect */}
+                  <p className="text-black group-hover:text-white/90 transition-colors duration-300 leading-relaxed text-sm sm:text-base">
+                    {solution.description}
+                  </p>
+                </div>
+              </NoSelector>
+            </div>
+          </CardContent>
+        </Card>
+      </CarouselItem>
+    ),
+    [cardStyles]
+  );
 
-  
   return (
-    <section 
-      ref={sectionRef} 
-      className="py-16 sm:py-20 lg:py-30 relative transform-gpu" 
-    >
+    <section
+      ref={sectionRef}
+      className="py-16 sm:py-20 lg:py-30 relative transform-gpu">
       <div className="container mx-auto px-4 relative">
         {/* Title with Animation */}
-        <div className="text-center space-y-4 mb-8 sm:mb-12 lg:mb-20 relative"> 
+        <div className="text-center space-y-4 mb-8 sm:mb-12 lg:mb-20 relative">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
             Find{" "}
             <AnimatePresence mode="wait">
@@ -190,12 +194,11 @@ const Solution = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -20, opacity: 0 }}
-                  transition={{ 
+                  transition={{
                     duration: 0.4,
-                    ease: "easeOut"
+                    ease: "easeOut",
                   }}
-                  className="text-primary-secondary inline-block transform-gpu" 
-                >
+                  className="text-primary-secondary inline-block transform-gpu">
                   {titles[titleIndex]}
                 </motion.span>
               )}
@@ -208,17 +211,16 @@ const Solution = () => {
         </div>
 
         {/* Optimized Solutions Carousel */}
-        <div className="relative px-4 sm:px-12 transform-gpu mt-8 lg:mt-16"> 
+        <div className="relative px-4 sm:px-12 transform-gpu mt-8 lg:mt-16">
           <Carousel
             opts={{
               align: "start",
               loop: true,
-              skipSnaps: true, 
-              dragFree: true  
+              skipSnaps: true,
+              dragFree: true,
             }}
             setApi={setApi}
-            className="w-full carousel-container relative"
-          >
+            className="w-full carousel-container relative">
             <CarouselContent className="-ml-2 md:-ml-4 carousel-container relative">
               {solutions.map(renderCard)}
             </CarouselContent>

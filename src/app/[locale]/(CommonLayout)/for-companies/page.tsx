@@ -1,38 +1,37 @@
-"use client";  
+"use client";
 
-import Banner from '@/components/pages-layout/Company/Banner';
-import CompanyForm from '@/components/pages-layout/Company/CompanyForm';
-import Industries from '@/components/pages-layout/Company/Industries';
-import Services from '@/components/pages-layout/Company/Services';
-import CommonBanner from '@/components/common/CommonBanner';
-import FAQ from '@/components/pages-layout/Company/Fqa';
+import Banner from "@/components/pages-layout/Company/Banner";
+import CompanyForm from "@/components/pages-layout/Company/CompanyForm";
+import Industries from "@/components/pages-layout/Company/Industries";
+import Services from "@/components/pages-layout/Company/Services";
+// import CommonBanner from "@/components/common/CommonBanner";
+import FAQ from "@/components/pages-layout/Company/Fqa";
 
 export default function CompanyPage() {
-  const handleCooperate = () => {
-  };
+  // const handleCooperate = () => {};
 
   return (
     <main className="min-h-screen pt-20">
       <CompanyForm />
-      <Banner 
+      <Banner
         text="We invest capital to gain in-depth knowledge of every industry."
         withMargin={true}
       />
       <Industries />
-      <Banner 
+      <Banner
         text="We carefully craft selection processes for each specific profession."
         withMargin={true}
       />
       <Services />
-      <CommonBanner
+      {/* <CommonBanner
         title="Using innovations, we maximize your potential."
         buttonText="Let's Cooperate"
         onButtonClick={handleCooperate}
-      />
+      /> */}
       <FAQ />
       <Banner
-        text="Short on time?"
-        subtitle="Contact us now and we will find a solution immediately. info@recruitment4u.com"
+        text="Do you have additional questions?"
+        subtitle="Contact us with confidence and we will find a solution. job@Recruitment4u.co"
         withMargin={true}
       />
     </main>

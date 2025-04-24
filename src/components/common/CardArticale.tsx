@@ -9,7 +9,7 @@ type CardProps = {
 
 const CardArticale: React.FC<CardProps> = ({ title, onClick, imageSrc }) => {
   return (
-    <div className="max-w-96 cursor-pointer rounded-2xl shadow-md bg-white overflow-hidden group transition">
+    <div onClick={onClick} className="max-w-96 cursor-pointer rounded-2xl shadow-md bg-white overflow-hidden group transition">
       {/* Full-width responsive image */}
       <div className="relative w-full h-60">
         <Image

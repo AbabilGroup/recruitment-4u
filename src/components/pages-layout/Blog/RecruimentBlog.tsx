@@ -1,7 +1,7 @@
 import React from "react";
 import BlogHeaderCard from "@/components/common/BlogHeaderCard";
-import Author from "../../../../public/images/author.jpg";
-import BlogImg from "../../../../public/images/articale3.jpg";
+import Author from "../../../../public/images/valueman1.jpg";
+import BlogImg from "../../../../public/images/articale1.jpg";
 import { BlogContent } from "@/components/common/BlogContent";
 
 type ParagraphItem =
@@ -88,24 +88,90 @@ export default function RecruimentBlog() {
 
       {
         type: "html",
-        content: `<ul class="space-y-2 my-4">
-        <p class="text-lg mb-10 text-primary leading-relaxed">Here’s why clients across Europe trust us with their international hiring::</p>
+        content: `<ul class="space-y-2 list-disc my-4">
+        <p class="text-lg mb-10 text-primary leading-relaxed"> why clients across Europe trust us with their international hiring:</p>
                 <li class="flex items-start">
-                 <span class="mr-2">✅</span>
-                 <span class=" font-semibold"> Access to English-speaking professionals from high-talent regions like India, Nigeria, and the Philippines</span>
+                <span class="mr-3">✅</span>
+                <span class=" font-black"> Access to English-speaking professionals from high-talent regions like India, Nigeria, and the Philippines</span>
+               
                 </li>
-                <li class="flex  items-start">
-                 <span class="mr-2">✅</span>
-                  <span class=" font-semibold" >End-to-end recruitment support: sourcing, screening, compliance, and onboarding</span>
+                <li class="flex items-start">
+                <span class="mr-3">✅</span>
+                  <span class="font-black" >End-to-end recruitment support: sourcing, screening, compliance, and onboarding</span>
                 </li>
-                
+                <li class="flex items-start">
+                <span class="mr-3">✅</span>
+                <span class="font-black">Compliance knowledge across visa processes, global tax laws, and local labour standards </span>
+                </li>
+                 <li class="flex items-start">
+                <span class="mr-3">✅</span>
+                <span class="font-black">Cost-effective and time-saving hiring processes</span>
+                </li>
+          
                 </ul>
                 `,
+      },
+      {
+        type: "text",
+        content: `Whether you're hiring for a single role or scaling a global division, we provide flexible, efficient solutions tailored to your hiring goals.`,
+      },
+      {
+        type: "text",
+        content: `<strong>How to Choose the Right Global Recruitment Agency</strong>`,
+      },
+      {
+        type: "text",
+        content: `Not all agencies are created equal. When choosing a recruitment partner outside Europe, keep these points in mind:`,
+      },
+      {
+        type: "html",
+        content: `<ul class="space-y-2 list-decimal my-4">
+        <li>
+        <strong>Check their international reach</strong> – Does the agency have strong candidate pipelines in high-potential regions?
+        </li>
+         <li>
+        <strong>Assess compliance knowledge</strong> –Can they advise on cross-border hiring, payroll, or visa processes?
+        </li>
+          <li>
+        <strong>Evaluate communication</strong>– Can they align with your company values and understand your team culture?
+        </li>
+        </ul>
+        `,
+      },
+      {
+        type: "text",
+        content: `At Recruitment-4u, we tick all the boxes. Our global presence, data-driven methods, and personal approach make us a trusted partner for businesses across Europe.`,
+      },
+      {
+        type: "text",
+        content: `<strong></strong>`,
+      },
+      {
+        type: "text",
+        content: `<strong>Final Thoughts: Expand Globally, Hire Confidently</strong>`,
+      },
+      {
+        type: "text",
+        content: `Hiring outside Europe doesn’t need to be overwhelming. With the right guidance, you can unlock access to diverse, skilled, and highly motivated professionals who bring real value to your business.`,
+      },
+      {
+        type: "text",
+        content: `At Recruitment-4u, we connect companies with global talent that fits seamlessly into your workflows and company culture. From tech to finance, marketing to healthcare whatever your need, we’ve got the talent to match.`,
+      },
+      {
+        type: "text",
+        content: `<strong>Ready to grow your team beyond borders?</strong> <br />
+  
+        Let Recruitment-4u take the stress out of global hiring. Contact us today and we'll help you find the right candidate, faster..`,
+      },
+      {
+        type: "text",
+        content: `Still thinking about it? Browse our success stories or talk to our consultants to see why businesses across Europe call Recruitment-4u their trusted recruitment partner.`,
       },
     ] as ParagraphItem[],
   };
   return (
-    <section>
+    <section className="container py-12 px-4 sm:px-6 bg-white">
       <BlogHeaderCard
         category="Recruiting"
         date="July 2, 2023"

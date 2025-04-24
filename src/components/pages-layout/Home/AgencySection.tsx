@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { ChevronDown, Building2, Users2, Filter } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
-import NoSelector from "@/components/common/Noselector";
+// import NoSelector from "@/components/common/Noselector";
 
 export default function AgencySection() {
   const [openItem, setOpenItem] = useState<number>(0);
@@ -38,38 +40,41 @@ export default function AgencySection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="aspect-square bg-primary flex items-center justify-center p-6 sm:p-8">
-              <NoSelector>
-                <Building2
-                  className="w-12 h-12 sm:w-16 sm:h-16 text-primary-secondary"
-                  strokeWidth={1.5}
-                />
-              </NoSelector>
+              className="aspect-square bg-primary flex items-center justify-center ">
+              <Image
+                src="/images/modern1.png"
+                alt="Image"
+                className="w-full h-full object-contain"
+                width={100}
+                height={100}
+              />
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="aspect-square bg-primary flex items-center justify-center p-6 sm:p-8 -mt-4 sm:-mt-8">
-              <NoSelector>
-                <Users2
-                  className="w-12 h-12 sm:w-16 sm:h-16 text-primary-secondary"
-                  strokeWidth={1.5}
-                />
-              </NoSelector>
+              className="aspect-square bg-primary flex items-center justify-center -mt-4 sm:-mt-8">
+              <Image
+                src="/images/modern2.png"
+                alt="Image"
+                className="w-full h-full object-contain"
+                width={100}
+                height={100}
+              />
             </motion.div>
             {/* Bottom row - Centered card */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="col-span-2 aspect-square bg-primary flex items-center justify-center p-6 sm:p-8 w-1/2 -mt-10 sm:-mt-14 ml-16 sm:ml-24">
-              <NoSelector>
-                <Filter
-                  className="w-12 h-12 sm:w-16 sm:h-16 text-primary-secondary"
-                  strokeWidth={1.5}
-                />
-              </NoSelector>
+              className="col-span-2 aspect-square bg-primary flex items-center justify-center  w-1/2 -mt-10 sm:-mt-14 ml-16 sm:ml-24">
+              <Image
+                src="/images/modern3.png"
+                alt="Image"
+                className="w-full h-full object-contain"
+                width={100}
+                height={100}
+              />
             </motion.div>
           </div>
 
