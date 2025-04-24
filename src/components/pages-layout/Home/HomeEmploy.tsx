@@ -35,7 +35,7 @@ const HomeEmploy = () => {
           {/* Image Container remains unchanged */}
           <div className="order-1 lg:order-2 mb-8 lg:mb-0 max-w-[300px] sm:max-w-full mx-auto">
             <CardContainer className="w-full !p-0" containerClassName="!py-0">
-              <CardBody className="relative bg-primary-secondary w-full aspect-[4/3] sm:aspect-[16/9] rounded-lg overflow-hidden">
+              <CardBody className="relative  w-full aspect-[4/3] sm:aspect-[16/9] rounded-lg overflow-hidden">
                 {/* Updated background gradient using primary-secondary */}
                 <div className="absolute inset-0 ">
                   <Image
