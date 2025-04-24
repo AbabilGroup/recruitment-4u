@@ -1,9 +1,7 @@
-import Image from "next/image";
-
 type CardProps = {
   title: string;
   description: string;
-  avatars: string[];
+
   onClick?: () => void;
   bgColor?: string;
 };
@@ -12,12 +10,11 @@ const Card: React.FC<CardProps> = ({
   title,
   bgColor,
   description,
-  avatars,
   onClick,
 }) => {
   return (
     <div
-      className={`text-white p-10 rounded-[2rem] w-full h-[450px] max-w-sm ${bgColor} shadow-lg`}>
+      className={`text-white p-10 rounded-[2rem] w-full h-[400px] max-w-sm ${bgColor} shadow-lg`}>
       <div className="flex flex-col  justify-between h-full">
         <div>
           <h2 className="text-[28px] font-bold mb-2">{title}</h2>
@@ -26,18 +23,7 @@ const Card: React.FC<CardProps> = ({
           </p>
         </div>
         <div className="flex items-center  justify-between">
-          <div className="flex -space-x-3">
-            {avatars.map((src, idx) => (
-              <Image
-                key={idx}
-                src={src}
-                width={60}
-                height={60}
-                className="rounded-full ring-2 ring-white"
-                alt={`avatar-${idx}`}
-              />
-            ))}
-          </div>
+          <div className="flex -space-x-3"></div>
           <button
             onClick={onClick}
             className="w-14 h-14 bg-white text-[#071A42] rounded-full flex items-center justify-center shadow-lg">

@@ -55,10 +55,7 @@ const CardHome = () => {
           <Card
             title={card1("title")}
             description={card1("description")}
-            avatars={[
-              "https://randomuser.me/api/portraits/women/1.jpg",
-              "https://randomuser.me/api/portraits/women/2.jpg",
-            ]}
+    
             bgColor="bg-[#05123F]"
           />
         </motion.div>
@@ -70,10 +67,7 @@ const CardHome = () => {
           <Card
             title={card2("title")}
             description={card2("description")}
-            avatars={[
-              "https://randomuser.me/api/portraits/women/1.jpg",
-              "https://randomuser.me/api/portraits/women/2.jpg",
-            ]}
+
             bgColor="bg-[#009AEE]"
           />
         </motion.div>
@@ -85,10 +79,7 @@ const CardHome = () => {
           <Card
             title={card3("title")}
             description={card3("description")}
-            avatars={[
-              "https://randomuser.me/api/portraits/women/1.jpg",
-              "https://randomuser.me/api/portraits/women/2.jpg",
-            ]}
+  
             bgColor="bg-[#90DA7B]"
           />
         </motion.div>
