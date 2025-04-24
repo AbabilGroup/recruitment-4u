@@ -5,18 +5,19 @@ import React from "react";
 
 const Content = [
   {
-    title: "Access to responsible workers",
-    paragraphs: "Access to a qualified and verified base of workers.",
+    title: "Access to Skilled Talent",
+    paragraphs:
+      "Gain access to a pool of qualified, vetted professionals ready to meet your business needs.",
   },
   {
-    title: "Preventing project delays",
+    title: "Flexible Workforce Solutions",
     paragraphs:
-      "We ensure the execution of projects on time with a qualified workforce.",
+      " We recognize the importance of adaptability and offer workforce management solutions tailored to your operational demands.",
   },
   {
-    title: "Quick and easy recruitment process",
+    title: "Fast & Hassle-Free Recruitment",
     paragraphs:
-      "We speed up the process of finding, administering and hiring workers.",
+      "Accelerate your hiring process with our streamlined approach to sourcing, onboarding, and managing talent.",
   },
 ];
 export default function ConstructionHero() {
@@ -25,18 +26,18 @@ export default function ConstructionHero() {
       <SolutionArticale
         imageSrc="/images/construction1.jpg"
         title="Challenges in finding construction workers"
-        highlightedText="The current problem in construction in finding workers revolves around a significant lack of labor. This hinders productivity, increases project completion time and leads to challenges in meeting the demand for skilled construction workers."
+        highlightedText="The current issue in the construction industry regarding the shortage of workers stems from a significant lack of labor. This shortage hampers productivity, extends project timelines, and creates challenges in meeting the demand for skilled construction workers."
         paragraphs={[
-          "The current market in Croatia shows a need for construction workers, as evidenced by numerous advertisements for construction positions. Companies often struggle to find dedicated and skilled workers to meet this demand, leading to hiring difficulties and potential delays in project completion.",
-          "As a foreign worker recruitment agency, there are several ways we can help you. First, we leverage our network of skilled foreign workers who are willing to work in Croatia. By connecting these workers with companies in need, we help bridge the gap between demand and supply in the labor market. In addition, we provide support in navigating the legal requirements for hiring foreign workers, ensuring a smooth and compliant hiring process for both companies and workers.",
+          "The European market is experiencing a similar need for construction workers, as reflected in numerous advertisements for available construction positions. Companies across the continent often face difficulties in finding dedicated and skilled workers to meet this demand, which can result in hiring challenges and potential delays in project completion.",
+          "As a foreign worker recruitment agency, we offer several ways to assist you. First, we leverage our extensive network of skilled foreign workers who are eager to work across Europe. By connecting these workers with companies in need, we help bridge the gap between labor supply and demand. Additionally, we provide support in navigating the legal requirements for hiring foreign workers, ensuring a seamless and compliant hiring process for both companies and workers.",
 
-          "The solution we offer you is employment mediation.",
+          "Our solution to address these challenges is employment mediation.",
         ]}
       />
       <SolutionDetails
         imageSrc="/images/construction2.jpg"
         title="Employment mediation"
-        paragraphs="By providing an employment mediation service, we help companies to access a pool of qualified workers, we solve the challenges you face in finding a qualified workforce. Overall, by facilitating the employment of foreign workers and offering comprehensive employment services, we play a key role in meeting the workforce needs of the construction industry in Croatia."
+        paragraphs="By offering an employment mediation service, we assist companies in accessing a pool of qualified workers, addressing the challenges you face in finding a skilled workforce. Through the facilitation of foreign worker employment and the provision of comprehensive employment services, we play a crucial role in meeting the workforce needs of the construction industry across Europe."
       />
       <div className="w-full flex justify-center px-4">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">

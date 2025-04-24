@@ -11,7 +11,7 @@ export default function ConstructionHeader() {
     <section className="py-12 container">
       <SolutionHeader
         title="Employment of construction workers"
-        description="We offer you a wide range of activities, among others, they are armourers, carpenters, carpenters, masons, fitters of metal structures, roofers, drivers of construction machines."
+        description="We offer a wide range of skilled professionals, including armourers, carpenters, masons, metal structure fitters, roofers, and construction machinery operators."
         onClick={() => handleButtonClick("/contact")}
       />
     </section>

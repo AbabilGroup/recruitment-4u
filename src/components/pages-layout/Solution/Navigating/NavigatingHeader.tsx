@@ -11,10 +11,7 @@ export default function NavigatingHeader() {
     <section className="py-12 container ">
       <SolutionHeader
         title="Navigating immigration laws"
-        description=" Following immigration laws for Croatian companies can be complex due
-          to the legal framework that regulates the employment of foreign
-          workers in Croatia. This is where we step in to help and speed up the
-          whole process."
+        description="Navigating immigration laws across Europe can be challenging due to the varying legal frameworks governing the employment of foreign workers. That’s where we come into simplify and accelerate the entire process."
         onClick={() => handleButtonClick("/contact")}
       />
     </section>

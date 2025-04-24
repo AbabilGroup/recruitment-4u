@@ -4,18 +4,19 @@ import SolutionDetails from "@/components/common/SolutionDetails";
 
 const Content = [
   {
-    title: "Access to skilled workers",
+    title: "Access to Skilled Talent",
     paragraphs:
-      "We offer a database of already verified candidates and reduce the risk of employment.",
+      " Gain access to a pool of qualified, vetted professionals ready to meet your business needs.",
   },
   {
-    title: "Flexibility in employment",
-    paragraphs: "We understand the need for flexible workforce management.",
+    title: "Flexible Workforce Solutions",
+    paragraphs:
+      " We recognize the importance of adaptability and offer workforce management solutions tailored to your operational demands.",
   },
   {
-    title: "Quick and easy recruitment process",
+    title: "Fast & Hassle-Free Recruitment",
     paragraphs:
-      "We speed up the process of finding, administering and hiring workers.",
+      "Accelerate your hiring process with our streamlined approach to sourcing, onboarding, and managing talent.",
   },
 ];
 export default function MedicalHero() {
@@ -24,19 +25,20 @@ export default function MedicalHero() {
       <SolutionArticale
         imageSrc="/images/medical1.jpg"
         title="Challenges in finding medical workers"
-        highlightedText="The challenge of finding qualified medical personnel, especially in specialized fields such as healthcare, is a complex issue facing many healthcare facilities around the world."
+        highlightedText="The challenge of finding qualified medical personnel, particularly in specialized fields such as healthcare, is a complex issue facing many healthcare facilities across Europe."
         paragraphs={[
-          "In Croatia, the health sector faces similar challenges as many other countries in finding and retaining qualified medical personnel. The demand for skilled healthcare professionals, including doctors, nurses, pharmacists and technicians, continues to grow due to factors such as an aging population, advances in medical treatments and evolving healthcare needs.",
-          "The demand for medical professionals continues to grow, driven by factors such as population growth, an aging population, and advances in medical technology.",
+          "In Europe, the healthcare sector faces similar challenges as many other regions in finding and retaining qualified medical personnel. The demand for skilled healthcare professionals, including doctors, nurses, pharmacists, and technicians, continues to grow due to factors such as an aging population, advances in medical treatments, and evolving healthcare needs.",
 
-          "Croatia’s healthcare system relies on a combination of public and private institutions, each with unique staffing needs. The country’s medical workforce is highly skilled, but there may be shortages in certain specialties or regions, leading to gaps in patient care and increased workloads on existing staff.",
-          "Healthcare facilities also often face difficulties in accurately forecasting their staffing needs, leading to shortages at critical times. This unpredictability can disrupt patient care and strain existing staff.",
+          "The demand for medical professionals continues to increase, driven by factors like population growth, an aging demographic, and advancements in medical technology.",
+
+          "Europe's healthcare system relies on a combination of public and private institutions, each with unique staffing needs. While the continent’s medical workforce is highly skilled, there are often shortages in certain specialties or regions, leading to gaps in patient care and increased workloads on existing staff.",
+          "Healthcare facilities also face difficulties in accurately forecasting their staffing needs, resulting in shortages during critical periods. This unpredictability can disrupt patient care and strain the workload of existing staff.",
         ]}
       />
       <SolutionDetails
         imageSrc="/images/medical2.jpg"
         title="Employment mediation"
-        paragraphs="Healthcare facilities also often face difficulties in accurately forecasting their staffing needs, leading to shortages at critical times. This unpredictability can disrupt patient care and strain existing staff."
+        paragraphs="Healthcare facilities across Europe often struggle with accurately forecasting their staffing needs, resulting in shortages during critical periods. This unpredictability can disrupt patient care and place additional strain on existing staff."
       />
       <div className="w-full flex justify-center px-4">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">

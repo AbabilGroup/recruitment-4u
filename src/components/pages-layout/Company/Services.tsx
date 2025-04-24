@@ -25,7 +25,7 @@ const services = [
     icon: Wrench,
   },
   {
-    title: "RECRUITMENT4U AGRO",
+    title: "Recruitment4u AGRO",
     description:
       "Recruitment4u Agro je projekt usmjeren na zadovoljavanje potreba primarnog sektora gospodarstva. Regrituiramo radnike za domaće gospodarstvenike u poljoprivredi, stočarstvu i prehrambenoj industriji.",
     icon: Wheat,
@@ -37,7 +37,7 @@ const services = [
     icon: UtensilsCrossed,
   },
   {
-    title: "RECRUITMENT4U CONSTRUCT",
+    title: "Recruitment4u CONSTRUCT",
     description:
       "Construction is a sector with the highest demand for foreign workers but also presents the greatest challenge in finding adequate labor. Recruitment4u Construct is a project aimed at finding a qualified workforce for this sector.",
     icon: Construction,
@@ -64,7 +64,7 @@ const ServiceCard = ({ service }: { service: Service }) => (
     {/* Icon Container - Added more margin bottom */}
     <div className="mb-5">
       <div
-        className="p-4 shadow-lg rounded-lg inline-block
+        className="p-4 bg-primary rounded-lg inline-block
         group-hover:bg-white transform transition-all duration-300">
         <service.icon
           className="w-6 h-6 text-primary-secondary group-hover:text-primary

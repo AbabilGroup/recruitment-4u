@@ -12,7 +12,7 @@ export default function SeasonalHeader() {
     <section className="py-12 container ">
       <SolutionHeader
         title="Employment of seasonal workers"
-        description="Waiter/bartender, cook, assistant kitchen worker, maid/cleaner and receptionist – we can help you in hiring any profession."
+        description="Whether you need a waiter, bartender, cook, kitchen assistant, cleaner, or receptionist – we’re here to help you hire the right talent for any role."
         onClick={() => handleButtonClick("/contact")}
       />
     </section>

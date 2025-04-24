@@ -5,18 +5,19 @@ import SolutionContent from "@/components/common/SolutionContent";
 
 const Content = [
   {
-    title: "Access to skilled workers",
+    title: "Access to Skilled Talent",
     paragraphs:
-      "We offer a database of already verified candidates and reduce the risk of employment.",
+      " Gain access to a pool of qualified, vetted professionals ready to meet your business needs",
   },
   {
-    title: "Flexibility in employment",
-    paragraphs: "We understand the need for flexible workforce management.",
+    title: "Flexible Workforce Solutions",
+    paragraphs:
+      " We recognize the importance of adaptability and offer workforce management solutions tailored to your operational demands.",
   },
   {
-    title: "Quick and easy recruitment process",
+    title: "Fast & Hassle-Free Recruitment",
     paragraphs:
-      "We speed up the process of finding, administering and hiring workers.",
+      " Accelerate your hiring process with our streamlined approach to sourcing, onboarding, and managing talent.",
   },
 ];
 export default function SeasonalHero() {
@@ -27,16 +28,15 @@ export default function SeasonalHero() {
         title="Challenges in finding seasonal workers"
         highlightedText="The problem of finding seasonal workers in Croatia, especially in industries such as tourism, catering, agriculture and construction, is multifaceted and often represents a significant challenge for employers."
         paragraphs={[
-          "The hospitality industry is more subject to seasonal changes than ever before, compared to any other sphere of activity.",
-          "Most of our clients during the first quarter cannot accurately predict the number and need for external or foreign workers during the high season.",
-          "It is obvious that the situation in which most resorts, hotels and restaurants make last-minute hiring decisions results in a sudden increase in demand for workers. This further results in the market’s unwillingness to meet that demand immediately. Namely, from the moment of signing the contract with the Employment Agency, it takes a month or even two until the foreign workers arrive at their workplace. Finding workers, testing qualifications, interviewing, paperwork and similar processes take up most of that time.",
-          "Therefore, we offer you a solution that eliminates the risks of long waits and delays in the arrival of workers: outsourcing of labor.",
+          "The hospitality industry, in particular, is now more affected by seasonal fluctuations than perhaps any other sector. Most of our clients struggle to accurately forecast their need for external or foreign workers during the high season, especially in the early months of the year.",
+          "As a result, many resorts, hotels, and restaurants make last-minute hiring decisions, which leads to a sudden surge in demand for workers. Unfortunately, the market often cannot respond to this demand immediately. From the moment an agreement is signed with a recruitment agency, it may take one to two months for foreign workers to arrive at their job sites. This timeline includes sourcing candidates, assessing qualifications, conducting interviews, processing paperwork, and other essential steps.",
+          "To address this, we offer a reliable solution that reduces the risks associated with delays and long waiting periods: labor outsourcing.",
         ]}
       />
       <SolutionDetails
         imageSrc="/images/seasonal2.jpg"
         title="Assignment of workers"
-        paragraphs="It enables quick and easy hiring of labor for seasonal projects or a specific period of time. You can use already available workers in Croatia, which speeds up the hiring process. We facilitate the conclusion of assignment agreements, and take responsibility for the payment of salaries and the accompanying administration. This service provides a practical solution for urgent manpower needs, providing flexibility and efficiency in managing workers for different projects and seasonal requirements."
+        paragraphs="t enables quick and easy hiring of labor for seasonal projects or fixed-term assignments. You can tap into an existing pool of workers across Europe, significantly speeding up the recruitment process. We handle the conclusion of assignment agreements and take full responsibility for salary payments and all related administrative tasks. This service offers a practical solution for urgent workforce needs, ensuring flexibility and efficiency in managing staff for various projects and seasonal demands."
       />
       <div className="w-full flex justify-center px-4">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">

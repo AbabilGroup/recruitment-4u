@@ -152,7 +152,7 @@ const Solution = () => {
           <CardContent className="p-6 flex flex-col h-full group">
             <div className="space-y-6 flex-1 flex flex-col">
               {/* Icon container */}
-              <div className="p-4 rounded-lg shadow-xl w-fit">
+              <div className="p-4 rounded-lg bg-primary w-fit">
                 <AnimatedSvgIcon
                   iconSrc={solution.icon}
                   className="w-10 h-10 sm:w-12 sm:h-12 relative transform-gpu"

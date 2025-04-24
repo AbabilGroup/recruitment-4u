@@ -11,7 +11,7 @@ export default function MedicalHeader() {
     <section className="py-12 container">
       <SolutionHeader
         title="Employment of medical workers"
-        description="Doctors, nurses, medical technicians, pharmacists and other health professionals – we can help you with the recruitment of all medical professions."
+        description="Doctors, nurses, medical technicians, pharmacists, and other healthcare professionals – we are here to assist you with recruiting for all medical roles.."
         onClick={() => handleButtonClick("/contact")}
       />
     </section>
