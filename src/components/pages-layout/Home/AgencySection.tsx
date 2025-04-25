@@ -40,7 +40,7 @@ export default function AgencySection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="aspect-square bg-primary flex items-center justify-center ">
+              className="aspect-square rounded-md bg-primary flex items-center justify-center ">
               <Image
                 src="/images/modern1.png"
                 alt="Image"
@@ -53,7 +53,7 @@ export default function AgencySection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="aspect-square bg-primary flex items-center justify-center -mt-4 sm:-mt-8">
+              className="aspect-square rounded-md bg-primary flex items-center justify-center -mt-4 sm:-mt-8">
               <Image
                 src="/images/modern2.png"
                 alt="Image"
@@ -67,11 +67,11 @@ export default function AgencySection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="col-span-2 aspect-square bg-primary flex items-center justify-center  w-1/2 -mt-10 sm:-mt-14 ml-16 sm:ml-24">
+              className="col-span-2 rounded-md aspect-square bg-primary flex items-center justify-center  w-1/2 -mt-10 sm:-mt-14 ml-16 sm:ml-24">
               <Image
                 src="/images/modern3.png"
                 alt="Image"
-                className="w-full h-full object-contain"
+                className="w-full  h-full object-contain"
                 width={100}
                 height={100}
               />
