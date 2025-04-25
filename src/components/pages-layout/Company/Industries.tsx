@@ -13,40 +13,67 @@ export default function Industries() {
     {
       title: "METAL INDUSTRY AND TECHNICAL FIELDS",
       content: [
-        "Welders", "Metalworkers", "Pipefitters", "Metal casters",
-        "CNC operators and programmers", "Mechanics and auto painters",
-        "Sandblasting workers", "Auto electricians",
-        "Electricians and electrical installers", "Industrial electricians",
-        "Carpenters", "Heating and air conditioning installers",
-        "Drivers of almost all categories", "Delivery workers",
-        "Developers", "And many other professions"
-      ]
+        "Welders",
+        "Metalworkers",
+        "Pipefitters",
+        "Metal casters",
+        "CNC operators and programmers",
+        "Mechanics and auto painters",
+        "Sandblasting workers",
+        "Auto electricians",
+        "Electricians and electrical installers",
+        "Industrial electricians",
+        "Carpenters",
+        "Heating and air conditioning installers",
+        "Drivers of almost all categories",
+        "Delivery workers",
+        "Developers",
+        "And many other professions",
+      ],
     },
     {
       title: "CONSTRUCTION",
       content: [
-        "Construction machinery managers", "Crane operators", "Reinforcers",
-        "Farmworkers", "Bricklayers", "Roofers", "Concrete workers",
-        "Tilers", "Painters", "Insulators and waterproofers", "Facade workers"
-      ]
+        "Construction machinery managers",
+        "Crane operators",
+        "Reinforcers",
+        "Farmworkers",
+        "Bricklayers",
+        "Roofers",
+        "Concrete workers",
+        "Tilers",
+        "Painters",
+        "Insulators and waterproofers",
+        "Facade workers",
+      ],
     },
     {
       title: "HOSPITALITY AND RETAIL",
       content: [
-        "Chefs (including national cuisine chefs)", "Baristas and waiters",
-        "Housekeepers", "Cleaners", "Receptionists", "Pastry chefs",
-        "Bakers", "Caregivers", "Support Staff", "Retail workers",
-        "Warehouse workers", "Forklift operators"
-      ]
+        "Chefs (including national cuisine chefs)",
+        "Baristas and waiters",
+        "Housekeepers",
+        "Cleaners",
+        "Receptionists",
+        "Pastry chefs",
+        "Bakers",
+        "Caregivers",
+        "Support Staff",
+        "Retail workers",
+        "Warehouse workers",
+        "Forklift operators",
+      ],
     },
     {
       title: "MANUFACTURING AND WOOD INDUSTRY",
       content: [
         "Workers in meat processing and food production industries",
-        "Textile industry workers (sewers)", "Sawmill workers",
-        "Furniture and ceramics production workers", "And many others"
-      ]
-    }
+        "Textile industry workers (sewers)",
+        "Sawmill workers",
+        "Furniture and ceramics production workers",
+        "And many others",
+      ],
+    },
   ];
 
   return (
@@ -54,24 +81,25 @@ export default function Industries() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left side - Image with adjusted width and padding */}
-          <div className="relative order-1 lg:order-1 py-8 w-full max-w-3xl mx-auto"> {/* Added max-w-3xl */}
+          <div className="relative order-1 lg:order-1 py-8 w-full max-w-3xl mx-auto">
+            {" "}
+            {/* Added max-w-3xl */}
             <motion.div
               animate={{
-                y: [0, -20, 0]
+                y: [0, -20, 0],
               }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
               className={cn(
                 "relative w-full mx-auto",
                 "h-[250px] sm:h-[400px] lg:h-[550px]", // Increased heights
-                "rounded-2xl bg-primary/5",
+                "rounded-2xl",
                 "p-4 sm:p-6 lg:p-8", // Responsive padding
                 "flex items-center justify-center" // Added flex for better centering
-              )}
-            >
+              )}>
               <Image
                 src="/images/teamworks.png"
                 alt="Industry Illustration"
@@ -90,14 +118,15 @@ export default function Industries() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-8"
-            >
+              className="space-y-8">
               <div className="space-y-4">
                 <h2 className="text-3xl sm:text-4xl font-bold text-black">
-                  We invest capital to gain in-depth knowledge of every industry.
+                  We invest capital to gain in-depth knowledge of every
+                  industry.
                 </h2>
                 <p className="text-black">
-                  With experience in recruitment across numerous industries, we find workers for all the professions you need.
+                  With experience in recruitment across numerous industries, we
+                  find workers for all the professions you need.
                 </p>
               </div>
 
@@ -108,12 +137,12 @@ export default function Industries() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="border-b border-gray-200"
-                  >
+                    className="border-b border-gray-200">
                     <button
-                      onClick={() => setOpenItem(openItem === index ? -1 : index)}
-                      className="w-full py-4 flex justify-between items-center group hover:text-primary transition-colors"
-                    >
+                      onClick={() =>
+                        setOpenItem(openItem === index ? -1 : index)
+                      }
+                      className="w-full py-4 flex justify-between items-center group hover:text-primary transition-colors">
                       <h3 className="text-lg font-semibold text-left text-black group-hover:text-primary transition-colors">
                         {industry.title}
                       </h3>
@@ -130,8 +159,7 @@ export default function Industries() {
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
-                        >
+                          className="overflow-hidden">
                           <div className="pb-4 text-black">
                             <p className="leading-relaxed">
                               {industry.content.join(", ")}.

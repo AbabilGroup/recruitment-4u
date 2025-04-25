@@ -40,7 +40,7 @@ export default function ContactHeader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}>
-            RECRUITMENT4U is here for you and all your questions — both for
+            Recruitment4u is here for you and all your questions — both for
             companies and job seekers.
           </motion.h1>
           <motion.div
