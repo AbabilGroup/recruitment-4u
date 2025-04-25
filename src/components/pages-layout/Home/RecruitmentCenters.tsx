@@ -3,46 +3,56 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { CardContent } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import { CarouselApi } from "@/components/ui/carousel";
-import NoSelector from "@/components/common/Noselector"; 
-import dynamic from 'next/dynamic';
-import { memo } from 'react';
+import NoSelector from "@/components/common/Noselector";
+import dynamic from "next/dynamic";
+import { memo } from "react";
+import Napal from "../../../../public/images/Nepal.webp";
+import Phillipine from "../../../../public/images/Phillipine.webp";
+import Qater from "../../../../public/images/Uae & Qatar.webp";
+import India from "../../../../public/images/India.webp";
 
-
-const MotionDiv = dynamic(() => import('framer-motion').then(mod => mod.motion.div), {
-  ssr: false
-});
+const MotionDiv = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.div),
+  {
+    ssr: false,
+  }
+);
 
 const centers = [
   {
     country: "India",
-    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da",
+    image: India,
     description:
       "India is a country with a rich culture and history known among other things as a global leader in metal production. Indian workers are renowned for their excellence in this field as well as in information technology and engineering.",
   },
   {
     country: "Philippines",
-    image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86",
+    image: Phillipine,
     description:
       "The Philippines is an island nation in Southeast Asia known for its beautiful beaches and exotic tourism. Filipino workers are known for their dedication and professionalism in the tourism industry as well as in healthcare.",
   },
   {
     country: "Nepal",
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa",
+    image: Napal,
     description:
       "Nepal is known for its high mountains and beautiful landscapes. Since Nepali workers are accustomed to demanding living conditions in high altitudes, they are ideal for jobs in agriculture, manufacturing or warehousing.",
   },
   {
     country: "UAE and Qatar",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c",
+    image: Qater,
     description:
       "The UAE and Qatar are developed countries where over 90% of the working population consists of foreign workers, most often from Nepal, India, Bangladesh or the Philippines. They serve as a good filter for qualified labor that gains experience, knowledge, and skills from cutting-edge technologies and practices.",
   },
 ];
 
 // Memoize CarouselSlide component
-const CarouselSlide = memo(({ center }: { center: typeof centers[0] }) => (
+const CarouselSlide = memo(({ center }: { center: (typeof centers)[0] }) => (
   <CarouselItem className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3 cursor-grab active:cursor-grabbing">
     <Card className="border-none h-full transition-all duration-300 hover:bg-primary group">
       <CardContent className="p-6">
@@ -70,40 +80,40 @@ const CarouselSlide = memo(({ center }: { center: typeof centers[0] }) => (
   </CarouselItem>
 ));
 
-CarouselSlide.displayName = 'CarouselSlide';
+CarouselSlide.displayName = "CarouselSlide";
 
 const AUTO_PLAY_INTERVAL = 5000;
 
 // Use in both components
 const pageVariants = {
   initial: { opacity: 0 },
-  animate: { 
+  animate: {
     opacity: 1,
-    transition: { 
+    transition: {
       duration: 0.3,
-      staggerChildren: 0.1 
-    }
-  }
+      staggerChildren: 0.1,
+    },
+  },
 };
 
 const itemVariants = {
   initial: { opacity: 0, y: 20 },
-  animate: { 
-    opacity: 1, 
+  animate: {
+    opacity: 1,
     y: 0,
-    transition: { duration: 0.3 }
-  }
+    transition: { duration: 0.3 },
+  },
 };
 
 const RecruitmentCenters = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   useEffect(() => {
     setIsLoading(false);
   }, []);
-  
+
   useEffect(() => {
     if (!api) return;
 
@@ -118,41 +128,37 @@ const RecruitmentCenters = () => {
     };
   }, [api]);
 
-  const carouselItems = useMemo(() => (
-    centers.map((center) => (
-      <CarouselSlide
-        key={center.country}
-        center={center}
-      />
-    ))
-  ), []);
+  const carouselItems = useMemo(
+    () =>
+      centers.map((center) => (
+        <CarouselSlide key={center.country} center={center} />
+      )),
+    []
+  );
 
   return (
     <section className="py-16 sm:py-20 lg:py-40 overflow-hidden">
       {!isLoading && (
         <div className="container mx-auto px-4">
-          <MotionDiv 
+          <MotionDiv
             className="text-center mb-8 sm:mb-12 lg:mb-20"
             initial="initial"
             animate="animate"
-            variants={pageVariants}
-          >
-            <MotionDiv 
+            variants={pageVariants}>
+            <MotionDiv
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary"
               initial="initial"
               animate="animate"
-              variants={itemVariants}
-            >
+              variants={itemVariants}>
               Recruitment Centers
             </MotionDiv>
-            <MotionDiv 
+            <MotionDiv
               className="text-black max-w-2xl mx-auto mt-4"
               initial="initial"
               animate="animate"
-              variants={itemVariants}
-            >
-              The choice of country depends on the required occupation of workers,
-              working conditions as well as employer preferences.
+              variants={itemVariants}>
+              The choice of country depends on the required occupation of
+              workers, working conditions as well as employer preferences.
             </MotionDiv>
           </MotionDiv>
 
@@ -163,8 +169,7 @@ const RecruitmentCenters = () => {
                 loop: true,
               }}
               setApi={setApi}
-              className="w-full"
-            >
+              className="w-full">
               <CarouselContent>{carouselItems}</CarouselContent>
             </Carousel>
 
