@@ -15,15 +15,19 @@ export default function BehindArticale() {
       </h2>
       <div className="grid mt-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-10">
         <CardArticale
-          onClick={() => handleButtonClick("/rercuitment-blog-1")}
+          onClick={() => handleButtonClick("/recruitment-blog-1")}
           title="Which Nationality Should You Prefer When You Think Outside Europe?"
           imageSrc="/images/articale1.jpg"
         />
         <CardArticale
-          title="Should You Rely on an Agency That Charges a High Amount? Things to Consider Before Choosing a Recruitment Partner to Build a Great Team in Europe."
+          onClick={() => handleButtonClick("/recruitment-blog-2")}
+          title="Should You Rely on an Agency That Charges a High Amount?
+ Things to Consider Before Choosing a Recruitment Partner to Build a Great Team in Europe
+"
           imageSrc="/images/articale2.jpg"
         />
         <CardArticale
+          onClick={() => handleButtonClick("/recruitment-blog-3")}
           title="How Fast Can Recruitment-4u Bring Foreign Workers to Europe?
  And how much can we really influence the visa approval timeline?"
           imageSrc="/images/articale3.jpg"

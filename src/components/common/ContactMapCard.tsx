@@ -1,12 +1,12 @@
-import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
+// import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { MdAccessTime } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa6";
 
 type ContactMapProps = {
   title: string;
   address: string;
-  phone: string;
-  email: string;
+  // phone: string;
+  // email: string;
   hours: string;
   mapEmbedUrl: string;
   mapLink?: string;
@@ -15,8 +15,8 @@ type ContactMapProps = {
 export default function ContactMapCard({
   title,
   address,
-  phone,
-  email,
+  // phone,
+  // email,
   hours,
   mapEmbedUrl,
   mapLink,
@@ -53,7 +53,7 @@ export default function ContactMapCard({
         <p>{address}</p>
         <hr />
         <div className="flex flex-col gap-1 text-sm">
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <HiOutlinePhone className="text-black" />
             <a href={`tel:${phone}`} className="text-black hover:underline">
               {phone}
@@ -61,12 +61,10 @@ export default function ContactMapCard({
           </div>
           <div className="flex items-center gap-2">
             <HiOutlineMail className="text-black" />
-            <a
-              href={`mailto:${email}`}
-              className="text-black hover:underline">
+            <a href={`mailto:${email}`} className="text-black hover:underline">
               {email}
             </a>
-          </div>
+          </div> */}
           <div className="flex items-center gap-2">
             <MdAccessTime className="text-black" />
             <span>

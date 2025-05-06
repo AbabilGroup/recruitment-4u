@@ -14,11 +14,11 @@ const Footer = () => {
   const locations = [
     {
       country: "Romania",
-      address: "Str. Sg. Constantin Moise 5 D BUCURESTI, Loc. SECTORUL 6",
+      address: "Str. Sg. Constantin Moise 5 D, SECTORUL 6, BUCHAREST",
     },
     {
       country: "UAE [Dubai]",
-      address: "The One Tower, Fl.24, DUBAI,  UAE",
+      address: "The One Tower, Fl.24, DUBAI, UAE",
     },
     {
       country: "Qatar",
