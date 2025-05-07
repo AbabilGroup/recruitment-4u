@@ -29,43 +29,80 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsFormSubmitted(true); // Set form submission state
+    setIsFormSubmitted(true);
+    let data;
     try {
-      const response = await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          formType: "contact",
-          formData: formData,
-        }),
+        body: JSON.stringify(formData),
       });
+      console.log(res, "res");
 
-      const data = await response.json();
-      if (!response.ok) {
-        setIsFormSubmitted(false); // Reset form submission state on error
-
-        throw new Error(data.error || "Failed to submit form");
+      if (res.ok) {
+        data = await res.json();
+        toast.success("Message sent successfully");
+        console.log(data);
+        setFormData({
+          company: "",
+          name: "",
+          email: "",
+          phone: "",
+          country: "",
+          message: "",
+        });
+      } else {
+        toast.error("Failed to send message");
       }
-
-      // Reset form on success
-      setFormData({
-        company: "",
-        name: "",
-        email: "",
-        phone: "",
-        country: "",
-        message: "",
-      });
-      setIsFormSubmitted(false); // Reset form submission state
-      toast.success("submitted successfully");
     } catch (error) {
-      console.error("Submission error:", error);
-      setIsFormSubmitted(false); // Reset form submission state on error
-      toast.error("Failed to submit form");
+      console.error("Submit error:", error);
+      toast.error("Failed to send message");
+    } finally {
+      setIsFormSubmitted(false);
     }
   };
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsFormSubmitted(true); // Set form submission state
+  //   try {
+  //     const response = await fetch("/api/contact", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         formType: "contact",
+  //         formData: formData,
+  //       }),
+  //     });
+
+  //     const data = await response.json();
+  //     if (!response.ok) {
+  //       setIsFormSubmitted(false); // Reset form submission state on error
+
+  //       throw new Error(data.error || "Failed to submit form");
+  //     }
+
+  //     // Reset form on success
+  //     setFormData({
+  //       company: "",
+  //       name: "",
+  //       email: "",
+  //       phone: "",
+  //       country: "",
+  //       message: "",
+  //     });
+  //     setIsFormSubmitted(false); // Reset form submission state
+  //     toast.success("submitted successfully");
+  //   } catch (error) {
+  //     console.error("Submission error:", error);
+  //     setIsFormSubmitted(false); // Reset form submission state on error
+  //     toast.error("Failed to submit form");
+  //   }
+  // };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

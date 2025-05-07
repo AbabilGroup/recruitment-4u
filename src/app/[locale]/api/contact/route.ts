@@ -1,136 +1,50 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-type FormConfig = {
-  emailSubject: string;
-  recipientEmail?: string;
-  fields: Record<
-    string,
-    {
-      label: string;
-      required?: boolean;
-    }
-  >;
-};
-
-// Predefined form configurations
-const FORM_CONFIGS: Record<string, FormConfig> = {
-  contact: {
-    emailSubject: "New Contact Form Submission",
-    fields: {
-      company: { label: "Company", required: true },
-      name: { label: "Name", required: true },
-      email: { label: "Email Address", required: true },
-      phone: { label: "Phone Number" },
-      note: { label: " Your Message" },
-    },
-  },
-  // Add more form types as needed
-};
-
-export async function POST(request: Request) {
-  // 1. Verify Content-Type header
-  const contentType = request.headers.get("content-type");
-  if (!contentType?.includes("application/json")) {
-    return NextResponse.json(
-      { error: "Invalid content type. Expected application/json" },
-      { status: 400 }
-    );
-  }
-
-  let formType: string;
-  let formData: Record<string, unknown>;
-
+export async function POST(req: Request) {
   try {
-    // 2. Safely parse request body
-    const requestBody = await request.text();
+    const { company, name, email, phone, country, message } = await req.json();
+    console.log("Contact API called");
 
-    // Check for empty body
-    if (!requestBody.trim()) {
+    if (!email || !message) {
       return NextResponse.json(
-        { error: "Request body cannot be empty" },
+        { error: "Email and message are required" },
         { status: 400 }
       );
     }
 
-    const parsedBody = JSON.parse(requestBody);
-    formType = parsedBody.formType;
-    formData = parsedBody.formData;
-
-    // 3. Validate required fields exist
-    if (!formType || !formData) {
-      return NextResponse.json(
-        { error: "Both formType and formData are required" },
-        { status: 400 }
-      );
-    }
-  } catch (error) {
-    console.error("JSON parsing error:", error);
-    return NextResponse.json(
-      { error: "Invalid JSON format in request body" },
-      { status: 400 }
-    );
-  }
-
-  // Rest of your existing validation and email sending logic
-  try {
-    // Validate form type
-    const config = FORM_CONFIGS[formType];
-    if (!config) {
-      return NextResponse.json({ error: "Invalid form type" }, { status: 400 });
-    }
-
-    // Validate required fields
-    for (const [field, fieldConfig] of Object.entries(config.fields)) {
-      if (fieldConfig.required && !formData[field]) {
-        return NextResponse.json(
-          { error: `${fieldConfig.label} is required` },
-          { status: 400 }
-        );
-      }
-    }
-
-    // Create email HTML (keep your existing implementation)
-    const emailHtml = `
-      <h2>${config.emailSubject}</h2>
-      ${Object.entries(config.fields)
-        .map(([field, fieldConfig]) =>
-          formData[field] !== undefined &&
-          formData[field] !== "" &&
-          formData[field] !== false
-            ? `<p><strong>${fieldConfig.label}:</strong> ${formData[field]}</p>`
-            : ""
-        )
-        .join("")}
-    `;
-
-    // Create transporter (keep your existing implementation)
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "playergtax6@gmail.com",
-        pass: "zkzcwbubvwjpnwec",
+        user: process.env.GMAIL_USER, // move to .env
+        pass: process.env.GMAIL_PASS, // move to .env
       },
     });
 
-    // Send email
-    await transporter.sendMail({
-      from: "playergtax6@gmail.com",
-      to: "playergtax8@gmail.com",
-      subject: `${config.emailSubject} - ${formType}`,
-      html: emailHtml,
-    });
+    const mailOptions = {
+      from: `Contact Form <${email}>`,
+      to: process.env.GMAIL_USER,
+      subject: `New Contact Form Submission from ${name}`,
+      html: `
+        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Country:</strong> ${country}</p>
+        <p><strong>Message:</strong><br/>${message}</p>
+      `,
+    };
 
-    return NextResponse.json(
-      { success: true, message: "Email sent successfully" },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error("Error processing request:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    await transporter.sendMail(mailOptions);
+
+    return NextResponse.json({ message: "Email sent successfully" });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("Error sending email:", error.message);
+    } else {
+      console.error("Error sending email:", error);
+    }
+    return NextResponse.json({ error: "Error sending email" }, { status: 500 });
   }
 }
 

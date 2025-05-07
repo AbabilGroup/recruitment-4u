@@ -26,29 +26,14 @@ const LanguageSwitcher = () => {
   const pathname = usePathname();
 
   // Get the current language from the URL
-  const currentLang = pathname.split("/")[1] as
-    | "en"
-    | "bg"
-    | "bs"
-    | "sr"
-    | "hr"
-    | "ro"
-    | "sl"
-    | "sk";
+  const currentLang = pathname.split("/")[1];
   const activeLang =
     languages.find((l) => l.code === currentLang) || languages[0];
 
   const handleLanguageChange = (lang: (typeof languages)[number]["code"]) => {
-    if (lang === currentLang) return; // Don't do anything if same language
-
-    // Get the current path without the language prefix
+    if (lang === currentLang) return;
     const pathWithoutLang = pathname.replace(/^\/[a-z]{2}/, "") || "/";
-
-    // Create the new path
-    const newPath = `${lang}${pathWithoutLang}`;
-
-    // Use push instead of replace to maintain history
-    router.push(newPath);
+    router.push(`/${lang}${pathWithoutLang}`);
   };
 
   return (

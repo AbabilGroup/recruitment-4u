@@ -2,7 +2,6 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import "./globals.css";
-import { ReactNode } from "react"; // Add missing import
 import { routing } from "@/i18n/routing";
 import NotFound from "@/components/common/NotFound";
 
@@ -73,10 +72,8 @@ export default async function RootLayout({
   children,
   params,
 }: {
-  children: ReactNode;
-  params: {
-    locale: string;
-  };
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
