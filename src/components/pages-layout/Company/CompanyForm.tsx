@@ -6,6 +6,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 import ForCompaniImg from "../../../../public/images/forcompanis.jpg";
+import { usePathname } from "next/navigation";
 
 type FormData = {
   company: string;
@@ -25,14 +26,15 @@ export default function CompanyForm() {
     message: "",
     agreeToContact: false,
   });
-
+  const pathname = usePathname(); // e.g. /en/contact
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
+    const locale = pathname.split("/")[1]; // 'en'
     e.preventDefault();
     setIsFormSubmitted(true); // Set form submission state
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(`/${locale}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
