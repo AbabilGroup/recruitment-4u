@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 
 const HomeEmploy = () => {
   const t = useTranslations("homepartner");
+
   const stats = [
     {
       number: "1",
@@ -62,30 +63,11 @@ const HomeEmploy = () => {
               {t("partner")}
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed">
-              {/* We are a leading agency in mediating the employment of foreign workers. */}
-              {/* {t.rich("partnerdesc", {
-                asia: (chunks) => <strong>{chunks}</strong>,
-                gulf: (chunks) => <strong>{chunks}</strong>,
-                americas: (chunks) => <strong>{chunks}</strong>,
-                africa: (chunks) => <strong>{chunks}</strong>,
-                dubai: (chunks) => <strong>{chunks}</strong>,
-                uk: (chunks) => <strong>{chunks}</strong>,
-                croatia: (chunks) => <strong>{chunks}</strong>,
-                malta: (chunks) => <strong>{chunks}</strong>,
-                bulgaria: (chunks) => <strong>{chunks}</strong>,
-                poland: (chunks) => <strong>{chunks}</strong>,
-                romania: (chunks) => <strong>{chunks}</strong>,
-                european: (chunks) => <strong>{chunks}</strong>,
-              })} */}
               We specialize in recruiting and selecting foreign workers from
-              various regions, including <strong>Asia</strong>, the{" "}
-              <strong>Gulf</strong>, <strong>North and South America</strong>,
-              and <strong>Africa</strong>. Operating from our central offices in{" "}
-              <strong>Dubai</strong>, we place workers in countries such as the{" "}
-              <strong>UK</strong>, <strong>Croatia</strong>,{" "}
-              <strong>Malta</strong>, <strong>Bulgaria</strong>,{" "}
-              <strong>Poland</strong>, <strong>Romania</strong>, and other{" "}
-              <strong>European</strong> nations.
+              various regions, including Asia, the Gulf, North and South
+              America, and Africa. Operating from our central offices in Dubai,
+              we place workers in countries such as the UK, Croatia, Malta,
+              Bulgaria, Poland, Romania, and other European nations.
             </p>
           </motion.div>
         </div>

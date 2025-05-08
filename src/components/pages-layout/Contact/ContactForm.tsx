@@ -11,7 +11,9 @@ import {
 import { motion } from "framer-motion";
 import ContactCard from "@/components/common/ContactCard";
 import { toast } from "sonner";
+import { usePathname } from "next/navigation";
 export const ContactForm = () => {
+  const pathname = usePathname(); // e.g. /en/contact
   const [formData, setFormData] = useState({
     company: "",
     name: "",
@@ -28,23 +30,21 @@ export const ContactForm = () => {
   // };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    const locale = pathname.split("/")[1]; // 'en'
     e.preventDefault();
     setIsFormSubmitted(true);
-    let data;
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(`/${locale}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-      console.log(res, "res");
 
       if (res.ok) {
-        data = await res.json();
         toast.success("Message sent successfully");
-        console.log(data);
+
         setFormData({
           company: "",
           name: "",
